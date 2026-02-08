@@ -1,55 +1,98 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    [Header("Prefabs (must contain PlayerInput)")]
-    [SerializeField] private GameObject heroPrefab;
-    [SerializeField] private GameObject bossPrefab;
+    [Header("Player Prefabs")]
+    [SerializeField] private GameObject[] playerPrefabs;
+    
+    [SerializeField] private int player1PrefabIndex = 0;
+    [SerializeField] private int player2PrefabIndex = 1;
 
     [Header("Spawn Points")]
-    [SerializeField] private Transform heroSpawn;
-    [SerializeField] private Transform bossSpawn;
+    [SerializeField] private Transform[] spawnPoints = new Transform[2];
 
-    [Header("Input")]
-    [SerializeField] private string controlScheme = "Joystick";
+    [Header("Options")]
+    [SerializeField] private bool disableJoiningAfterSpawn = true;
+    [SerializeField] private bool allowJoinIfMissingSecondDevice = true;
+
+    private PlayerInputManager _pim;
+
+    private void Awake()
+    {
+        _pim = GetComponent<PlayerInputManager>();
+    }
 
     private void Start()
     {
-        // Ensure exactly two gamepads are present
-        if (Joystick.all.Count < 2)
+        if (FindObjectsByType<PlayerInput>(0).Length > 0)
         {
-            Debug.LogError($"Need 2 Joysticks connected. Found: {Joystick.all.Count}");
+            if (disableJoiningAfterSpawn) _pim.DisableJoining();
             return;
         }
 
-        var p1 = Joystick.all[0];
-        var p2 = Joystick.all[1];
+        if (playerPrefabs == null || playerPrefabs.Length == 0)
+        {
+            Debug.LogError("AutoTwoPlayerSpawner: No playerPrefabs assigned.");
+            return;
+        }
 
-        // Spawn Hero controlled by gamepad #1
-        var hero = PlayerInput.Instantiate(
-            heroPrefab,
-            playerIndex: 0,
-            controlScheme: controlScheme,
-            pairWithDevice: p1
-        );
+        // Gather devices
+        var devices = new List<InputDevice>();
+        foreach (var g in Gamepad.all) devices.Add(g);
+        foreach (var j in Joystick.all) devices.Add(j);
 
-        // Spawn Boss controlled by gamepad #2
-        var boss = PlayerInput.Instantiate(
-            bossPrefab,
-            playerIndex: 1,
-            controlScheme: controlScheme,
-            pairWithDevice: p2
-        );
+        int count = Mathf.Min(2, devices.Count);
 
-        // Position them
-        if (heroSpawn != null) hero.transform.position = heroSpawn.position;
-        if (bossSpawn != null) boss.transform.position = bossSpawn.position;
+        for (int i = 0; i < count; i++)
+        {
+            var device = devices[i];
+            string scheme = device is Gamepad ? "Gamepad" : "Joystick";
 
-        // Safety: make sure both are on the right action map
-        hero.SwitchCurrentActionMap("Gameplay");
-        boss.SwitchCurrentActionMap("Gameplay");
+            // Choose prefab for player i
+            var prefab = GetPrefabForPlayerIndex(i);
 
-        Debug.Log($"Spawned Hero with {p1.displayName}, Boss with {p2.displayName}");
+            if (prefab == null)
+            {
+                Debug.LogError($"AutoTwoPlayerSpawner: Prefab for player {i} is null.");
+                continue;
+            }
+
+            // Spawn and pair device
+            var player = PlayerInput.Instantiate(
+                prefab,
+                playerIndex: i,
+                controlScheme: scheme,
+                pairWithDevice: device
+            );
+
+            // Move to spawn point
+            if (spawnPoints != null && spawnPoints.Length > i && spawnPoints[i] != null)
+            {
+                player.transform.SetPositionAndRotation(
+                    spawnPoints[i].position,
+                    spawnPoints[i].rotation
+                );
+            }
+
+            player.gameObject.name = $"P{i + 1}_{prefab.name}_{device.displayName}";
+        }
+
+        // Joining behavior after spawn
+        if (disableJoiningAfterSpawn && count == 2)
+            _pim.DisableJoining();
+        else if (!allowJoinIfMissingSecondDevice)
+            _pim.DisableJoining();
+        else
+            _pim.EnableJoining();
+    }
+
+    private GameObject GetPrefabForPlayerIndex(int playerIndex)
+    {
+        int chosenIndex = (playerIndex == 0) ? player1PrefabIndex : player2PrefabIndex;
+        chosenIndex = Mathf.Clamp(chosenIndex, 0, playerPrefabs.Length - 1);
+        return playerPrefabs[chosenIndex];
     }
 }
+
