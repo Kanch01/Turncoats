@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class AttackHitboxController : MonoBehaviour
 {
@@ -6,6 +7,9 @@ public class AttackHitboxController : MonoBehaviour
     [SerializeField] private LayerMask hittableLayers;
     [SerializeField] private Transform hitboxRoot;
     [SerializeField] public float damage = 1f;
+
+    // Track already hit targets for this attack
+    private HashSet<GameObject> hitTracker;
 
     private void Awake()
     {
@@ -19,6 +23,7 @@ public class AttackHitboxController : MonoBehaviour
     // Called by Animation Events
     public void EnableHitboxes()
     {
+        hitTracker = new HashSet<GameObject>();
         Debug.Log($"{name}: EnableHitboxes event fired", this);
         SetActive(true);
     }
@@ -43,6 +48,12 @@ public class AttackHitboxController : MonoBehaviour
     {
         if (((1 << other.gameObject.layer) & hittableLayers) == 0)
             return;
+
+        // Hit only once per attack
+        if (hitTracker.Contains(other.gameObject))
+            return;
+
+        hitTracker.Add(other.gameObject);
 
         HealthManager targetHealth = other.GetComponent<HealthManager>();
         if (targetHealth != null)
