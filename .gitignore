@@ -1,0 +1,8 @@
+_Recovery/
+.vscode/
+UserSettings/
+Library/
+Logs/
+Turncoats.slnx
+Assembly-CSharp.csproj
+Assets/_Recovery.meta

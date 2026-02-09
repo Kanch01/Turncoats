@@ -1,3 +1,4 @@
+using System.Security;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,8 +15,34 @@ public class PlayerManager : MonoBehaviour
     [Header("Input")]
     [SerializeField] private string controlScheme = "Joystick";
 
+    [Header("Dev")]
+    [SerializeField] private bool devMode = false;
+
+    private void initializeDev()
+    {
+        // Spawn Hero controlled by gamepad #1
+        // var p1 = Joystick.all[0];
+        // var hero = PlayerInput.Instantiate(
+        //     heroPrefab,
+        //     playerIndex: 0,
+        //     controlScheme: controlScheme,
+        //     pairWithDevice: p1
+        // );
+
+        // // Position them
+        // if (heroSpawn != null) hero.transform.position = heroSpawn.position;
+        // hero.SwitchCurrentActionMap("Gameplay");
+        // Debug.Log($"Spawned Hero in dev mode with {p1.displayName}");
+        Debug.Log("Debug mode activated");
+    }
+
     private void Start()
     {
+        if (devMode)
+        {
+            initializeDev();
+            return;
+        }
         // Ensure exactly two gamepads are present
         if (Joystick.all.Count < 2)
         {
