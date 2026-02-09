@@ -3,6 +3,7 @@ _Recovery/
 UserSettings/
 Library/
 Logs/
-Turncoats.slnx
-Assembly-CSharp.csproj
 Assets/_Recovery.meta
+*.csproj
+*.sln
+*.slnx
