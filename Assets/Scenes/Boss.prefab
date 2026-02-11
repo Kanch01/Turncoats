@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -4181479934752901710}
   - component: {fileID: 7451388757717716085}
   - component: {fileID: 3019786892522875702}
+  - component: {fileID: -775332242211437412}
   m_Layer: 6
   m_Name: Boss
   m_TagString: Untagged
@@ -114,7 +115,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -124,7 +125,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &6515307872890731601
 CapsuleCollider2D:
@@ -227,12 +228,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b26c7548b69413ead925faebd1144e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 10
-  jumpImpulse: 15
+  moveSpeed: 8
+  jumpImpulse: 25
   dashSpeed: 35
-  dashDuration: 0.15
+  dashDuration: 0.1
   dashCooldown: 0.5
-  attackLockoutMoveTime: 0.15
+  attackLockoutMoveTime: 0
   groundCheck: {fileID: 5369116203322428786}
   groundCheckRadius: 0.12
   groundLayer:
@@ -255,6 +256,29 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   hitboxRoot: {fileID: 4077325758893138220}
+  damage: 1
+--- !u!114 &-775332242211437412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232351733049374520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c601402246c3c694aba42a359db8ed4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthManager
+  maxHealth: 3
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  spriteRenderer: {fileID: 718212349973549858}
+  hurtColor: {r: 0.6980392, g: 0.1333333, b: 0.1333333, a: 1}
+  flashDuration: 0.5
 --- !u!1 &6204560630894171009
 GameObject:
   m_ObjectHideFlags: 0

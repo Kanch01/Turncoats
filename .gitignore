@@ -4,6 +4,7 @@ UserSettings/
 Library/
 Logs/
 Assets/_Recovery.meta
+obj/
 *.csproj
 *.sln
 *.slnx

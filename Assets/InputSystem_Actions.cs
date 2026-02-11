@@ -210,7 +210,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""67c0b6cc-5de0-493b-a744-9133b283bcdd"",
-                    ""path"": ""<HID::Microsoft Jared Controller>/button2"",
+                    ""path"": ""<HID::Microsoft Jared Controller>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Joystick"",
@@ -221,7 +221,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1ba24831-36ea-4b99-afb3-2cb7367cfe82"",
-                    ""path"": ""<HID::Microsoft Jose Controller>/button2"",
+                    ""path"": ""<HID::Microsoft Jose Controller>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Joystick"",

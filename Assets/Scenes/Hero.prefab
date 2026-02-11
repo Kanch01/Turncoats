@@ -364,7 +364,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_Linear  ping: 0
+  m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 10
   m_Material: {fileID: 0}
@@ -376,7 +376,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &-6334807409157570306
 Animator:
@@ -443,11 +443,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 15
-  jumpImpulse: 40
+  jumpImpulse: 20
   dashSpeed: 45
   dashDuration: 0.15
   dashCooldown: 0.5
-  attackLockoutMoveTime: 0.15
+  attackLockoutMoveTime: 0
   groundCheck: {fileID: 4338873356781908039}
   groundCheckRadius: 0.12
   groundLayer:
@@ -470,6 +470,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   hitboxRoot: {fileID: 5220588145049612613}
+  damage: 1
 --- !u!114 &-1958762131152821503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,10 +483,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c601402246c3c694aba42a359db8ed4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 3.0
+  maxHealth: 3
   onHealthChanged:
     m_PersistentCalls:
       m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  spriteRenderer: {fileID: 727265057789168791}
+  hurtColor: {r: 0.6980392, g: 0.1333333, b: 0.1333333, a: 1}
+  flashDuration: 0.5

@@ -577,6 +577,9 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  spriteRenderer: {fileID: 0}
+  hurtColor: {r: 0.6980392, g: 0.1333333, b: 0.1333333, a: 1}
+  flashDuration: 0.15
 --- !u!1 &532016510
 GameObject:
   m_ObjectHideFlags: 0
