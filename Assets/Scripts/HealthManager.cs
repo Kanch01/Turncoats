@@ -74,7 +74,7 @@ public class HealthManager : MonoBehaviour
         Debug.Log($"{name} bleh (ˆ𐃷ˆ)");
         onDeath?.Invoke();
         // TODO: Death animation
-        Destroy(gameObject, 1f);    // Will just kill object for now lol
+        Destroy(gameObject, 0f);    // Will just kill object for now lol
     }
 
     /// <summary>

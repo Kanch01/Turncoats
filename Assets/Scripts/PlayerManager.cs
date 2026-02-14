@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -22,14 +23,6 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         _pim = GetComponent<PlayerInputManager>();
-    }
-
-    [Header("Dev")]
-    [SerializeField] private bool devMode = false;
-
-    private void initializeDev()
-    {
-        Debug.Log("Debug mode activated");
     }
 
     private void Start()
@@ -85,6 +78,8 @@ public class PlayerManager : MonoBehaviour
             }
 
             player.gameObject.name = $"P{i + 1}_{prefab.name}_{device.displayName}";
+
+            FindFirstObjectByType<MultiTargetCamera>().RegisterPlayer(player.transform);
         }
 
         // Joining behavior after spawn
@@ -94,6 +89,14 @@ public class PlayerManager : MonoBehaviour
             _pim.DisableJoining();
         else
             _pim.EnableJoining();
+    }
+
+    [Header("Dev")]
+    [SerializeField] private bool devMode = false;
+
+    private void initializeDev()
+    {
+        Debug.Log("Debug mode activated");
     }
 
     private GameObject GetPrefabForPlayerIndex(int playerIndex)
