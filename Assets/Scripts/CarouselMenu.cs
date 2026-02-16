@@ -56,6 +56,11 @@ public class CarouselMenu : MonoBehaviour
             }
         }
     }
+    
+    public void OnConfirmPressed()
+    {
+        GameFlowManager.Instance.GoBossToStageMod();
+    }
 
 void AnimateLayout()
 {

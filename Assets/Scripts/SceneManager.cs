@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+
 
 public enum Phase { StartMenu, Battle }
 
@@ -17,6 +19,7 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] string bossSelect = "BossSelect";
     [SerializeField] string stageMod = "StageMod";
     [SerializeField] string battle = "Battle";
+    [SerializeField] private Camera rootCamera;
 
     string currentLoadedContentScene; 
     bool isLoading;
@@ -63,6 +66,7 @@ public class GameFlowManager : MonoBehaviour
         }
         
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(next));
+        SetCameraForActiveScene();
         
         if (!string.IsNullOrEmpty(currentLoadedContentScene) && currentLoadedContentScene != next)
         {
@@ -73,6 +77,33 @@ public class GameFlowManager : MonoBehaviour
         currentLoadedContentScene = next;
 
         isLoading = false;
+    }
+    
+    
+    private void SetCameraForActiveScene()
+    {
+        var active = SceneManager.GetActiveScene().name;
+
+        if (active == "StageMod" || active == "Battle")
+        {
+            // Disable root camera
+            SetCameraEnabled(rootCamera, false);
+        }
+        else
+        {
+            // For menus/customization scenes, use root camera
+            SetCameraEnabled(rootCamera, true);
+        }
+    }
+
+    private void SetCameraEnabled(Camera cam, bool enablede)
+    {
+        if (cam == null) return;
+        cam.enabled = enablede;
+
+        // Avoid two active AudioListeners
+        var al = cam.GetComponent<AudioListener>();
+        if (al != null) al.enabled = enablede;
     }
 
     bool IsSceneLoaded(string name)

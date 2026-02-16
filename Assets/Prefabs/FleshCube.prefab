@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7389582261561861850}
   - component: {fileID: 2713678867720340593}
   - component: {fileID: 9113255693217561127}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: FleshCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

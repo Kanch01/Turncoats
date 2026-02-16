@@ -6,8 +6,7 @@ public class PlayerConfig
     public int attack;
     public int speed;
     public int health;
-    public int weight;
-    public int defense;
+    public int jump;
     
     public int weapon;
     public int ability;

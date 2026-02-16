@@ -221,7 +221,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""67c0b6cc-5de0-493b-a744-9133b283bcdd"",
-                    ""path"": ""<HID::Microsoft Jared Controller>/button2"",
+                    ""path"": ""<HID::Microsoft Jared Controller>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Joystick"",
@@ -232,7 +232,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1ba24831-36ea-4b99-afb3-2cb7367cfe82"",
-                    ""path"": ""<HID::Microsoft Jose Controller>/button2"",
+                    ""path"": ""<HID::Microsoft Jose Controller>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Joystick"",
@@ -292,7 +292,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Submit"",
                     ""type"": ""Button"",
                     ""id"": ""7607c7b6-cd76-4816-beef-bd0341cfe950"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -666,6 +666,39 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""e95bcd34-c753-43b5-bc7e-d8b87fa78621"",
+                    ""path"": ""<HID::Microsoft Jose Controller>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Joystick"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""913244bc-b24f-4a6c-a602-5a05d08b48c1"",
+                    ""path"": ""<HID::Microsoft Jared Controller>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Joystick"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d730a73-0d6d-4d5b-9251-9357c0e3d1c7"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""82627dcc-3b13-4ba9-841d-e4b746d6553e"",
                     ""path"": ""*/{Cancel}"",
                     ""interactions"": """",
@@ -754,6 +787,39 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""0db9eec3-4cfb-4feb-a5bb-e06f991c0b5b"",
+                    ""path"": ""<HID::Microsoft Jose Controller>/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Joystick"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b5e56af8-9ab9-409a-9a05-ae30d1c0e5f2"",
+                    ""path"": ""<HID::Microsoft Jared Controller>/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Joystick"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef9c7400-7f3b-4b13-a3f4-f85e8fa92e17"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""38c99815-14ea-4617-8627-164d27641299"",
                     ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
@@ -820,12 +886,23 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""953f210d-0b66-4928-984c-72a35e583071"",
-                    ""path"": """",
+                    ""id"": ""afe17e63-f2b2-4345-b27d-ed82b56d9f83"",
+                    ""path"": ""<HID::Microsoft Jared Controller>/button4"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotate"",
+                    ""groups"": "";Joystick"",
+                    ""action"": ""Cycle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f8c14eb-6596-4367-a482-b7e1dd0c4d96"",
+                    ""path"": ""<HID::Microsoft Jose Controller>/button4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Joystick"",
+                    ""action"": ""Cycle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -836,6 +913,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""084c2105-6fb6-47f8-b8ff-eebf58863b08"",
+                    ""path"": ""<HID::Microsoft Jared Controller>/button5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Joystick"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3adbc2fe-4631-4dfb-adc1-e5fa34ef8f8f"",
+                    ""path"": ""<HID::Microsoft Jose Controller>/button5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Joystick"",
                     ""action"": ""Rotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

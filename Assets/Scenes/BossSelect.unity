@@ -339,7 +339,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 519852540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2114482568}
+        m_TargetAssemblyTypeName: CarouselMenu, Assembly-CSharp
+        m_MethodName: OnConfirmPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &519852540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,7 +826,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1238972942}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2114482568}
+        m_TargetAssemblyTypeName: CarouselMenu, Assembly-CSharp
+        m_MethodName: OnConfirmPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1238972942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,7 +1240,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1657141040}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2114482568}
+        m_TargetAssemblyTypeName: CarouselMenu, Assembly-CSharp
+        m_MethodName: OnConfirmPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1657141040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,7 +1522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2035579291
 MonoBehaviour:
   m_ObjectHideFlags: 0

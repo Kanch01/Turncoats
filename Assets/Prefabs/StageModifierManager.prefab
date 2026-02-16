@@ -125,6 +125,9 @@ MonoBehaviour:
   rotateAction: {fileID: 3584566496950942275, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   nextPrefabAction: {fileID: 808930066650462972, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   controllerCursorSpeed: 1000
+  spawnPoints: {fileID: 0}
+  playerManager: {fileID: 0}
+  gameCamera: {fileID: 0}
 --- !u!1 &4362828108351991850
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +248,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3655358990296705500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3515273853223700072}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5026406576241084363
 GameObject:
   m_ObjectHideFlags: 0

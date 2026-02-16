@@ -715,17 +715,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_SubmitAction: {fileID: 3001919216989983466, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 5664809712444411639}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1052236569
@@ -13489,6 +13489,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519255749}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: placeAction
+      value: 
+      objectReference: {fileID: 392368643174621059, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: spawnPoints
       value: 
       objectReference: {fileID: 1680890989}
@@ -13502,7 +13506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896426323434745975, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5896426323434745975, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -13511,10 +13515,22 @@ PrefabInstance:
     - target: {fileID: 5896426323434745975, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1246678497}
+      objectReference: {fileID: 5664809712444411641}
     - target: {fileID: 5896426323434745975, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896426323434745975, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896426323434745975, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StageModifierManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896426323434745975, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8661892794234573140, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: m_Pivot.x
@@ -13605,6 +13621,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+--- !u!1 &5664809712444411639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4362828108351991850, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+  m_PrefabInstance: {fileID: 5664809712444411638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5664809712444411641 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+  m_PrefabInstance: {fileID: 5664809712444411638}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8aa0ccd413772c4fbd485e568c556dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageModifierManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

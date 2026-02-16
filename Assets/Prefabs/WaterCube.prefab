@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8807673572924967571}
   - component: {fileID: 126362411967958656}
   - component: {fileID: 1582026285292761593}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: WaterCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

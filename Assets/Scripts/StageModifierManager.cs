@@ -55,7 +55,7 @@ public class StageModifierManager : MonoBehaviour
         nextPrefabAction.action.Disable();
     }
 
-    void OnButtonPressed()
+    public void OnButtonPress()
     {
         if (gameCamera != null)
         {
@@ -103,8 +103,8 @@ public class StageModifierManager : MonoBehaviour
         pointerData = new PointerEventData(eventSystem);
 
         // Enable transition button
-        Button transition = GetComponentInChildren<Button>();
-        transition.onClick.AddListener(OnButtonPressed);
+        // Button transition = GetComponentInChildren<Button>();
+        // transition.onClick.AddListener(OnButtonPressed);
     }
 
     void Update()
