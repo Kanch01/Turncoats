@@ -11,11 +11,17 @@ public class MultiTargetCamera : MonoBehaviour
     
     void LateUpdate()
     {
-        if (target1 == null || target2 == null)
+        if (target1 == null && target2 == null)
             return;
 
         // Calculate the midpoint between the two targets
-        Vector3 centerPoint = (target1.position + target2.position) / 2f;
+        Vector3 centerPoint;
+        if (target1 != null && target2 != null)
+            centerPoint = (target1.position + target2.position) / 2f;
+        else if (target1 != null)
+            centerPoint = target1.position;
+        else
+            centerPoint = target2.position;
 
         // Calculate the desired new position
         Vector3 newPosition = centerPoint + offset;

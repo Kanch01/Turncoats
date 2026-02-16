@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private bool allowJoinIfMissingSecondDevice = true;
 
     private PlayerInputManager _pim;
-
+    private int deviceCount;
     private void Awake()
     {
         _pim = GetComponent<PlayerInputManager>();
@@ -44,9 +44,9 @@ public class PlayerManager : MonoBehaviour
         foreach (var g in Gamepad.all) devices.Add(g);
         foreach (var j in Joystick.all) devices.Add(j);
 
-        int count = Mathf.Min(2, devices.Count);
+        deviceCount = Mathf.Min(2, devices.Count);
 
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < deviceCount; i++)
         {
             var device = devices[i];
             string scheme = device is Gamepad ? "Gamepad" : "Joystick";
@@ -83,20 +83,12 @@ public class PlayerManager : MonoBehaviour
         }
 
         // Joining behavior after spawn
-        if (disableJoiningAfterSpawn && count == 2)
+        if (disableJoiningAfterSpawn && deviceCount == 2)
             _pim.DisableJoining();
         else if (!allowJoinIfMissingSecondDevice)
             _pim.DisableJoining();
         else
             _pim.EnableJoining();
-    }
-
-    [Header("Dev")]
-    [SerializeField] private bool devMode = false;
-
-    private void initializeDev()
-    {
-        Debug.Log("Debug mode activated");
     }
 
     private GameObject GetPrefabForPlayerIndex(int playerIndex)

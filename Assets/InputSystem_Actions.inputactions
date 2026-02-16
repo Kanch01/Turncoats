@@ -112,6 +112,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7037fabf-fe02-4076-b79c-55015d4e2a2d",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "daba33a1-ad0c-4742-a909-43ad1cdfbeb6",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -124,7 +135,7 @@
                 {
                     "name": "",
                     "id": "67c0b6cc-5de0-493b-a744-9133b283bcdd",
-                    "path": "<HID::Microsoft Jared Controller>/trigger",
+                    "path": "<HID::Microsoft Jared Controller>/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Joystick",
@@ -135,22 +146,11 @@
                 {
                     "name": "",
                     "id": "1ba24831-36ea-4b99-afb3-2cb7367cfe82",
-                    "path": "<HID::Microsoft Jose Controller>/trigger",
+                    "path": "<HID::Microsoft Jose Controller>/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Joystick",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c2a32c55-b138-44d9-a540-9ba9b2994998",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -175,6 +175,17 @@
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "28cb18a5-b39a-4b04-9da4-bb315a39f2ef",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -195,7 +206,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "7607c7b6-cd76-4816-beef-bd0341cfe950",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -204,7 +215,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "15cef263-9014-4fd5-94d9-4e4a6234a6ef",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -540,22 +551,11 @@
                 },
                 {
                     "name": "",
-                    "id": "4f85dded-e954-464a-93a2-02309f57600e",
-                    "path": "<HID::Microsoft Jared Controller>/trigger",
+                    "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
+                    "path": "*/{Submit}",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Joystick",
-                    "action": "Submit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "091fab2e-69e5-4a5e-8968-ad2609ab1a01",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
+                    "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
