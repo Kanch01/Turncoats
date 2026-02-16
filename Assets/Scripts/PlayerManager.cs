@@ -24,8 +24,13 @@ public class PlayerManager : MonoBehaviour
     {
         _pim = GetComponent<PlayerInputManager>();
     }
-
+    
     private void Start()
+    {
+        // StartGame();
+    }
+
+    public void StartGame()
     {
         if (FindObjectsByType<PlayerInput>(0).Length > 0)
         {

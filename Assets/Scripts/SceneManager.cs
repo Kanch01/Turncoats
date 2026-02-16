@@ -14,6 +14,8 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] string statsMenu = "HeroStats";
     [SerializeField] string weaponMenu = "HeroWeapon";
     [SerializeField] string abilityMenu = "HeroAbility";
+    [SerializeField] string bossSelect = "BossSelect";
+    [SerializeField] string stageMod = "StageMod";
     [SerializeField] string battle = "Battle";
 
     string currentLoadedContentScene; 
@@ -45,6 +47,8 @@ public class GameFlowManager : MonoBehaviour
     public void GoStatsToWeapon() => _ = StartCoroutine(LoadContentScene(weaponMenu));
     public void GoWeaponToAbility() => _ = StartCoroutine(LoadContentScene(abilityMenu));
     public void GoAbilityToBattle() => _ = StartCoroutine(LoadContentScene(battle));
+    public void GoAbilityToBoss() => _ = StartCoroutine(LoadContentScene(bossSelect));
+    public void GoBossToStageMod() => _ = StartCoroutine(LoadContentScene(stageMod));
     public void BackToMainMenu() => _ = StartCoroutine(LoadContentScene(mainMenu));
 
     IEnumerator LoadContentScene(string next)

@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/HeroWeapon.unity
     guid: 9e04c303341654f8482500f9c8d76acf
   - enabled: 1
+    path: Assets/Scenes/BossSelect.unity
+    guid: 844099de67d93eb4c8d732ef4600f526
+  - enabled: 1
+    path: Assets/Scenes/StageMod.unity
+    guid: 1a59a6e50c4d1e94f8077ca9a492301b
+  - enabled: 0
     path: Assets/Scenes/Battle.unity
     guid: 6491c2c2435210d4aa791d7bbea98a4f
   m_configObjects:
