@@ -17,6 +17,7 @@ public class StageModifierManager : MonoBehaviour
     public InputActionReference placeAction;        // Button to place object
     public InputActionReference rotateAction;       // Button to rotate preview
     public InputActionReference nextPrefabAction;   // Button to cycle stage modifiers
+    public InputActionReference buttonAction;       // UI Button to move on to battle
 
     [Header("Cursor Settings")]
     public float controllerCursorSpeed = 1000f;     // Speed of virtual cursor
@@ -41,10 +42,12 @@ public class StageModifierManager : MonoBehaviour
         placeAction.action.Enable();
         rotateAction.action.Enable();
         nextPrefabAction.action.Enable();
+        buttonAction.action.Enable();
 
         placeAction.action.performed += _ => TryPlaceObject();
         rotateAction.action.performed += _ => RotatePreview();
         nextPrefabAction.action.performed += _ => NextPrefab();
+        buttonAction.action.performed += _ => OnButtonPress();
     }
 
     void OnDisable()
@@ -53,10 +56,12 @@ public class StageModifierManager : MonoBehaviour
         placeAction.action.Disable();
         rotateAction.action.Disable();
         nextPrefabAction.action.Disable();
+        buttonAction.action.Disable();
     }
 
     public void OnButtonPress()
     {
+        UnityEngine.Debug.Log("Pressed button!");
         if (gameCamera != null)
         {
             mainCamera.enabled = false;
@@ -104,7 +109,7 @@ public class StageModifierManager : MonoBehaviour
 
         // Enable transition button
         // Button transition = GetComponentInChildren<Button>();
-        // transition.onClick.AddListener(OnButtonPressed);
+        // transition.onClick.AddListener(OnButtonPress);
     }
 
     void Update()
