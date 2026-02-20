@@ -119,11 +119,14 @@ MonoBehaviour:
   placeablePrefabs:
   - {fileID: 8922384266696629566, guid: 9ab4e51224c1b53489312d180a418f48, type: 3}
   - {fileID: 5440784020798262430, guid: ff449a117f9f41543a73bc1b942fd2fc, type: 3}
+  - {fileID: 6204657668505716869, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
+  - {fileID: 8615502785291650437, guid: e95da3ab17fa2c44990cf41f162ba360, type: 3}
   gridSize: 0
   moveAction: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   placeAction: {fileID: 392368643174621059, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   rotateAction: {fileID: 3584566496950942275, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   nextPrefabAction: {fileID: 808930066650462972, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  buttonAction: {fileID: 7727032971491509709, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   controllerCursorSpeed: 1000
   spawnPoints: {fileID: 0}
   playerManager: {fileID: 0}

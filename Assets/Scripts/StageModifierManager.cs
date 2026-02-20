@@ -62,6 +62,7 @@ public class StageModifierManager : MonoBehaviour
     public void OnButtonPress()
     {
         UnityEngine.Debug.Log("Pressed button!");
+        Destroy(currentPreview);
         if (gameCamera != null)
         {
             mainCamera.enabled = false;
