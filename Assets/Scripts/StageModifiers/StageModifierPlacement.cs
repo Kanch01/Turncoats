@@ -10,7 +10,7 @@ public enum PlacementMode
 public class StageModifierPlacement : MonoBehaviour
 {
     public PlacementMode placementMode = PlacementMode.Free;
-    public bool ignoreCollisions = false; // Some stage mods ignore collisions
+    public bool ignoreCollisions = false;  // Some stage mods ignore physical collisions
     public bool mustBeOnTile = false;      // Only valid if on tilemap
     public Tilemap groundTilemap;          // Reference to tilemap if needed
 }

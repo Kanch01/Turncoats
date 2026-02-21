@@ -3,9 +3,10 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Buoyancy : MonoBehaviour
 {
-    public float buoyancyForce = 10f; // Upward force
-    public float drag = 1f;           // Water drag
+    public float baseBuoyancy = 50f; // Upward force
+    public float drag = 20f;           // Water drag
     public float angularDrag = 1f;    // Water angular drag
+    public float maxForcePerMass = 20f;  // Optional cap to prevent tiny objects from flying
 
     private void Reset()
     {
@@ -18,11 +19,21 @@ public class Buoyancy : MonoBehaviour
         Rigidbody2D rb = other.attachedRigidbody;
         if (rb == null) return;
 
-        // Buoyant force
-        rb.AddForce(Vector2.up * buoyancyForce * rb.mass);
+        // Estimate "volume" using collider size
+        Collider2D col = other.GetComponent<Collider2D>();
+        float area = 1f;
+        if (col is BoxCollider2D box)
+            area = box.size.x * box.size.y * rb.transform.localScale.x * rb.transform.localScale.y;
+        else if (col is CircleCollider2D circle)
+            area = Mathf.PI * Mathf.Pow(circle.radius * rb.transform.localScale.x, 2);
 
-        // Drag in water
+        // Apply buoyancy scaled by area (approximation of volume)
+        float force = baseBuoyancy * area;
+        force = Mathf.Min(force, maxForcePerMass * rb.mass); // optional clamp
+        rb.AddForce(Vector2.up * force);
+
+        // Apply drag
         rb.linearVelocity *= 1f - drag * Time.fixedDeltaTime;
-        // rb.angularVelocity *= 1f - angularDrag * Time.fixedDeltaTime;
+        rb.angularVelocity *= 1f - angularDrag * Time.fixedDeltaTime;
     }
 }

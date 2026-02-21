@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3c9aa1f254462458288a04531ad0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buoyancy
-  buoyancyForce: 10
+  baseBuoyancy: 50
   drag: 1
   angularDrag: 1
+  maxForcePerMass: 50

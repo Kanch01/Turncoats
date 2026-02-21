@@ -887,34 +887,6 @@ PrefabInstance:
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 1246678497}
-    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
-      propertyPath: controllerCursorSpeed
-      value: 800
-      objectReference: {fileID: 0}
-    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
-      propertyPath: placeablePrefabs.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
-      propertyPath: 'placeablePrefabs.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8922384266696629566, guid: 9ab4e51224c1b53489312d180a418f48, type: 3}
-    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
-      propertyPath: 'placeablePrefabs.Array.data[1]'
-      value: 
-      objectReference: {fileID: 5440784020798262430, guid: ff449a117f9f41543a73bc1b942fd2fc, type: 3}
-    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
-      propertyPath: 'placeablePrefabs.Array.data[2]'
-      value: 
-      objectReference: {fileID: 6204657668505716869, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
-    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
-      propertyPath: 'placeablePrefabs.Array.data[3]'
-      value: 
-      objectReference: {fileID: 8615502785291650437, guid: e95da3ab17fa2c44990cf41f162ba360, type: 3}
-    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
-      propertyPath: 'placeablePrefabs.Array.data[4]'
-      value: 
-      objectReference: {fileID: 6691990723813493879, guid: 87345da6b1fafaa40b4573dce7bd4c8d, type: 3}
     - target: {fileID: 3515273853223700072, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: m_Name
       value: StageModifierManager
