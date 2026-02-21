@@ -46,5 +46,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: StageMod
+    uniqueID: 3665278697
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8807673572924967571}
   - component: {fileID: 126362411967958656}
   - component: {fileID: 1582026285292761593}
+  - component: {fileID: 1339836269221461748}
   m_Layer: 3
   m_Name: WaterCube
   m_TagString: Untagged
@@ -189,3 +190,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   hurtColor: {r: 0.6980392, g: 0.1333333, b: 0.1333333, a: 1}
   flashDuration: 0.15
+--- !u!114 &1339836269221461748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5440784020798262430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460f6def46775de4eab2f952366d999a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageModifierPlacement
+  placementMode: 0
+  ignoreCollisions: 0
+  mustBeOnTile: 0
+  groundTilemap: {fileID: 0}

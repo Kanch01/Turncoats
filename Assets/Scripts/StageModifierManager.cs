@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 
 public class StageModifierManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class StageModifierManager : MonoBehaviour
     public Camera mainCamera;
     public GameObject[] placeablePrefabs;       // Put stage modifier prefabs here
     public float gridSize = 0f;                 // Set >0 for optional grid snapping
+    public Tilemap groundTilemap;
 
     [Header("Input Actions")]
     public InputActionReference moveAction;         // Control to move virtual cursor
@@ -191,13 +193,41 @@ public class StageModifierManager : MonoBehaviour
 
     private void UpdatePreviewPosition()
     {
-        // Make sure z position is right
+        // Convert virtual cursor to world position
         Vector3 screenPos = new Vector3(virtualCursor.x, virtualCursor.y, -mainCamera.transform.position.z);
         Vector3 worldPos = mainCamera.ScreenToWorldPoint(screenPos);
         worldPos.z = 0f;
 
-        // Optional grid snapping
-        if (gridSize > 0f)
+        if (currentPreview == null) return;
+
+        var placement = currentPreview.GetComponentInChildren<StageModifierPlacement>();
+
+        if (placement != null)
+        {
+            placement.groundTilemap = groundTilemap;
+        }
+        if (placement != null && placement.placementMode == PlacementMode.Grid && placement.groundTilemap != null)
+        {
+            Vector3 targetPos = worldPos;
+
+            // If the placement is on a child, keep offset
+            if (placement.transform != currentPreview.transform)
+            {
+                Vector3 offset = currentPreview.transform.position - placement.transform.position;
+                targetPos -= offset;
+                Vector3Int cellPos = placement.groundTilemap.WorldToCell(targetPos);
+                targetPos = placement.groundTilemap.GetCellCenterWorld(cellPos) + offset;
+            }
+            else
+            {
+                // Root prefab: snap directly
+                Vector3Int cellPos = placement.groundTilemap.WorldToCell(targetPos);
+                targetPos = placement.groundTilemap.GetCellCenterWorld(cellPos);
+            }
+
+            worldPos = targetPos;
+        }
+        else if (gridSize > 0f)
         {
             worldPos.x = Mathf.Round(worldPos.x / gridSize) * gridSize;
             worldPos.y = Mathf.Round(worldPos.y / gridSize) * gridSize;
@@ -214,11 +244,17 @@ public class StageModifierManager : MonoBehaviour
 
         if (!IsPlacementValid(currentPreview.transform.position, currentPreview))
         {
-            UnityEngine.Debug.Log("Can't place here bozo!");
+            UnityEngine.Debug.Log("Can't place here bozo...");
             return;
         }
+        UnityEngine.Debug.Log("Oh yeah, placing!");
 
-        Instantiate(placeablePrefabs[selectedIndex], currentPreview.transform.position, currentPreview.transform.rotation, null);
+        GameObject placed = Instantiate(placeablePrefabs[selectedIndex], currentPreview.transform.position, currentPreview.transform.rotation, null);
+
+        // Disable the tiles under the placed object
+        SpriteRenderer rend = placed.GetComponent<SpriteRenderer>();
+        if (rend != null)
+            DisableTilesUnderObject(groundTilemap, rend);
     }
 
     private void RotatePreview()
@@ -238,20 +274,65 @@ public class StageModifierManager : MonoBehaviour
 
     private bool IsPlacementValid(Vector3 position, GameObject preview)
     {
-        Collider2D col = preview.GetComponent<Collider2D>();
-        if (col == null) return true;
 
-        Collider2D[] hits = Physics2D.OverlapBoxAll(col.bounds.center, col.bounds.size, rotationZ);
-        foreach (var hit in hits)
+        var placement = preview.GetComponentInChildren<StageModifierPlacement>();
+
+        // Only check collisions if the stage mod wants it
+        if (placement == null || !placement.ignoreCollisions)
         {
-            if (!hit.isTrigger && hit.gameObject != preview)
+            // Get all colliders on root and children
+            Collider2D[] cols = preview.GetComponentsInChildren<Collider2D>();
+            foreach (var col in cols)
             {
-                return false;
+                // Check for overlapping non-trigger colliders
+                Collider2D[] hits = Physics2D.OverlapBoxAll(col.bounds.center, col.bounds.size, rotationZ);
+                foreach (var hit in hits)
+                {
+                    // Ignore the stage mod's own colliders
+                    if (!hit.isTrigger && System.Array.IndexOf(cols, hit) == -1)
+                        return false;
+                }
             }
         }
-        UnityEngine.Debug.Log("Oh yeah, placing!");
+
+        // Tilemap requirement for some stage mods
+        if (placement != null)
+        {
+            placement.groundTilemap = groundTilemap;
+        }
+        if (placement != null && placement.mustBeOnTile && placement.groundTilemap != null)
+        {
+            Vector3Int cellPos = placement.groundTilemap.WorldToCell(position);
+            if (!placement.groundTilemap.HasTile(cellPos))
+                return false;
+        }
+
         return true;
     }
+
+    public void DisableTilesUnderObject(Tilemap tilemap, SpriteRenderer rend)
+{
+    Bounds bounds = rend.bounds;
+
+    // Iterate over all tiles that the bounds might cover
+    Vector3Int minCell = tilemap.WorldToCell(bounds.min);
+    Vector3Int maxCell = tilemap.WorldToCell(bounds.max);
+
+    for (int x = minCell.x; x <= maxCell.x; x++)
+    {
+        for (int y = minCell.y; y <= maxCell.y; y++)
+        {
+            Vector3Int cellPos = new Vector3Int(x, y, 0);
+            Vector3 cellWorldPos = tilemap.GetCellCenterWorld(cellPos);
+
+            // Only remove tile if its center is inside the bounds
+            if (bounds.Contains(cellWorldPos))
+            {
+                tilemap.SetTile(cellPos, null);
+            }
+        }
+    }
+}
 
     private void SetPreviewMaterial(GameObject preview)
     {

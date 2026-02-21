@@ -245,6 +245,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6204657668505716869, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3234782403131200583}
+    - targetCorrespondingSourceObject: {fileID: 6204657668505716869, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5263911958057771732}
   m_SourcePrefab: {fileID: 100100000, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
 --- !u!1 &4758987290617678310 stripped
 GameObject:
@@ -277,6 +280,22 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &5263911958057771732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4758987290617678310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460f6def46775de4eab2f952366d999a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageModifierPlacement
+  placementMode: 0
+  ignoreCollisions: 0
+  mustBeOnTile: 0
+  groundTilemap: {fileID: 0}
 --- !u!4 &7201667813072440368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8638317797274701139, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
