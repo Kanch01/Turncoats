@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7389582261561861850}
   - component: {fileID: 2713678867720340593}
   - component: {fileID: 9113255693217561127}
+  - component: {fileID: 8219013011758411713}
   m_Layer: 3
   m_Name: FleshCube
   m_TagString: Untagged
@@ -152,7 +153,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 2
   m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -189,3 +190,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   hurtColor: {r: 0.6980392, g: 0.1333333, b: 0.1333333, a: 1}
   flashDuration: 0.15
+--- !u!114 &8219013011758411713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8922384266696629566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460f6def46775de4eab2f952366d999a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageModifierPlacement
+  placementMode: 0
+  ignoreCollisions: 0
+  mustBeOnTile: 0
+  groundTilemap: {fileID: 0}

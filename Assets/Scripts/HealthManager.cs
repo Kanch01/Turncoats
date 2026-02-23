@@ -4,7 +4,7 @@ using System.Collections;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private float maxHealth = 3f;   // Health when full
+    [SerializeField] public float maxHealth = 3f;   // Health when full
     private float currentHealth;
 
     public UnityEvent<float> onHealthChanged;
@@ -27,6 +27,12 @@ public class HealthManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        // Initialize health bar
+        onHealthChanged?.Invoke(currentHealth / maxHealth);
+    }
+
     /// <summary>
     /// Object will take damage
     /// Called when damage colliion is triggered
@@ -36,7 +42,7 @@ public class HealthManager : MonoBehaviour
         Debug.Log($"{name}: AHHHHHHH IT HURTS");
         currentHealth -= amount;
         currentHealth = Mathf.Max(currentHealth, 0);
-        onHealthChanged?.Invoke(currentHealth);
+        onHealthChanged?.Invoke(currentHealth / maxHealth);
         
         if (spriteRenderer != null)
         {
@@ -84,7 +90,7 @@ public class HealthManager : MonoBehaviour
     {
         currentHealth += amount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
-        onHealthChanged?.Invoke(currentHealth);
+        onHealthChanged?.Invoke(currentHealth / maxHealth);
     }
 
     public float GetHealth() => currentHealth;

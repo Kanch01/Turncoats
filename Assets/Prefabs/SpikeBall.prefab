@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6475730610698937873}
   - component: {fileID: 2798980181600247176}
   - component: {fileID: 3668809545337363116}
+  - component: {fileID: 1872532377537909833}
   m_Layer: 3
   m_Name: SpikeBall
   m_TagString: Untagged
@@ -220,3 +221,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7907500523031ee4dadc3e6089dfa48e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageOnTouch
+--- !u!114 &1872532377537909833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204657668505716869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460f6def46775de4eab2f952366d999a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageModifierPlacement
+  placementMode: 0
+  ignoreCollisions: 0
+  mustBeOnTile: 0
+  groundTilemap: {fileID: 0}
