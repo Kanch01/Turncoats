@@ -24,9 +24,11 @@ public class StageModifierManager : MonoBehaviour
     [Header("Cursor Settings")]
     public float controllerCursorSpeed = 1000f;     // Speed of virtual cursor
 
+    [Header("To Enable")]
     [SerializeField] private GameObject spawnPoints;
     [SerializeField] private GameObject playerManager;
     [SerializeField] private GameObject gameCamera;
+    [SerializeField] private GameObject UI;
 
     private GameObject currentPreview;
     private int selectedIndex = 0;
@@ -82,6 +84,14 @@ public class StageModifierManager : MonoBehaviour
         else
         {
             UnityEngine.Debug.Log("SpawnPoints not found");
+        }
+        if (UI != null)
+        {
+            UI.SetActive(true);
+        }
+        else
+        {
+            UnityEngine.Debug.Log("UI not found");
         }
         if (playerManager != null)
         { 

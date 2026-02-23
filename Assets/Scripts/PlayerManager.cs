@@ -10,6 +10,9 @@ public class PlayerManager : MonoBehaviour
     
     [SerializeField] private int player1PrefabIndex = 0;
     [SerializeField] private int player2PrefabIndex = 1;
+    
+    [Header("UI")]
+    [SerializeField] private HealthBarUI[] healthBars;
 
     [Header("Spawn Points")]
     [SerializeField] private Transform[] spawnPoints = new Transform[2];
@@ -85,6 +88,14 @@ public class PlayerManager : MonoBehaviour
             player.gameObject.name = $"P{i + 1}_{prefab.name}_{device.displayName}";
 
             FindFirstObjectByType<MultiTargetCamera>().RegisterPlayer(player.transform);
+
+            // Connect health to correct UI
+            HealthManager health = player.GetComponent<HealthManager>();
+
+            if (healthBars != null && healthBars.Length > i && healthBars[i] != null)
+            {
+                healthBars[i].Initialize(health);
+            }
         }
 
         // Joining behavior after spawn
