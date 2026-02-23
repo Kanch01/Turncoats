@@ -300,8 +300,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 85404734}
-  - component: {fileID: 85404733}
   - component: {fileID: 85404735}
+  - component: {fileID: 85404736}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -309,28 +309,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &85404733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85404732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d315420a17c8e4a24be870f20e661d40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
-  playerPrefabs:
-  - {fileID: 4094913555195892951, guid: 4968fd56e53db4ee0ac1f75b3a62003c, type: 3}
-  - {fileID: 3232351733049374520, guid: f87b51483d6ce43cca4c93457e25fd14, type: 3}
-  player1PrefabIndex: 0
-  player2PrefabIndex: 1
-  spawnPoints:
-  - {fileID: 1657759377}
-  - {fileID: 981640334}
-  disableJoiningAfterSpawn: 1
-  allowJoinIfMissingSecondDevice: 1
 --- !u!4 &85404734
 Transform:
   m_ObjectHideFlags: 0
@@ -353,7 +331,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85404732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
@@ -390,6 +368,22 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &85404736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85404732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d315420a17c8e4a24be870f20e661d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
+  heroPrefab: {fileID: 4094913555195892951, guid: 4968fd56e53db4ee0ac1f75b3a62003c, type: 3}
+  bossPrefab: {fileID: 3232351733049374520, guid: f87b51483d6ce43cca4c93457e25fd14, type: 3}
+  heroSpawn: {fileID: 1657759377}
+  bossSpawn: {fileID: 981640334}
 --- !u!1 &532016510
 GameObject:
   m_ObjectHideFlags: 0

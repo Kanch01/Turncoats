@@ -38,6 +38,7 @@ public class StageModifierManager : MonoBehaviour
     void OnEnable()
     {
         // Enable controls and connect callbacks
+        EnsureStageModCameraIsActive();
         moveAction.action.Enable();
         placeAction.action.Enable();
         rotateAction.action.Enable();
@@ -101,6 +102,7 @@ public class StageModifierManager : MonoBehaviour
 
     void Start()
     {
+        EnsureStageModCameraIsActive();
         virtualCursor = new Vector2(Screen.width / 2f, Screen.height / 2f);
 
         // UI raycasting setup
@@ -260,6 +262,24 @@ public class StageModifierManager : MonoBehaviour
             Color c = rend.color;
             c.a = 0.5f;
             rend.color = c;
+        }
+    }
+    
+    private void EnsureStageModCameraIsActive()
+    {
+        // Stage-mod should start on its own camera
+        if (mainCamera != null)
+        {
+            mainCamera.gameObject.SetActive(true);
+            mainCamera.enabled = true;
+        }
+    
+        // Battle/game camera should be OFF until the transition button is pressed
+        if (gameCamera != null)
+        {
+            gameCamera.SetActive(false);
+            var cam = gameCamera.GetComponent<Camera>();
+            if (cam != null) cam.enabled = false;
         }
     }
 }
