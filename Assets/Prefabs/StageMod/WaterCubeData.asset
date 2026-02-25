@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed1a237ce9fa2194882df38a645825e1, type: 3}
-  m_Name: SpikeBallData
+  m_Name: WaterCubeData
   m_EditorClassIdentifier: Assembly-CSharp::StageModifierData
   modifierName: SpikeBall
-  damage: 1
+  damage: 0
   knockbackForce: 0
-  prefab: {fileID: 0}

@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3532813636490585992}
   - component: {fileID: 5551275209591231942}
-  - component: {fileID: 3389766990029945936}
   - component: {fileID: -3850348944336849345}
+  - component: {fileID: 3389766990029945936}
   - component: {fileID: 810198325031209134}
+  - component: {fileID: -2309320607565379647}
   m_Layer: 3
   m_Name: WaterPool
   m_TagString: Untagged
@@ -94,22 +95,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 1
---- !u!114 &3389766990029945936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6691990723813493879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 460f6def46775de4eab2f952366d999a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StageModifierPlacement
-  placementMode: 1
-  ignoreCollisions: 1
-  mustBeOnTile: 1
-  groundTilemap: {fileID: 0}
 --- !u!61 &-3850348944336849345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -156,6 +141,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3389766990029945936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6691990723813493879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460f6def46775de4eab2f952366d999a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageModifierPlacement
+  placementMode: 1
+  ignoreCollisions: 1
+  mustBeOnTile: 1
+  groundTilemap: {fileID: 0}
 --- !u!114 &810198325031209134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,3 +173,16 @@ MonoBehaviour:
   drag: 1
   angularDrag: 1
   maxForcePerMass: 50
+--- !u!114 &-2309320607565379647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6691990723813493879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de65c972d4f2a3c45b53f3894fc75a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageModifier
+  data: {fileID: 11400000, guid: 872ff0ebe3dc4f14d9c84b57c7c4eaf3, type: 2}

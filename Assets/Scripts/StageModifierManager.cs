@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
+using TMPro;
 
 public class StageModifierManager : MonoBehaviour
 {
     [Header("Placement Settings")]
-    public Camera mainCamera;
+    public Camera stageModCamera;
     public GameObject[] placeablePrefabs;       // Put stage modifier prefabs here
     public float gridSize = 0f;                 // Set >0 for optional grid snapping
     public Tilemap groundTilemap;
+    public float budget = 20f;
 
     [Header("Input Actions")]
     public InputActionReference moveAction;         // Control to move virtual cursor
@@ -28,7 +30,7 @@ public class StageModifierManager : MonoBehaviour
     [SerializeField] private GameObject spawnPoints;
     [SerializeField] private GameObject playerManager;
     [SerializeField] private GameObject gameCamera;
-    [SerializeField] private GameObject UI;
+    [SerializeField] private GameObject gameUI;
 
     private GameObject currentPreview;
     private int selectedIndex = 0;
@@ -38,6 +40,7 @@ public class StageModifierManager : MonoBehaviour
     private GraphicRaycaster raycaster;
     private EventSystem eventSystem;
     private bool hoveringUI = false;
+    private TMP_Text budgetText;
 
     void OnEnable()
     {
@@ -69,7 +72,7 @@ public class StageModifierManager : MonoBehaviour
         Destroy(currentPreview);
         if (gameCamera != null)
         {
-            mainCamera.enabled = false;
+            stageModCamera.enabled = false;
             gameCamera.SetActive(true);
             gameCamera.GetComponent<Camera>().enabled = true;
         }
@@ -83,15 +86,15 @@ public class StageModifierManager : MonoBehaviour
         }
         else
         {
-            UnityEngine.Debug.Log("SpawnPoints not found");
+            UnityEngine.Debug.LogWarning("SpawnPoints not found");
         }
-        if (UI != null)
+        if (gameUI != null)
         {
-            UI.SetActive(true);
+            gameUI.SetActive(true);
         }
         else
         {
-            UnityEngine.Debug.Log("UI not found");
+            UnityEngine.Debug.LogWarning("UI not found");
         }
         if (playerManager != null)
         { 
@@ -104,7 +107,7 @@ public class StageModifierManager : MonoBehaviour
         }
         else
         {
-            UnityEngine.Debug.Log("PlayerManager not found");
+            UnityEngine.Debug.LogWarning("PlayerManager not found");
         }
 
         // Disable this button
@@ -123,6 +126,14 @@ public class StageModifierManager : MonoBehaviour
         // Enable transition button
         // Button transition = GetComponentInChildren<Button>();
         // transition.onClick.AddListener(OnButtonPress);
+
+        // Use the class name GameObject, not the instance
+        budgetText = GameObject.Find("BudgetText").GetComponent<TMP_Text>();
+
+        if (budgetText != null)
+            budgetText.text = $"Budget: {budget:F0}";
+        else
+            UnityEngine.Debug.LogWarning("BudgetText GameObject not found!");
     }
 
     void Update()
@@ -204,8 +215,8 @@ public class StageModifierManager : MonoBehaviour
     private void UpdatePreviewPosition()
     {
         // Convert virtual cursor to world position
-        Vector3 screenPos = new Vector3(virtualCursor.x, virtualCursor.y, -mainCamera.transform.position.z);
-        Vector3 worldPos = mainCamera.ScreenToWorldPoint(screenPos);
+        Vector3 screenPos = new Vector3(virtualCursor.x, virtualCursor.y, -stageModCamera.transform.position.z);
+        Vector3 worldPos = stageModCamera.ScreenToWorldPoint(screenPos);
         worldPos.z = 0f;
 
         if (currentPreview == null) return;
@@ -284,10 +295,8 @@ public class StageModifierManager : MonoBehaviour
 
     private bool IsPlacementValid(Vector3 position, GameObject preview)
     {
-
-        var placement = preview.GetComponentInChildren<StageModifierPlacement>();
-
         // Only check collisions if the stage mod wants it
+        var placement = preview.GetComponentInChildren<StageModifierPlacement>();
         if (placement == null || !placement.ignoreCollisions)
         {
             // Get all colliders on root and children
@@ -315,6 +324,23 @@ public class StageModifierManager : MonoBehaviour
             Vector3Int cellPos = placement.groundTilemap.WorldToCell(position);
             if (!placement.groundTilemap.HasTile(cellPos))
                 return false;
+        }
+
+        // Check budget before placing
+        StageModifier script = preview.GetComponentInChildren<StageModifier>();
+        if (script != null)
+        {
+            float new_budget = budget - script.data.cost;
+            if (new_budget < 0.0)
+            {
+                UnityEngine.Debug.Log("You broke!");
+                return false;
+            }
+            else
+            {
+                budget = new_budget;
+                budgetText.text = $"Budget: {budget:F0}";
+            }
         }
 
         return true;

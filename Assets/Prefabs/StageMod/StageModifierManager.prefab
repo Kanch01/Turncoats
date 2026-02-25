@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8aa0ccd413772c4fbd485e568c556dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageModifierManager
-  mainCamera: {fileID: 0}
+  stageModCamera: {fileID: 0}
   placeablePrefabs:
   - {fileID: 8922384266696629566, guid: 9ab4e51224c1b53489312d180a418f48, type: 3}
   - {fileID: 5440784020798262430, guid: ff449a117f9f41543a73bc1b942fd2fc, type: 3}
@@ -125,6 +125,7 @@ MonoBehaviour:
   - {fileID: 1357180114309260521, guid: 5389a3bc44a0cb648b553f8c124ac40d, type: 3}
   gridSize: 0
   groundTilemap: {fileID: 0}
+  budget: 20
   moveAction: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   placeAction: {fileID: 392368643174621059, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   rotateAction: {fileID: 3584566496950942275, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
@@ -134,6 +135,7 @@ MonoBehaviour:
   spawnPoints: {fileID: 0}
   playerManager: {fileID: 0}
   gameCamera: {fileID: 0}
+  gameUI: {fileID: 0}
 --- !u!1 &4362828108351991850
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3934150125597131642
 RectTransform:
   m_ObjectHideFlags: 0
