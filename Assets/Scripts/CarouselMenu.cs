@@ -59,43 +59,50 @@ public class CarouselMenu : MonoBehaviour
     
     public void OnConfirmPressed()
     {
-        GameFlowManager.Instance.GoBossToStageMod();
+        // Get the selected boss
+        RectTransform selectedBoss = bosses[targetIndex];
+
+        // Optionally get its name or some identifier
+        string bossName = selectedBoss.name;
+
+        Debug.Log("Selected boss: " + bossName);
+        GameFlowManager.Instance.GoBossToStageMod(targetIndex);
     }
 
-void AnimateLayout()
-{
-    // Move smoothly to newly selected boss button
-    currentIndex = Mathf.SmoothDamp(currentIndex, targetIndex, ref currentIndexVelocity, 0.15f);
-
-
-    for (int i = 0; i < bosses.Count; i++)
+    void AnimateLayout()
     {
-        // Target boss button is either left or right * spacing with small vertical offset
-        Vector2 targetPos = new Vector2(
-            (i - currentIndex) * spacing,
-            -Mathf.Abs(i - currentIndex) * verticalOffset
-        );
+        // Move smoothly to newly selected boss button
+        currentIndex = Mathf.SmoothDamp(currentIndex, targetIndex, ref currentIndexVelocity, 0.15f);
 
-        // Lerp button i to target position
-        bosses[i].anchoredPosition = Vector2.Lerp(
-            bosses[i].anchoredPosition,
-            targetPos,
-            Time.deltaTime * animationSpeed
-        );
 
-        // Scale button i
-        float distance = Mathf.Abs(i - currentIndex);
-        float scale = 1f - distance * 0.15f;
-        bosses[i].localScale = Vector3.Lerp(
-            bosses[i].localScale,
-            Vector3.one * Mathf.Clamp(scale, 0.6f, 1f),
-            Time.deltaTime * animationSpeed
-        );
+        for (int i = 0; i < bosses.Count; i++)
+        {
+            // Target boss button is either left or right * spacing with small vertical offset
+            Vector2 targetPos = new Vector2(
+                (i - currentIndex) * spacing,
+                -Mathf.Abs(i - currentIndex) * verticalOffset
+            );
 
-        // Show or hide boss description
-        Transform description = bosses[i].Find("Description");
-        if (description != null)
-            description.gameObject.SetActive(i == targetIndex);
+            // Lerp button i to target position
+            bosses[i].anchoredPosition = Vector2.Lerp(
+                bosses[i].anchoredPosition,
+                targetPos,
+                Time.deltaTime * animationSpeed
+            );
+
+            // Scale button i
+            float distance = Mathf.Abs(i - currentIndex);
+            float scale = 1f - distance * 0.15f;
+            bosses[i].localScale = Vector3.Lerp(
+                bosses[i].localScale,
+                Vector3.one * Mathf.Clamp(scale, 0.6f, 1f),
+                Time.deltaTime * animationSpeed
+            );
+
+            // Show or hide boss description
+            Transform description = bosses[i].Find("Description");
+            if (description != null)
+                description.gameObject.SetActive(i == targetIndex);
+        }
     }
-}
 }

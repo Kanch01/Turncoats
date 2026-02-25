@@ -15,6 +15,7 @@ public class StageModifierManager : MonoBehaviour
     public float gridSize = 0f;                 // Set >0 for optional grid snapping
     public Tilemap groundTilemap;
     public float budget = 20f;
+    public GameObject confirmPanel;
 
     [Header("Input Actions")]
     public InputActionReference moveAction;         // Control to move virtual cursor
@@ -41,6 +42,7 @@ public class StageModifierManager : MonoBehaviour
     private EventSystem eventSystem;
     private bool hoveringUI = false;
     private TMP_Text budgetText;
+    private bool confirming = false;
 
     void OnEnable()
     {
@@ -68,6 +70,18 @@ public class StageModifierManager : MonoBehaviour
 
     public void OnButtonPress()
     {
+        confirmPanel.SetActive(true);
+        confirming = true;
+
+        // Set focus to confirm panel
+        Button yesButton = confirmPanel.transform.Find("YesButton").GetComponent<Button>();
+        EventSystem.current.SetSelectedGameObject(yesButton.gameObject);
+    }
+
+    public void ConfirmStartGame()
+    {
+        confirming = false;
+        confirmPanel.SetActive(false);
         UnityEngine.Debug.Log("Pressed button!");
         Destroy(currentPreview);
         if (gameCamera != null)
@@ -114,6 +128,12 @@ public class StageModifierManager : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void CancelStartGame()
+    {
+        confirming = false;
+        confirmPanel.SetActive(false);
+    }
+
     void Start()
     {
         virtualCursor = new Vector2(Screen.width / 2f, Screen.height / 2f);
@@ -136,18 +156,8 @@ public class StageModifierManager : MonoBehaviour
             UnityEngine.Debug.LogWarning("BudgetText GameObject not found!");
     }
 
-    void Update()
+    private void HandleStageModPlacement(List<RaycastResult> results)
     {
-        UpdateCursorPosition();
-
-        // Reset hovering flag each frame
-        hoveringUI = false;
-
-        // Set the pointer position for UI raycasting
-        pointerData.position = virtualCursor;
-        List<RaycastResult> results = new List<RaycastResult>();
-        raycaster.Raycast(pointerData, results);
-
         // Handle UI buttons under cursor
         foreach (var r in results)
         {
@@ -156,27 +166,22 @@ public class StageModifierManager : MonoBehaviour
             {
                 hoveringUI = true;
 
-                // Let EventSystem handle hover/highlight
                 if (eventSystem.currentSelectedGameObject != b.gameObject)
                     eventSystem.SetSelectedGameObject(b.gameObject);
 
-                // Trigger button click if submit pressed
                 if (placeAction.action.triggered)
                     b.onClick.Invoke();
 
-                break; // Only handle first button under cursor
+                break;
             }
         }
 
-        // Reset selection if no buttons under cursor
         if (!hoveringUI && eventSystem.currentSelectedGameObject != null)
             eventSystem.SetSelectedGameObject(null);
 
-        // Show/hide preview based on UI hovering
         if (currentPreview != null)
             currentPreview.SetActive(!hoveringUI);
 
-        // Only update preview and allow placement/cycling if not over UI
         if (!hoveringUI)
         {
             if (currentPreview == null)
@@ -193,6 +198,43 @@ public class StageModifierManager : MonoBehaviour
         {
             placeAction.action.Disable();
             nextPrefabAction.action.Disable();
+        }
+    }
+
+    void Update()
+    {
+        UpdateCursorPosition(); // cursor can still move
+
+        hoveringUI = false;
+        pointerData.position = virtualCursor;
+        List<RaycastResult> results = new List<RaycastResult>();
+        raycaster.Raycast(pointerData, results);
+
+        // Only handle stage-mod placement if NOT confirming
+        if (!confirming)
+        {
+            HandleStageModPlacement(results);
+        }
+        else
+        {
+            // If confirming, force preview hidden
+            if (currentPreview != null)
+                currentPreview.SetActive(false);
+
+            // Set the pointer to the confirm panel’s selected button
+            if (eventSystem.currentSelectedGameObject == null && confirmPanel.activeSelf)
+            {
+                Button yesButton = confirmPanel.transform.Find("YesButton").GetComponent<Button>();
+                eventSystem.SetSelectedGameObject(yesButton.gameObject);
+            }
+
+            // Handle submit input for UI
+            if (placeAction.action.triggered)
+            {
+                var selected = eventSystem.currentSelectedGameObject?.GetComponent<Button>();
+                if (selected != null)
+                    selected.onClick.Invoke();
+            }
         }
     }
 
@@ -260,6 +302,9 @@ public class StageModifierManager : MonoBehaviour
 
     private void TryPlaceObject()
     {
+        if (confirming)
+            return;
+
         // Place a new object if it isn't colliding
         if (currentPreview == null) return;
 
@@ -274,8 +319,11 @@ public class StageModifierManager : MonoBehaviour
 
         // Disable the tiles under the placed object
         SpriteRenderer rend = placed.GetComponent<SpriteRenderer>();
-        if (rend != null)
+        StageModifierPlacement placement = placed.GetComponent<StageModifierPlacement>();
+        if (rend != null && placement.mustBeOnTile)
+        {
             DisableTilesUnderObject(groundTilemap, rend);
+        }
     }
 
     private void RotatePreview()

@@ -17,7 +17,9 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] string weaponMenu = "HeroWeapon";
     [SerializeField] string abilityMenu = "HeroAbility";
     [SerializeField] string bossSelect = "BossSelect";
-    [SerializeField] string stageMod = "StageMod";
+    [SerializeField] string map0 = "Map0";
+    [SerializeField] string map1 = "Map1";
+    [SerializeField] string map2 = "Map2";
     [SerializeField] string battle = "Battle";
     [SerializeField] private Camera rootCamera;
 
@@ -51,7 +53,20 @@ public class GameFlowManager : MonoBehaviour
     public void GoWeaponToAbility() => _ = StartCoroutine(LoadContentScene(abilityMenu));
     public void GoAbilityToBattle() => _ = StartCoroutine(LoadContentScene(battle));
     public void GoAbilityToBoss() => _ = StartCoroutine(LoadContentScene(bossSelect));
-    public void GoBossToStageMod() => _ = StartCoroutine(LoadContentScene(stageMod));
+
+    // Each boss has a different map
+    public void GoBossToStageMod(int bossIndex)
+    {
+        string mapToLoad = bossIndex switch
+        {
+            0 => map0,
+            1 => map1,
+            2 => map2,
+            _ => map0
+        };
+
+        _ = StartCoroutine(LoadContentScene(mapToLoad));
+    }
     public void BackToMainMenu() => _ = StartCoroutine(LoadContentScene(mainMenu));
 
     IEnumerator LoadContentScene(string next)

@@ -6,12 +6,13 @@ public class MultiTargetCamera : MonoBehaviour
     public Transform target2;
     [SerializeField] private Vector3 offset;
     [SerializeField] private float smoothTime = 0.5f; // For smooth movement
+    [SerializeField] private bool move = true;         // Whether to actually move the camera
 
     private Vector3 velocity;
     
     void LateUpdate()
     {
-        if (target1 == null && target2 == null)
+        if ((target1 == null && target2 == null) || !move)
             return;
 
         // Calculate the midpoint between the two targets
