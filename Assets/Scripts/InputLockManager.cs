@@ -17,8 +17,10 @@ public class InputLockManager : MonoBehaviour
 
     public void EnableAllKnownDevices(GameState state)
     {
+        foreach (var g in Gamepad.all) EnableDeviceSafe(g);
+        foreach (var j in Joystick.all) EnableDeviceSafe(j);
+        
         if (state == null) return;
-
         EnableDeviceSafe(state.player0Device);
         EnableDeviceSafe(state.player1Device);
     }
@@ -26,11 +28,9 @@ public class InputLockManager : MonoBehaviour
     public void LockToOnlyDevice(GameState state, InputDevice allowed)
     {
         if (state == null) return;
-
-        // Enable allowed
+        
         EnableDeviceSafe(allowed);
-
-        // Disable the other known device(s)
+        
         if (state.player0Device != null && state.player0Device != allowed) DisableDeviceSafe(state.player0Device);
         if (state.player1Device != null && state.player1Device != allowed) DisableDeviceSafe(state.player1Device);
     }

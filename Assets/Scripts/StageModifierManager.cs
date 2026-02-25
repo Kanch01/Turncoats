@@ -66,6 +66,12 @@ public class StageModifierManager : MonoBehaviour
 
     public void OnButtonPress()
     {
+        var flow = GameFlowManager.Instance;
+        if (flow != null && flow.State != null && InputLockManager.Instance != null)
+        {
+            InputLockManager.Instance.EnableAllKnownDevices(flow.State);
+        }
+        
         UnityEngine.Debug.Log("Pressed button!");
         Destroy(currentPreview);
         if (gameCamera != null)

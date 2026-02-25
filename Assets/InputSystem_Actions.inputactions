@@ -624,6 +624,28 @@
                 },
                 {
                     "name": "",
+                    "id": "6c7ca02e-c7fc-49c8-9234-ee5ace606f04",
+                    "path": "<HID::Microsoft Jose Controller>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ba7c728-eaff-457d-8e45-27f3b6534d97",
+                    "path": "<HID::Microsoft Jared Controller>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c52c8e0b-8179-41d3-b8a1-d149033bbe86",
                     "path": "<Mouse>/position",
                     "interactions": "",

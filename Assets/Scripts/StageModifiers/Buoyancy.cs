@@ -28,7 +28,7 @@ public class Buoyancy : MonoBehaviour
             area = Mathf.PI * Mathf.Pow(circle.radius * rb.transform.localScale.x, 2);
 
         // Apply buoyancy scaled by area (approximation of volume)
-        float force = baseBuoyancy * area;
+        float force = baseBuoyancy * area * rb.gravityScale * (1 / 5.0f);  
         force = Mathf.Min(force, maxForcePerMass * rb.mass); // optional clamp
         rb.AddForce(Vector2.up * force);
 
