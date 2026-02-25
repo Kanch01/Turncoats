@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 using TMPro;
@@ -16,6 +16,9 @@ public class StageModifierManager : MonoBehaviour
     public Tilemap groundTilemap;
     public float budget = 20f;
     public GameObject confirmPanel;
+    
+    public EventSystem evsystem;
+    public GameObject done;
 
     [Header("Input Actions")]
     public InputActionReference moveAction;         // Control to move virtual cursor
@@ -72,10 +75,21 @@ public class StageModifierManager : MonoBehaviour
     {
         confirmPanel.SetActive(true);
         confirming = true;
+        
+        /*
+        if (yesButton != null)
+        {
+            evsystem.SetSelectedGameObject(null);
+            evsystem.SetSelectedGameObject(yesButton);
+
+            var btn = yesButton.GetComponent<Button>();
+            if (btn != null) btn.Select();
+        }
+        */
 
         // Set focus to confirm panel
-        Button yesButton = confirmPanel.transform.Find("YesButton").GetComponent<Button>();
-        EventSystem.current.SetSelectedGameObject(yesButton.gameObject);
+        // Button yesButton = confirmPanel.transform.Find("YesButton").GetComponent<Button>();
+        // EventSystem.current.SetSelectedGameObject(yesButton.gameObject);
     }
 
     public void ConfirmStartGame()
@@ -84,6 +98,12 @@ public class StageModifierManager : MonoBehaviour
         confirmPanel.SetActive(false);
         UnityEngine.Debug.Log("Pressed button!");
         Destroy(currentPreview);
+        var flow = GameFlowManager.Instance;
+        if (flow != null && flow.State != null && InputLockManager.Instance != null)
+        {
+            InputLockManager.Instance.EnableAllKnownDevices(flow.State);
+        }
+        
         if (gameCamera != null)
         {
             stageModCamera.enabled = false;
