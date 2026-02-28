@@ -1967,7 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1863430961}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1052236569
@@ -1995,7 +1995,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1246678500}
   - component: {fileID: 1246678499}
-  - component: {fileID: 1246678498}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -2003,50 +2002,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1246678498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246678497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInputManager
-  m_NotificationBehavior: 0
-  m_MaxPlayerCount: 2
-  m_AllowJoining: 1
-  m_JoinBehavior: 0
-  m_PlayerJoinedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_PlayerLeftEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_JoinAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: 
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: d5dfe120-68f8-41d3-a6ac-d77a3b616f46
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 4094913555195892951, guid: 4968fd56e53db4ee0ac1f75b3a62003c, type: 3}
-  m_SplitScreen: 0
-  m_MaintainAspectRatioInSplitScreen: 0
-  m_FixedNumberOfSplitScreens: -1
-  m_SplitScreenRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!114 &1246678499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2059,19 +2014,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d315420a17c8e4a24be870f20e661d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
-  playerPrefabs:
-  - {fileID: 4094913555195892951, guid: 4968fd56e53db4ee0ac1f75b3a62003c, type: 3}
-  - {fileID: 3232351733049374520, guid: f87b51483d6ce43cca4c93457e25fd14, type: 3}
-  player1PrefabIndex: 0
-  player2PrefabIndex: 1
+  heroPrefab: {fileID: 4094913555195892951, guid: 4968fd56e53db4ee0ac1f75b3a62003c, type: 3}
+  bossPrefab: {fileID: 3232351733049374520, guid: f87b51483d6ce43cca4c93457e25fd14, type: 3}
   healthBars:
   - {fileID: 1288396013}
   - {fileID: 1712559543}
-  spawnPoints:
-  - {fileID: 330481877}
-  - {fileID: 305253498}
-  disableJoiningAfterSpawn: 1
-  allowJoinIfMissingSecondDevice: 1
+  heroSpawn: {fileID: 330481877}
+  bossSpawn: {fileID: 305253498}
 --- !u!4 &1246678500
 Transform:
   m_ObjectHideFlags: 0
@@ -17763,6 +17712,11 @@ PrefabInstance:
 --- !u!1 &1863430960 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5076393759005229335, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+  m_PrefabInstance: {fileID: 1863430959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1863430961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7688614661148288677, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
   m_PrefabInstance: {fileID: 1863430959}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1954263046

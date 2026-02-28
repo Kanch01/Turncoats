@@ -893,7 +893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 1895010750}
+  m_FirstSelected: {fileID: 1895010752}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1052236569
@@ -942,6 +942,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
   heroPrefab: {fileID: 4094913555195892951, guid: 4968fd56e53db4ee0ac1f75b3a62003c, type: 3}
   bossPrefab: {fileID: 3232351733049374520, guid: f87b51483d6ce43cca4c93457e25fd14, type: 3}
+  healthBars:
+  - {fileID: 1288396013}
+  - {fileID: 1712559543}
   heroSpawn: {fileID: 330481877}
   bossSpawn: {fileID: 305253498}
 --- !u!4 &1246678500
@@ -14084,7 +14087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4362828108351991850, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5076393759005229335, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: m_IsActive

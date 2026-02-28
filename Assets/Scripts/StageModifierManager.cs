@@ -16,9 +16,6 @@ public class StageModifierManager : MonoBehaviour
     public Tilemap groundTilemap;
     public float budget = 20f;
     public GameObject confirmPanel;
-    
-    public EventSystem evsystem;
-    public GameObject done;
 
     [Header("Input Actions")]
     public InputActionReference moveAction;         // Control to move virtual cursor
@@ -150,6 +147,7 @@ public class StageModifierManager : MonoBehaviour
 
     public void CancelStartGame()
     {
+        Debug.Log("Cancel starting game");
         confirming = false;
         confirmPanel.SetActive(false);
     }
@@ -237,22 +235,47 @@ public class StageModifierManager : MonoBehaviour
         }
         else
         {
-            // If confirming, force preview hidden
+            // Hide preview while confirming
             if (currentPreview != null)
                 currentPreview.SetActive(false);
 
-            // Set the pointer to the confirm panel’s selected button
-            if (eventSystem.currentSelectedGameObject == null && confirmPanel.activeSelf)
+            // Raycast UI while confirming so hovering Yes/No updates selection
+            Button hoveredButton = null;
+            foreach (var r in results)
             {
-                Button yesButton = confirmPanel.transform.Find("YesButton").GetComponent<Button>();
-                eventSystem.SetSelectedGameObject(yesButton.gameObject);
+                // Only consider buttons that are inside the confirm panel
+                if (!r.gameObject.transform.IsChildOf(confirmPanel.transform))
+                    continue;
+
+                var b = r.gameObject.GetComponent<Button>();
+                if (b != null)
+                {
+                    hoveredButton = b;
+                    break;
+                }
             }
 
-            // Handle submit input for UI
+            if (hoveredButton != null)
+            {
+                if (eventSystem.currentSelectedGameObject != hoveredButton.gameObject)
+                    eventSystem.SetSelectedGameObject(hoveredButton.gameObject);
+            }
+            else
+            {
+                // If nothing is hovered, make sure something is selected (default to Yes)
+                if (eventSystem.currentSelectedGameObject == null && confirmPanel.activeSelf)
+                {
+                    var yes = confirmPanel.transform.Find("YesButton")?.GetComponent<Button>();
+                    if (yes != null)
+                        eventSystem.SetSelectedGameObject(yes.gameObject);
+                }
+            }
+
+            // Click whichever confirm button is currently selected (now updated by hover)
             if (placeAction.action.triggered)
             {
                 var selected = eventSystem.currentSelectedGameObject?.GetComponent<Button>();
-                if (selected != null)
+                if (selected != null && selected.interactable)
                     selected.onClick.Invoke();
             }
         }

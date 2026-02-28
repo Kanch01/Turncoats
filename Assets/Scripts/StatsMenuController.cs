@@ -126,10 +126,10 @@ public class StatsMenuController : MonoBehaviour
         var state = GameFlowManager.Instance.State;
         var cfg = state.hero;
 
-        cfg.attack = (int)attackSlider.value;
-        cfg.speed  = (int)speedSlider.value;
-        cfg.health = (int)hpSlider.value;
-        cfg.jump   = (int)jumpSlider.value;
+        cfg.attack = (int)attackSlider.value + 1;
+        cfg.speed  = (int)speedSlider.value + 10;
+        cfg.health = (int)hpSlider.value + 10;
+        cfg.jump   = (int)jumpSlider.value + 15;
 
         GameFlowManager.Instance.GoStatsToWeapon();
     }

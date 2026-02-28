@@ -56,4 +56,14 @@ public class GameState : MonoBehaviour
         int idx = GetPlayerIndexForRole(role);
         return idx < 0 ? null : GetDeviceForPlayerIndex(idx);
     }
+    
+    public PlayerConfig GetConfigForRole(Role role)
+    {
+        return role switch
+        {
+            Role.Hero => hero,
+            Role.Boss => boss,
+            _ => null
+        };
+    }
 }
