@@ -38,7 +38,7 @@ public class FloatyZone : MonoBehaviour
 
             // Apply gentle upward force
             if (rb.linearVelocity.y < maxUpSpeed)
-                rb.AddForce(Vector2.up * floatStrength * rb.mass, ForceMode2D.Force);
+                rb.AddForce(Vector2.up * floatStrength * rb.mass * objectsInZone[rb]/5, ForceMode2D.Force);
 
             // Horizontal damping
             rb.linearVelocity = new Vector2(rb.linearVelocity.x * (1f - drag * Time.fixedDeltaTime), rb.linearVelocity.y);
