@@ -8,19 +8,17 @@ public class AttackHitboxController : MonoBehaviour
     [SerializeField] private Transform hitboxRoot;
     [SerializeField] public float damage = 1f;
 
-    // Track already hit targets for this attack
+    // Track already hit targets for this attack (by ROOT)
     private HashSet<GameObject> hitTracker;
 
     private void Awake()
     {
         if (hitboxes == null || hitboxes.Length == 0)
             hitboxes = hitboxRoot.GetComponentsInChildren<Collider2D>(true);
-        
-        
+
         SetActive(false);
     }
 
-    // Called by Animation Events
     public void EnableHitboxes()
     {
         hitTracker = new HashSet<GameObject>();
@@ -28,7 +26,6 @@ public class AttackHitboxController : MonoBehaviour
         SetActive(true);
     }
 
-    // Called by Animation Events
     public void DisableHitboxes()
     {
         Debug.Log($"{name}: DisableHitboxes event fired", this);
@@ -43,22 +40,38 @@ public class AttackHitboxController : MonoBehaviour
                 if (c) c.enabled = on;
         }
     }
-    
+
+    public void ApplyNewAttack(float dmg)
+    {
+        damage = dmg;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (((1 << other.gameObject.layer) & hittableLayers) == 0)
             return;
 
-        // Hit only once per attack
-        if (hitTracker.Contains(other.gameObject))
+        // attacker = character root owning this hitbox
+        GameObject attacker = transform.root.gameObject;
+
+        // Identify the "target character" root (not the collider GameObject)
+        GameObject targetRoot = other.transform.root.gameObject;
+
+        // Don't hit self
+        if (targetRoot == attacker)
             return;
 
-        hitTracker.Add(other.gameObject);
+        // Hit only once per attack (by target ROOT)
+        if (hitTracker != null && hitTracker.Contains(targetRoot))
+            return;
 
-        HealthManager targetHealth = other.GetComponent<HealthManager>();
+        hitTracker?.Add(targetRoot);
+
+        // HealthManager might be on the root while collider is on a child
+        HealthManager targetHealth = other.GetComponentInParent<HealthManager>();
         if (targetHealth != null)
         {
-            targetHealth.TakeDamage(damage);
+            targetHealth.TakeDamage(damage, attacker);
         }
     }
 }

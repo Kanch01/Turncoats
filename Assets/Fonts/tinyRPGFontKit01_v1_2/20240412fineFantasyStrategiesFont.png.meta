@@ -1,0 +1,2379 @@
+fileFormatVersion: 2
+guid: ee26a90b145c84c68a5735844d03dc9d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6519609971516493125
+    second: 20240412fineFantasyStrategiesFont_0
+  - first:
+      213: 5244524149433688259
+    second: 20240412fineFantasyStrategiesFont_1
+  - first:
+      213: 1584289066721782751
+    second: 20240412fineFantasyStrategiesFont_2
+  - first:
+      213: 5526829669117647029
+    second: 20240412fineFantasyStrategiesFont_3
+  - first:
+      213: 156165077929440163
+    second: 20240412fineFantasyStrategiesFont_4
+  - first:
+      213: -1902934316778543706
+    second: 20240412fineFantasyStrategiesFont_5
+  - first:
+      213: 6954264820624514432
+    second: 20240412fineFantasyStrategiesFont_6
+  - first:
+      213: -3666838542267056377
+    second: 20240412fineFantasyStrategiesFont_7
+  - first:
+      213: -3298979472103046758
+    second: 20240412fineFantasyStrategiesFont_8
+  - first:
+      213: -419343166965671996
+    second: 20240412fineFantasyStrategiesFont_9
+  - first:
+      213: -4051923556955458468
+    second: 20240412fineFantasyStrategiesFont_10
+  - first:
+      213: -7834578487326104831
+    second: 20240412fineFantasyStrategiesFont_11
+  - first:
+      213: 6038173521402891029
+    second: 20240412fineFantasyStrategiesFont_12
+  - first:
+      213: 8380230569044783499
+    second: 20240412fineFantasyStrategiesFont_13
+  - first:
+      213: -7017141683713203014
+    second: 20240412fineFantasyStrategiesFont_14
+  - first:
+      213: 5753632842239473498
+    second: 20240412fineFantasyStrategiesFont_15
+  - first:
+      213: -6191723257959375039
+    second: 20240412fineFantasyStrategiesFont_16
+  - first:
+      213: 527919435501827467
+    second: 20240412fineFantasyStrategiesFont_17
+  - first:
+      213: -5508735434525033727
+    second: 20240412fineFantasyStrategiesFont_18
+  - first:
+      213: 83654126718127149
+    second: 20240412fineFantasyStrategiesFont_19
+  - first:
+      213: -2215674821095394134
+    second: 20240412fineFantasyStrategiesFont_20
+  - first:
+      213: 9201315174525039421
+    second: 20240412fineFantasyStrategiesFont_21
+  - first:
+      213: -1890613674743366585
+    second: 20240412fineFantasyStrategiesFont_22
+  - first:
+      213: 6963602275525787847
+    second: 20240412fineFantasyStrategiesFont_23
+  - first:
+      213: 9193908515978873916
+    second: 20240412fineFantasyStrategiesFont_24
+  - first:
+      213: -7082521927142963093
+    second: 20240412fineFantasyStrategiesFont_25
+  - first:
+      213: 6926722653158128356
+    second: 20240412fineFantasyStrategiesFont_26
+  - first:
+      213: 6502175937263789663
+    second: 20240412fineFantasyStrategiesFont_27
+  - first:
+      213: 4493957109705368123
+    second: 20240412fineFantasyStrategiesFont_28
+  - first:
+      213: -7089593927921808425
+    second: 20240412fineFantasyStrategiesFont_29
+  - first:
+      213: 6329491086484059534
+    second: 20240412fineFantasyStrategiesFont_30
+  - first:
+      213: -5847332770590119013
+    second: 20240412fineFantasyStrategiesFont_31
+  - first:
+      213: 4490075852050385018
+    second: 20240412fineFantasyStrategiesFont_32
+  - first:
+      213: 2617613250767213507
+    second: 20240412fineFantasyStrategiesFont_33
+  - first:
+      213: -8347510097201538744
+    second: 20240412fineFantasyStrategiesFont_34
+  - first:
+      213: 8444740804614482293
+    second: 20240412fineFantasyStrategiesFont_35
+  - first:
+      213: 6888653786574616628
+    second: 20240412fineFantasyStrategiesFont_36
+  - first:
+      213: 3211497974130522547
+    second: 20240412fineFantasyStrategiesFont_37
+  - first:
+      213: -6309893633945205601
+    second: 20240412fineFantasyStrategiesFont_38
+  - first:
+      213: -7073781199334230585
+    second: 20240412fineFantasyStrategiesFont_39
+  - first:
+      213: -174247365109604
+    second: 20240412fineFantasyStrategiesFont_40
+  - first:
+      213: -3192773404086687498
+    second: 20240412fineFantasyStrategiesFont_41
+  - first:
+      213: 7722869063290306210
+    second: 20240412fineFantasyStrategiesFont_42
+  - first:
+      213: -1078905705952032789
+    second: 20240412fineFantasyStrategiesFont_43
+  - first:
+      213: -4175697581955079693
+    second: 20240412fineFantasyStrategiesFont_44
+  - first:
+      213: 3026173842083732945
+    second: 20240412fineFantasyStrategiesFont_45
+  - first:
+      213: 2478137409984454910
+    second: 20240412fineFantasyStrategiesFont_46
+  - first:
+      213: -8100084039726350749
+    second: 20240412fineFantasyStrategiesFont_47
+  - first:
+      213: -6990869304989445394
+    second: 20240412fineFantasyStrategiesFont_48
+  - first:
+      213: 4411626143263582825
+    second: 20240412fineFantasyStrategiesFont_49
+  - first:
+      213: -8571798425144141074
+    second: 20240412fineFantasyStrategiesFont_50
+  - first:
+      213: 3583549089546773640
+    second: 20240412fineFantasyStrategiesFont_51
+  - first:
+      213: -8356490283967515474
+    second: 20240412fineFantasyStrategiesFont_52
+  - first:
+      213: 5666456605652205645
+    second: 20240412fineFantasyStrategiesFont_53
+  - first:
+      213: -5429634097749122239
+    second: 20240412fineFantasyStrategiesFont_54
+  - first:
+      213: -694273355844334278
+    second: 20240412fineFantasyStrategiesFont_55
+  - first:
+      213: -6879538294909913930
+    second: 20240412fineFantasyStrategiesFont_56
+  - first:
+      213: 4953160072717328073
+    second: 20240412fineFantasyStrategiesFont_57
+  - first:
+      213: -6047260144466370333
+    second: 20240412fineFantasyStrategiesFont_58
+  - first:
+      213: -9048524985869301414
+    second: 20240412fineFantasyStrategiesFont_59
+  - first:
+      213: 2956448445338948036
+    second: 20240412fineFantasyStrategiesFont_60
+  - first:
+      213: 6352150471146891495
+    second: 20240412fineFantasyStrategiesFont_61
+  - first:
+      213: -1802000745337231334
+    second: 20240412fineFantasyStrategiesFont_62
+  - first:
+      213: -2490410090616230528
+    second: 20240412fineFantasyStrategiesFont_63
+  - first:
+      213: 4517424568049699449
+    second: 20240412fineFantasyStrategiesFont_64
+  - first:
+      213: 7048790838372824051
+    second: 20240412fineFantasyStrategiesFont_65
+  - first:
+      213: -6334030308597130799
+    second: 20240412fineFantasyStrategiesFont_66
+  - first:
+      213: 5330032185561190389
+    second: 20240412fineFantasyStrategiesFont_67
+  - first:
+      213: -8955943715926904965
+    second: 20240412fineFantasyStrategiesFont_68
+  - first:
+      213: 2361612358358869420
+    second: 20240412fineFantasyStrategiesFont_69
+  - first:
+      213: 5988293262704921098
+    second: 20240412fineFantasyStrategiesFont_70
+  - first:
+      213: 1965699160480115294
+    second: 20240412fineFantasyStrategiesFont_71
+  - first:
+      213: -4356159366988100428
+    second: 20240412fineFantasyStrategiesFont_72
+  - first:
+      213: 7535067966546068292
+    second: 20240412fineFantasyStrategiesFont_73
+  - first:
+      213: 658233708574685781
+    second: 20240412fineFantasyStrategiesFont_74
+  - first:
+      213: 4986843385532142069
+    second: 20240412fineFantasyStrategiesFont_75
+  - first:
+      213: 2478078335836238131
+    second: 20240412fineFantasyStrategiesFont_76
+  - first:
+      213: -7324755405746599588
+    second: 20240412fineFantasyStrategiesFont_77
+  - first:
+      213: -4029769702726151310
+    second: 20240412fineFantasyStrategiesFont_78
+  - first:
+      213: -1887758964551605044
+    second: 20240412fineFantasyStrategiesFont_79
+  - first:
+      213: -3185059415117057946
+    second: 20240412fineFantasyStrategiesFont_80
+  - first:
+      213: -3710781806173728548
+    second: 20240412fineFantasyStrategiesFont_81
+  - first:
+      213: 3499965761538057483
+    second: 20240412fineFantasyStrategiesFont_82
+  - first:
+      213: 4564692546884574681
+    second: 20240412fineFantasyStrategiesFont_83
+  - first:
+      213: -7371990014116499792
+    second: 20240412fineFantasyStrategiesFont_84
+  - first:
+      213: 2437931969105165133
+    second: 20240412fineFantasyStrategiesFont_85
+  - first:
+      213: 8075950324762494267
+    second: 20240412fineFantasyStrategiesFont_86
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb23aa5f541b585a0800000000000000
+      internalID: -6519609971516493125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19
+        width: 7
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0e3fe5dea48c840800000000000000
+      internalID: 5244524149433688259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 83
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdbac7323868cf510800000000000000
+      internalID: 1584289066721782751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 67
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8d8d93d4e33bc40800000000000000
+      internalID: 5526829669117647029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 19
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a33e4c9f4fca2200800000000000000
+      internalID: 156165077929440163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_5
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a5a381325b6795e0800000000000000
+      internalID: -1902934316778543706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_6
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 67
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08dd1535203828060800000000000000
+      internalID: 6954264820624514432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 83
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70ff57706c5cc1dc0800000000000000
+      internalID: -3666838542267056377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_8
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 64
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a910efb16aba732d0800000000000000
+      internalID: -3298979472103046758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_9
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 35
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c716068c913e2af0800000000000000
+      internalID: -419343166965671996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54f1a23efca4c7c0800000000000000
+      internalID: -4051923556955458468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_11
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 64
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103a20a006cf54390800000000000000
+      internalID: -7834578487326104831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 35
+        width: 8
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51b836b73d6ebc350800000000000000
+      internalID: 6038173521402891029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 83
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81b8cb5d4f8c4470800000000000000
+      internalID: 8380230569044783499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_14
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 35
+        width: 8
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab420bb21da1e9e90800000000000000
+      internalID: -7017141683713203014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_15
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5774b1069209df40800000000000000
+      internalID: 5753632842239473498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 35
+        width: 8
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f9ec58084921aa0800000000000000
+      internalID: -6191723257959375039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_17
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 83
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b857c17fdeb835700800000000000000
+      internalID: 527919435501827467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_18
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 65
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10b378f0f4a0d83b0800000000000000
+      internalID: -5508735434525033727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_19
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 19
+        width: 6
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2c870b2cf2392100800000000000000
+      internalID: 83654126718127149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_20
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 19
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4f4d64d775041e0800000000000000
+      internalID: -2215674821095394134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_21
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 82
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33f9fb8663a1bf70800000000000000
+      internalID: 9201315174525039421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_22
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 64
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74cfc6531e033c5e0800000000000000
+      internalID: -1890613674743366585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_23
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 58
+        width: 7
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c001d5ff5fa3a060800000000000000
+      internalID: 6963602275525787847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_24
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 74
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c0c587513579f70800000000000000
+      internalID: 9193908515978873916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_25
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 51
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b688ab205d3d5bd90800000000000000
+      internalID: -7082521927142963093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_26
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 35
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea342fbd89a02060800000000000000
+      internalID: 6926722653158128356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_27
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5663bf909e5c3a50800000000000000
+      internalID: 6502175937263789663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_28
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 83
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3264d76e2ebd5e30800000000000000
+      internalID: 4493957109705368123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_29
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 67
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db447482e3bc9d90800000000000000
+      internalID: -7089593927921808425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_30
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 51
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8532eaab9ed6d750800000000000000
+      internalID: 6329491086484059534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_31
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ba97d53d91adea0800000000000000
+      internalID: -5847332770590119013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_32
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a78c500b234ff4e30800000000000000
+      internalID: 4490075852050385018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_33
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 50
+        width: 9
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3d5530261a35420800000000000000
+      internalID: 2617613250767213507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_34
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849d0592bcfa72c80800000000000000
+      internalID: -8347510097201538744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_35
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579ea47050fb13570800000000000000
+      internalID: 8444740804614482293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_36
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 67
+        width: 6
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 438fd690f1a699f50800000000000000
+      internalID: 6888653786574616628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_37
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 18
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b9bfe86468819c20800000000000000
+      internalID: 3211497974130522547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_38
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f948232db21ce68a0800000000000000
+      internalID: -6309893633945205601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_39
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5b8da4a71e4dd90800000000000000
+      internalID: -7073781199334230585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_40
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 67
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9813bfd5816ffff0800000000000000
+      internalID: -174247365109604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_41
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 74
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f82919418df0b3d0800000000000000
+      internalID: -3192773404086687498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_42
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 18
+        width: 6
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aeb54cde742d2b60800000000000000
+      internalID: 7722869063290306210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_43
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 99
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7469a0af4f601f0800000000000000
+      internalID: -1078905705952032789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_44
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 66
+        width: 6
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f12c1a4c21fc06c0800000000000000
+      internalID: -4175697581955079693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_45
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 35
+        width: 7
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dddaf573112ff920800000000000000
+      internalID: 3026173842083732945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_46
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef0eaba38dc146220800000000000000
+      internalID: 2478137409984454910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_47
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 66
+        width: 6
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36ebc416b78b69f80800000000000000
+      internalID: -8100084039726350749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_48
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 16
+        width: 7
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee21ce408617bfe90800000000000000
+      internalID: -6990869304989445394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_49
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a6d0f7a9e393d30800000000000000
+      internalID: 4411626143263582825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_50
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 69
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eead7076fbada0980800000000000000
+      internalID: -8571798425144141074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_51
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 51
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8842c9519e25bb130800000000000000
+      internalID: 3583549089546773640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_52
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 35
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea4fc1f7c58c70c80800000000000000
+      internalID: -8356490283967515474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_53
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d40c01bb24c43ae40800000000000000
+      internalID: 5666456605652205645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_54
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 69
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 143a0573e8016a4b0800000000000000
+      internalID: -5429634097749122239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_55
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 51
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3d41efaf027d56f0800000000000000
+      internalID: -694273355844334278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_56
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 19
+        width: 7
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b4b231ce58f680a0800000000000000
+      internalID: -6879538294909913930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_57
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 83
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ced6f9d7d82db440800000000000000
+      internalID: 4953160072717328073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_58
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 51
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e064b830f0d31ca0800000000000000
+      internalID: -6047260144466370333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_59
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59830c677e2d6280800000000000000
+      internalID: -9048524985869301414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_60
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c11f25723a670920800000000000000
+      internalID: 2956448445338948036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_61
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 51
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e86a88c23f572850800000000000000
+      internalID: 6352150471146891495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_62
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 51
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a186f299ed10ef6e0800000000000000
+      internalID: -1802000745337231334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_63
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d65c3a739407dd0800000000000000
+      internalID: -2490410090616230528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_64
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 83
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97a8936d5bd11be30800000000000000
+      internalID: 4517424568049699449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_65
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f37d31ebe552d160800000000000000
+      internalID: 7048790838372824051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_66
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d992835ef00918a0800000000000000
+      internalID: -6334030308597130799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_67
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 35
+        width: 6
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff06c5780418f940800000000000000
+      internalID: 5330032185561190389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_68
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 35
+        width: 7
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7fe8c714a816b380800000000000000
+      internalID: -8955943715926904965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_69
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 4
+        width: 7
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca527257de126c020800000000000000
+      internalID: 2361612358358869420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_70
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 19
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a446ebef0ba1350800000000000000
+      internalID: 5988293262704921098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_71
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 3
+        width: 7
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a63b3c8f0974b10800000000000000
+      internalID: 1965699160480115294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_72
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 19
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc0fa9b220db83c0800000000000000
+      internalID: -4356159366988100428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_73
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 19
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4434760a460f19860800000000000000
+      internalID: 7535067966546068292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_74
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 19
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a38ca0214822900800000000000000
+      internalID: 658233708574685781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_75
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 19
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1562143a3d43540800000000000000
+      internalID: 4986843385532142069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_76
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 16
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3313c15fd17e36220800000000000000
+      internalID: 2478078335836238131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_77
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 19
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c590ad544cd395a90800000000000000
+      internalID: -7324755405746599588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_78
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 19
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27350665ec16318c0800000000000000
+      internalID: -4029769702726151310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_79
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 19
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc4a75839355dc5e0800000000000000
+      internalID: -1887758964551605044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_80
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 19
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6603f6d46556cc3d0800000000000000
+      internalID: -3185059415117057946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_81
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 19
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd0580c9b97a08cc0800000000000000
+      internalID: -3710781806173728548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_82
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 19
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0561860150629030800000000000000
+      internalID: 3499965761538057483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_83
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd9de5cfab095f30800000000000000
+      internalID: 4564692546884574681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_84
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0beebd0042e61b990800000000000000
+      internalID: -7371990014116499792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_85
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 3
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4bf41d853645d120800000000000000
+      internalID: 2437931969105165133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesFont_86
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 3
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b354b2b380a831070800000000000000
+      internalID: 8075950324762494267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      20240412fineFantasyStrategiesFont_0: -6519609971516493125
+      20240412fineFantasyStrategiesFont_1: 5244524149433688259
+      20240412fineFantasyStrategiesFont_10: -4051923556955458468
+      20240412fineFantasyStrategiesFont_11: -7834578487326104831
+      20240412fineFantasyStrategiesFont_12: 6038173521402891029
+      20240412fineFantasyStrategiesFont_13: 8380230569044783499
+      20240412fineFantasyStrategiesFont_14: -7017141683713203014
+      20240412fineFantasyStrategiesFont_15: 5753632842239473498
+      20240412fineFantasyStrategiesFont_16: -6191723257959375039
+      20240412fineFantasyStrategiesFont_17: 527919435501827467
+      20240412fineFantasyStrategiesFont_18: -5508735434525033727
+      20240412fineFantasyStrategiesFont_19: 83654126718127149
+      20240412fineFantasyStrategiesFont_2: 1584289066721782751
+      20240412fineFantasyStrategiesFont_20: -2215674821095394134
+      20240412fineFantasyStrategiesFont_21: 9201315174525039421
+      20240412fineFantasyStrategiesFont_22: -1890613674743366585
+      20240412fineFantasyStrategiesFont_23: 6963602275525787847
+      20240412fineFantasyStrategiesFont_24: 9193908515978873916
+      20240412fineFantasyStrategiesFont_25: -7082521927142963093
+      20240412fineFantasyStrategiesFont_26: 6926722653158128356
+      20240412fineFantasyStrategiesFont_27: 6502175937263789663
+      20240412fineFantasyStrategiesFont_28: 4493957109705368123
+      20240412fineFantasyStrategiesFont_29: -7089593927921808425
+      20240412fineFantasyStrategiesFont_3: 5526829669117647029
+      20240412fineFantasyStrategiesFont_30: 6329491086484059534
+      20240412fineFantasyStrategiesFont_31: -5847332770590119013
+      20240412fineFantasyStrategiesFont_32: 4490075852050385018
+      20240412fineFantasyStrategiesFont_33: 2617613250767213507
+      20240412fineFantasyStrategiesFont_34: -8347510097201538744
+      20240412fineFantasyStrategiesFont_35: 8444740804614482293
+      20240412fineFantasyStrategiesFont_36: 6888653786574616628
+      20240412fineFantasyStrategiesFont_37: 3211497974130522547
+      20240412fineFantasyStrategiesFont_38: -6309893633945205601
+      20240412fineFantasyStrategiesFont_39: -7073781199334230585
+      20240412fineFantasyStrategiesFont_4: 156165077929440163
+      20240412fineFantasyStrategiesFont_40: -174247365109604
+      20240412fineFantasyStrategiesFont_41: -3192773404086687498
+      20240412fineFantasyStrategiesFont_42: 7722869063290306210
+      20240412fineFantasyStrategiesFont_43: -1078905705952032789
+      20240412fineFantasyStrategiesFont_44: -4175697581955079693
+      20240412fineFantasyStrategiesFont_45: 3026173842083732945
+      20240412fineFantasyStrategiesFont_46: 2478137409984454910
+      20240412fineFantasyStrategiesFont_47: -8100084039726350749
+      20240412fineFantasyStrategiesFont_48: -6990869304989445394
+      20240412fineFantasyStrategiesFont_49: 4411626143263582825
+      20240412fineFantasyStrategiesFont_5: -1902934316778543706
+      20240412fineFantasyStrategiesFont_50: -8571798425144141074
+      20240412fineFantasyStrategiesFont_51: 3583549089546773640
+      20240412fineFantasyStrategiesFont_52: -8356490283967515474
+      20240412fineFantasyStrategiesFont_53: 5666456605652205645
+      20240412fineFantasyStrategiesFont_54: -5429634097749122239
+      20240412fineFantasyStrategiesFont_55: -694273355844334278
+      20240412fineFantasyStrategiesFont_56: -6879538294909913930
+      20240412fineFantasyStrategiesFont_57: 4953160072717328073
+      20240412fineFantasyStrategiesFont_58: -6047260144466370333
+      20240412fineFantasyStrategiesFont_59: -9048524985869301414
+      20240412fineFantasyStrategiesFont_6: 6954264820624514432
+      20240412fineFantasyStrategiesFont_60: 2956448445338948036
+      20240412fineFantasyStrategiesFont_61: 6352150471146891495
+      20240412fineFantasyStrategiesFont_62: -1802000745337231334
+      20240412fineFantasyStrategiesFont_63: -2490410090616230528
+      20240412fineFantasyStrategiesFont_64: 4517424568049699449
+      20240412fineFantasyStrategiesFont_65: 7048790838372824051
+      20240412fineFantasyStrategiesFont_66: -6334030308597130799
+      20240412fineFantasyStrategiesFont_67: 5330032185561190389
+      20240412fineFantasyStrategiesFont_68: -8955943715926904965
+      20240412fineFantasyStrategiesFont_69: 2361612358358869420
+      20240412fineFantasyStrategiesFont_7: -3666838542267056377
+      20240412fineFantasyStrategiesFont_70: 5988293262704921098
+      20240412fineFantasyStrategiesFont_71: 1965699160480115294
+      20240412fineFantasyStrategiesFont_72: -4356159366988100428
+      20240412fineFantasyStrategiesFont_73: 7535067966546068292
+      20240412fineFantasyStrategiesFont_74: 658233708574685781
+      20240412fineFantasyStrategiesFont_75: 4986843385532142069
+      20240412fineFantasyStrategiesFont_76: 2478078335836238131
+      20240412fineFantasyStrategiesFont_77: -7324755405746599588
+      20240412fineFantasyStrategiesFont_78: -4029769702726151310
+      20240412fineFantasyStrategiesFont_79: -1887758964551605044
+      20240412fineFantasyStrategiesFont_8: -3298979472103046758
+      20240412fineFantasyStrategiesFont_80: -3185059415117057946
+      20240412fineFantasyStrategiesFont_81: -3710781806173728548
+      20240412fineFantasyStrategiesFont_82: 3499965761538057483
+      20240412fineFantasyStrategiesFont_83: 4564692546884574681
+      20240412fineFantasyStrategiesFont_84: -7371990014116499792
+      20240412fineFantasyStrategiesFont_85: 2437931969105165133
+      20240412fineFantasyStrategiesFont_86: 8075950324762494267
+      20240412fineFantasyStrategiesFont_9: -419343166965671996
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

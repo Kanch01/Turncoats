@@ -126,7 +126,7 @@ public class StatsMenuController : MonoBehaviour
         var state = GameFlowManager.Instance.State;
         var cfg = state.hero;
 
-        cfg.attack = (int)attackSlider.value + 1;
+        cfg.attack = ((int)attackSlider.value / 2) + 1;
         cfg.speed  = (int)speedSlider.value + 10;
         cfg.health = (int)hpSlider.value + 10;
         cfg.jump   = (int)jumpSlider.value + 15;

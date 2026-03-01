@@ -126,6 +126,13 @@ public class PlayerManager : MonoBehaviour
             healthMgr.ApplyMaxHealth(cfg.health, fillToMax: true);
         }
 
+        var attackMgr = pi.GetComponent<AttackHitboxController>();
+        if (attackMgr != null && cfg != null)
+        {
+            // cfg.health is int; HealthManager uses float
+            attackMgr.ApplyNewAttack(cfg.attack);
+        }
+
         var cam = FindFirstObjectByType<MultiTargetCamera>();
         if (cam != null) cam.RegisterPlayer(pi.transform);
 

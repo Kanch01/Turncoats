@@ -95,15 +95,15 @@ public class GameFlowManager : MonoBehaviour
     }
 
     // Called by PlayerSelect buttons:
-    public void ChooserSelectsHero()
+    public void ChooserSelectsHero(bool decision)
     {
-        AssignRoles(chooserIsHero: true);
+        AssignRoles(chooserIsHero: decision);
         _ = StartCoroutine(LoadContentScene(statsMenu));
     }
 
-    public void ChooserSelectsBoss()
+    public void ChooserSelectsBoss(bool decision)
     {
-        AssignRoles(chooserIsHero: false);
+        AssignRoles(chooserIsHero: decision);
         _ = StartCoroutine(LoadContentScene(statsMenu));
     }
 
@@ -128,6 +128,7 @@ public class GameFlowManager : MonoBehaviour
         State.boss.playerInd = State.GetPlayerIndexForRole(Role.Boss);
     }
 
+    public void GoSelectToStats() => _ = StartCoroutine(LoadContentScene(statsMenu));
     public void GoStatsToWeapon() => _ = StartCoroutine(LoadContentScene(weaponMenu));
     public void GoWeaponToAbility() => _ = StartCoroutine(LoadContentScene(abilityMenu));
     public void GoAbilityToBattle() => _ = StartCoroutine(LoadContentScene(battle));

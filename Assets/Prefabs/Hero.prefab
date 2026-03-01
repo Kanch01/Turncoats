@@ -442,12 +442,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b26c7548b69413ead925faebd1144e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  attack: 1
+  health: 10
   moveSpeed: 11
   jumpImpulse: 15
   dashSpeed: 45
   dashDuration: 0.09
   dashCooldown: 0.5
   attackLockoutMoveTime: 0
+  parryWindow: 1
+  parryCooldown: 0.5
+  parryCounterHitDelay: 0.5
+  parryFreezeMaxDuration: 0.5
+  spriteRenderer: {fileID: 727265057789168791}
   groundCheck: {fileID: 4338873356781908039}
   groundCheckRadius: 0.26
   groundLayer:

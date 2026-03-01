@@ -41,6 +41,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Parry",
+                    "type": "Button",
+                    "id": "799f4ac5-61ff-44d1-bbb2-d01204d6dbb8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -157,7 +166,7 @@
                 {
                     "name": "",
                     "id": "7c5299a0-d2de-48ab-b179-f85dada71dd2",
-                    "path": "<HID::Microsoft Jared Controller>/button5",
+                    "path": "<HID::Microsoft Jared Controller>/button7",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Joystick",
@@ -168,7 +177,7 @@
                 {
                     "name": "",
                     "id": "7cb5cc44-8caf-49fc-a894-eda7dcac9ada",
-                    "path": "<HID::Microsoft Jose Controller>/button5",
+                    "path": "<HID::Microsoft Jose Controller>/button7",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Joystick",
@@ -184,6 +193,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c6c70d1-f8be-4de6-a147-66dc92c18016",
+                    "path": "<HID::Microsoft Jared Controller>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e6b6e70-36be-41fb-b7b7-8a395c388c4f",
+                    "path": "<HID::Microsoft Jose Controller>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8599e4ab-e0fd-4b1c-a35e-4f88de09858c",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

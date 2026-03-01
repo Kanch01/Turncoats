@@ -1,7 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public enum Role { None, Hero, Boss }
+
+
 
 [System.Serializable]
 public class PlayerConfig
@@ -12,7 +15,7 @@ public class PlayerConfig
     public int jump;
     public int playerInd;
 
-    public int weapon;
+    public string weapon;
     public int ability;
 }
 
