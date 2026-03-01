@@ -13,6 +13,7 @@ public class HealthManager : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Color hurtColor = Color.firebrick;
     public float flashDuration = 0.15f;
+    public float knockbackDuration = 0.5f;
     
     private Color originalColor;
     private Coroutine flashRoutine;
@@ -33,16 +34,64 @@ public class HealthManager : MonoBehaviour
         onHealthChanged?.Invoke(currentHealth / maxHealth);
     }
 
+    // Coroutine to apply knockback force, and then disable after set amount of time
+    private Coroutine knockbackCoroutine;
+    private void StartKnockbackTimer(Vector2 knockback, float duration)
+    {
+        // Stop any existing coroutine so you don’t overwrite
+        if (knockbackCoroutine != null)
+            StopCoroutine(knockbackCoroutine);
+
+        knockbackCoroutine = StartCoroutine(ResetKnockbackAfterTime(knockback, duration));
+    }
+
+    private IEnumerator ResetKnockbackAfterTime(Vector2 knockback, float duration)
+    {
+        // Apply knockback immediately
+        var playerController = GetComponent<PlayerMovement>();
+        if (playerController != null)
+        {
+            playerController.AddActingKnockbackForce(knockback);
+        }
+
+        // Wait for duration
+        yield return new WaitForSeconds(duration);
+
+        // Reset acting knockback
+        if (playerController != null)
+        {
+            playerController.SetActingKnockbackForce(Vector2.zero);
+        }
+
+        knockbackCoroutine = null;
+    }
+
     /// <summary>
-    /// Object will take damage
+    /// Object will take damage and take knockback
     /// Called when damage colliion is triggered
     /// </summary>
-    public void TakeDamage(float amount)
+    public void TakeDamage(float damage, Vector2 knockback)
     {
-        Debug.Log($"{name}: AHHHHHHH IT HURTS");
-        currentHealth -= amount;
+        // Debug.Log($"{name}: AHHHHHHH IT HURTS");
+        currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0);
         onHealthChanged?.Invoke(currentHealth / maxHealth);
+
+        // Look for rigid body and apply knockback if found
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+            rb = GetComponentInParent<Rigidbody2D>();
+        if (rb != null)
+        {
+            float y_knockback_lim = (4f / 8f) * rb.gravityScale;            // Limit grav scale of 8 to 5, lim scale of 5 to smaller
+            knockback.y = Mathf.Clamp(knockback.y, -y_knockback_lim, y_knockback_lim);
+            // UnityEngine.Debug.Log($"Knockback: {knockback}"); 
+            StartKnockbackTimer(knockback, knockbackDuration);
+        }
+        else
+        {
+            UnityEngine.Debug.Log($"Couldn't find rigidbody!");    
+        }
         
         if (spriteRenderer != null)
         {

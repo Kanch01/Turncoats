@@ -7,6 +7,7 @@ public class AttackHitboxController : MonoBehaviour
     [SerializeField] private LayerMask hittableLayers;
     [SerializeField] private Transform hitboxRoot;
     [SerializeField] public float damage = 1f;
+    [SerializeField] public float knockback = 1f;
 
     // Track already hit targets for this attack
     private HashSet<GameObject> hitTracker;
@@ -58,7 +59,16 @@ public class AttackHitboxController : MonoBehaviour
         HealthManager targetHealth = other.GetComponent<HealthManager>();
         if (targetHealth != null)
         {
-            targetHealth.TakeDamage(damage);
+            // Apply knockback based on distance between GroundChecks because they should be at
+            // the same y-level when on even ground no matter player height
+            PlayerMovement attacker = transform.root.GetComponent<PlayerMovement>();
+            PlayerMovement target = other.transform.root.GetComponent<PlayerMovement>();
+
+            Vector2 direction = (target.groundCheck.position - attacker.groundCheck.position).normalized;
+
+            // if (Mathf.Abs(direction.y) < 0.2f)
+            //     direction.y = 0f;
+            targetHealth.TakeDamage(damage, direction * knockback);
         }
     }
 }

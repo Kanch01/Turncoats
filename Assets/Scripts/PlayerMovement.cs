@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private static readonly int SpeedParam = Animator.StringToHash("Speed");
 
     [Header("Ground Check")]
-    [SerializeField] private Transform groundCheck;
+    [SerializeField] public Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.12f;
     [SerializeField] private LayerMask groundLayer;
 
@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     
     private Vector3 _baseScale;
     private float _facingSign = 1f;
+    private Vector2 actingKnockbackForce = Vector2.zero; 
 
     private void Awake()
     {
@@ -98,7 +99,13 @@ public class PlayerMovement : MonoBehaviour
         // If attacking lock movement briefly
         float effectiveMoveX = _attackMoveLocked ? 0f : _moveX;
         
-        _rb.linearVelocity = new Vector2(effectiveMoveX * moveSpeed, _rb.linearVelocity.y);
+        _rb.linearVelocity = new Vector2(
+            effectiveMoveX * moveSpeed + actingKnockbackForce.x,
+            _rb.linearVelocity.y + actingKnockbackForce.y
+        );
+
+        // Add knockback force
+        // _rb.AddForce(actingKnockbackForce, ForceMode2D.Force);
 
         // Face direction
         if (effectiveMoveX > 0.01f) _facingSign = 1f;
@@ -226,6 +233,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         animator.SetFloat("Speed", speedForAnim);
+    }
+
+    public void AddActingKnockbackForce(Vector2 knockback)
+    {
+        actingKnockbackForce += knockback;
+    }
+
+    public void SetActingKnockbackForce(Vector2 knockback)
+    {
+        actingKnockbackForce = knockback;
     }
 
 #if UNITY_EDITOR

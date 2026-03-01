@@ -265,7 +265,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2ab10ade0adc5be4cbd33a31ad4c8900, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -470,7 +470,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   hitboxRoot: {fileID: 5220588145049612613}
-  damage: 1
+  damage: 0
+  knockback: 10
 --- !u!114 &-1958762131152821503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,3 +494,4 @@ MonoBehaviour:
   spriteRenderer: {fileID: 727265057789168791}
   hurtColor: {r: 0.6980392, g: 0.1333333, b: 0.1333333, a: 1}
   flashDuration: 0.5
+  knockbackDuration: 0.15

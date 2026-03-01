@@ -6,7 +6,7 @@ public class StageModifierData : ScriptableObject
 {
     public string modifierName;
     public float damage;
-    public float knockbackForce;
+    public float knockback;
 
     public float cost;
 }
