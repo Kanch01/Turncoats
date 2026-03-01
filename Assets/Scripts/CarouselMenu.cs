@@ -59,6 +59,14 @@ public class CarouselMenu : MonoBehaviour
     
     public void OnConfirmPressed()
     {
+        var state = GameFlowManager.Instance.State;
+        var cfg = state.boss;
+
+        cfg.attack = 2;
+        cfg.health = 10;
+        cfg.jump = 20;
+        cfg.speed = 10;
+        
         // Get the selected boss
         RectTransform selectedBoss = bosses[targetIndex];
 

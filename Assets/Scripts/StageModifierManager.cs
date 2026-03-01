@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 using TMPro;
@@ -72,10 +72,21 @@ public class StageModifierManager : MonoBehaviour
     {
         confirmPanel.SetActive(true);
         confirming = true;
+        
+        /*
+        if (yesButton != null)
+        {
+            evsystem.SetSelectedGameObject(null);
+            evsystem.SetSelectedGameObject(yesButton);
+
+            var btn = yesButton.GetComponent<Button>();
+            if (btn != null) btn.Select();
+        }
+        */
 
         // Set focus to confirm panel
-        Button yesButton = confirmPanel.transform.Find("YesButton").GetComponent<Button>();
-        EventSystem.current.SetSelectedGameObject(yesButton.gameObject);
+        // Button yesButton = confirmPanel.transform.Find("YesButton").GetComponent<Button>();
+        // EventSystem.current.SetSelectedGameObject(yesButton.gameObject);
     }
 
     public void ConfirmStartGame()
@@ -84,6 +95,12 @@ public class StageModifierManager : MonoBehaviour
         confirmPanel.SetActive(false);
         UnityEngine.Debug.Log("Pressed button!");
         Destroy(currentPreview);
+        var flow = GameFlowManager.Instance;
+        if (flow != null && flow.State != null && InputLockManager.Instance != null)
+        {
+            InputLockManager.Instance.EnableAllKnownDevices(flow.State);
+        }
+        
         if (gameCamera != null)
         {
             stageModCamera.enabled = false;
@@ -130,6 +147,7 @@ public class StageModifierManager : MonoBehaviour
 
     public void CancelStartGame()
     {
+        Debug.Log("Cancel starting game");
         confirming = false;
         confirmPanel.SetActive(false);
     }
@@ -217,22 +235,47 @@ public class StageModifierManager : MonoBehaviour
         }
         else
         {
-            // If confirming, force preview hidden
+            // Hide preview while confirming
             if (currentPreview != null)
                 currentPreview.SetActive(false);
 
-            // Set the pointer to the confirm panel’s selected button
-            if (eventSystem.currentSelectedGameObject == null && confirmPanel.activeSelf)
+            // Raycast UI while confirming so hovering Yes/No updates selection
+            Button hoveredButton = null;
+            foreach (var r in results)
             {
-                Button yesButton = confirmPanel.transform.Find("YesButton").GetComponent<Button>();
-                eventSystem.SetSelectedGameObject(yesButton.gameObject);
+                // Only consider buttons that are inside the confirm panel
+                if (!r.gameObject.transform.IsChildOf(confirmPanel.transform))
+                    continue;
+
+                var b = r.gameObject.GetComponent<Button>();
+                if (b != null)
+                {
+                    hoveredButton = b;
+                    break;
+                }
             }
 
-            // Handle submit input for UI
+            if (hoveredButton != null)
+            {
+                if (eventSystem.currentSelectedGameObject != hoveredButton.gameObject)
+                    eventSystem.SetSelectedGameObject(hoveredButton.gameObject);
+            }
+            else
+            {
+                // If nothing is hovered, make sure something is selected (default to Yes)
+                if (eventSystem.currentSelectedGameObject == null && confirmPanel.activeSelf)
+                {
+                    var yes = confirmPanel.transform.Find("YesButton")?.GetComponent<Button>();
+                    if (yes != null)
+                        eventSystem.SetSelectedGameObject(yes.gameObject);
+                }
+            }
+
+            // Click whichever confirm button is currently selected (now updated by hover)
             if (placeAction.action.triggered)
             {
                 var selected = eventSystem.currentSelectedGameObject?.GetComponent<Button>();
-                if (selected != null)
+                if (selected != null && selected.interactable)
                     selected.onClick.Invoke();
             }
         }

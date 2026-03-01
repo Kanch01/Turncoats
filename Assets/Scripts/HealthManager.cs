@@ -146,4 +146,16 @@ public class HealthManager : MonoBehaviour
     }
 
     public float GetHealth() => currentHealth;
+    
+    public void ApplyMaxHealth(float newMaxHealth, bool fillToMax = true)
+    {
+        maxHealth = Mathf.Max(1f, newMaxHealth); 
+        if (fillToMax)
+            currentHealth = maxHealth;
+        else
+            currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+
+        // push updated value to UI listeners
+        onHealthChanged?.Invoke(currentHealth / maxHealth);
+    }
 }

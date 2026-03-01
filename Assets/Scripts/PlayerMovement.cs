@@ -4,6 +4,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Stats (runtime from GameState)")]
+    [SerializeField] private int attack = 1;
+    [SerializeField] private int health = 10;
+
+    // These already existed as floats; we will overwrite them from config at runtime:
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpImpulse = 12f;
@@ -42,10 +47,33 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _isAttacking;
     private bool _attackMoveLocked;
-    
+
     private Vector3 _baseScale;
     private float _facingSign = 1f;
     private Vector2 actingKnockbackForce = Vector2.zero; 
+
+    // ---- Public read access for other systems (damage, UI, etc.) ----
+    public int Attack => attack;
+    public int Health => health;
+    public float MoveSpeed => moveSpeed;
+    public float JumpImpulse => jumpImpulse;
+
+    /// <summary>
+    /// Call this immediately after spawning to overwrite stats from GameState.
+    /// </summary>
+    public void ApplyConfig(PlayerConfig cfg)
+    {
+        if (cfg == null) return;
+
+        attack = cfg.attack;
+        health = cfg.health;
+
+        // Your GameState uses ints; PlayerMovement uses floats for movement.
+        // If your ints are already “real values”, this is correct.
+        // If they’re “points”, this is where you’d convert points -> real stats.
+        moveSpeed = cfg.speed;
+        jumpImpulse = cfg.jump;
+    }
 
     private void Awake()
     {
@@ -55,12 +83,11 @@ public class PlayerMovement : MonoBehaviour
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
 
-        // Get actions from player's PlayerInput
         _moveAction = _playerInput.actions["Move"];
         _jumpAction = _playerInput.actions["Jump"];
         _dashAction = _playerInput.actions["Dash"];
         _attackAction = _playerInput.actions["Attack"];
-        
+
         _baseScale = transform.localScale;
         _facingSign = Mathf.Sign(_baseScale.x);
         if (_facingSign == 0f) _facingSign = 1f;
@@ -84,10 +111,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 move = _moveAction.ReadValue<Vector2>();
         _moveX = Mathf.Clamp(move.x, -1f, 1f);
-        
-        _isGrounded = CheckGrounded();
 
-        // Update animations every frame
+        _isGrounded = CheckGrounded();
         UpdateAnimationState();
     }
 
@@ -96,7 +121,6 @@ public class PlayerMovement : MonoBehaviour
         if (_isDashing)
             return;
 
-        // If attacking lock movement briefly
         float effectiveMoveX = _attackMoveLocked ? 0f : _moveX;
         
         _rb.linearVelocity = new Vector2(
@@ -107,7 +131,6 @@ public class PlayerMovement : MonoBehaviour
         // Add knockback force
         // _rb.AddForce(actingKnockbackForce, ForceMode2D.Force);
 
-        // Face direction
         if (effectiveMoveX > 0.01f) _facingSign = 1f;
         else if (effectiveMoveX < -0.01f) _facingSign = -1f;
 
@@ -123,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
         if (_isDashing) return;
         if (_isAttacking) return;
         if (!_isGrounded) return;
-        
+
         _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0f);
         _rb.AddForce(Vector2.up * jumpImpulse, ForceMode2D.Impulse);
     }
@@ -132,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_isDashing) return;
         if (!_canDash) return;
-        
+
         StartCoroutine(DashRoutine());
     }
 
@@ -144,7 +167,6 @@ public class PlayerMovement : MonoBehaviour
         float dir = Mathf.Abs(_moveX) > 0.01f ? Mathf.Sign(_moveX) : Mathf.Sign(transform.localScale.x);
         if (dir == 0) dir = 1;
 
-        // No vertical velocity on dash
         _rb.linearVelocity = new Vector2(0f, 0f);
 
         float t = 0f;
@@ -157,7 +179,6 @@ public class PlayerMovement : MonoBehaviour
 
         _isDashing = false;
 
-        // cooldown
         yield return new WaitForSeconds(dashCooldown);
         _canDash = true;
     }
@@ -165,28 +186,23 @@ public class PlayerMovement : MonoBehaviour
     private void OnAttack(InputAction.CallbackContext ctx)
     {
         if (_isAttacking) return;
-
         StartCoroutine(AttackRoutine());
     }
-
 
     private IEnumerator AttackRoutine()
     {
         _isAttacking = true;
 
-        // Fire the attack animation once
         animator.ResetTrigger(AttackTrigger);
         animator.SetTrigger(AttackTrigger);
 
-        // Lock movement during hit
         _attackMoveLocked = true;
         yield return new WaitForSeconds(attackLockoutMoveTime);
         _attackMoveLocked = false;
-        
+
         while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             yield return null;
 
-        // Wait until Attack animation finishes
         while (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") &&
                animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
         {
@@ -196,9 +212,6 @@ public class PlayerMovement : MonoBehaviour
         _isAttacking = false;
     }
 
-    /// <summary>
-    /// Check whether player is on ground
-    /// </summary>
     private bool CheckGrounded()
     {
         if (groundCheck == null) return false;
@@ -209,28 +222,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (animator == null) return;
 
-        // Attacking overrides everything
-        
-        float speedForAnim;
-
         if (_isAttacking)
         {
-            // speedForAnim = 0f;
             animator.SetFloat(SpeedParam, 0f);
             return;
         }
-        else if (!_isGrounded)
-        {
-            speedForAnim = 0f; 
-        }
-        else if (_isDashing)
-        {
-            speedForAnim = 1f;
-        }
-        else
-        {
-            speedForAnim = Mathf.Abs(_moveX);
-        }
+
+        float speedForAnim;
+
+        if (!_isGrounded) speedForAnim = 0f;
+        else if (_isDashing) speedForAnim = 1f;
+        else speedForAnim = Mathf.Abs(_moveX);
 
         animator.SetFloat("Speed", speedForAnim);
     }

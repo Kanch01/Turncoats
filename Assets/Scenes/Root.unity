@@ -266,6 +266,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1638193264}
   - component: {fileID: 1638193263}
+  - component: {fileID: 1638193266}
+  - component: {fileID: 1638193265}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -285,12 +287,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a887c6c6e004aee81f6c864b59432c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  state: {fileID: 1638193266}
+  inputLock: {fileID: 1638193265}
+  rootSceneName: Root
   mainMenu: StartMenu
+  playerSelect: PlayerSelect
   statsMenu: HeroStats
   weaponMenu: HeroWeapon
   abilityMenu: HeroAbility
+  bossSelect: BossSelect
+  map0: Map0
+  map1: Map1
+  map2: Map2
   battle: Battle
   rootCamera: {fileID: 1289615043}
+  roleChooserPlayerIndex: -1
 --- !u!4 &1638193264
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +317,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1638193265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638193262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a61bec6ca6d4746a510241c300c845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputLockManager
+--- !u!114 &1638193266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638193262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43aab49be40b24715a3b321b391620d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameState
+  player0Role: 0
+  player1Role: 0
+  hero:
+    attack: 0
+    speed: 0
+    health: 0
+    jump: 0
+    playerInd: 0
+    weapon: 0
+    ability: 0
+  boss:
+    attack: 0
+    speed: 0
+    health: 0
+    jump: 0
+    playerInd: 0
+    weapon: 0
+    ability: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

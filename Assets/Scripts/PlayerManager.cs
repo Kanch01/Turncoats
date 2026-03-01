@@ -1,117 +1,147 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class PlayerManager : MonoBehaviour
 {
-    [Header("Player Prefabs")]
-    [SerializeField] private GameObject[] playerPrefabs;
-    
-    [SerializeField] private int player1PrefabIndex = 0;
-    [SerializeField] private int player2PrefabIndex = 1;
-    
-    [Header("UI")]
+    [Header("Role Prefabs")]
+    [SerializeField] private GameObject heroPrefab;
+    [SerializeField] private GameObject bossPrefab;
     [SerializeField] private HealthBarUI[] healthBars;
 
     [Header("Spawn Points")]
-    [SerializeField] private Transform[] spawnPoints = new Transform[2];
-
-    [Header("Options")]
-    [SerializeField] private bool disableJoiningAfterSpawn = true;
-    [SerializeField] private bool allowJoinIfMissingSecondDevice = true;
-
-    private PlayerInputManager _pim;
-    private int deviceCount;
-    private void Awake()
-    {
-        _pim = GetComponent<PlayerInputManager>();
-    }
-    
-    private void Start()
-    {
-        // StartGame();
-    }
+    [SerializeField] private Transform heroSpawn;
+    [SerializeField] private Transform bossSpawn;
 
     public void StartGame()
     {
-        if (FindObjectsByType<PlayerInput>(0).Length > 0)
+        if (FindObjectsByType<PlayerInput>(FindObjectsSortMode.None).Length > 0)
+            return;
+
+        var flow = GameFlowManager.Instance;
+        if (flow == null || flow.State == null)
         {
-            if (disableJoiningAfterSpawn) _pim.DisableJoining();
+            
+            Debug.LogError("PlayerManager: GameFlowManager/State missing.");
             return;
         }
 
-        if (playerPrefabs == null || playerPrefabs.Length == 0)
+        var state = flow.State;
+
+        var heroDevice = state.GetDeviceForRole(Role.Hero);
+        var bossDevice = state.GetDeviceForRole(Role.Boss);
+
+        if (heroDevice == null || bossDevice == null)
         {
-            Debug.LogError("AutoTwoPlayerSpawner: No playerPrefabs assigned.");
+            Debug.LogError("PlayerManager: Hero/Boss devices not assigned.");
             return;
         }
 
-        // Gather devices
-        var devices = new List<InputDevice>();
-        foreach (var g in Gamepad.all) devices.Add(g);
-        foreach (var j in Joystick.all) devices.Add(j);
+        // Spawn HERO
+        var heroPI = SpawnForRole(
+            role: Role.Hero,
+            prefab: heroPrefab,
+            playerIndex: state.GetPlayerIndexForRole(Role.Hero),
+            device: heroDevice,
+            spawn: heroSpawn,
+            namePrefix: "HERO",
+            state: state
+        );
 
-        deviceCount = Mathf.Min(2, devices.Count);
+        // Spawn BOSS
+        var bossPI = SpawnForRole(
+            role: Role.Boss,
+            prefab: bossPrefab,
+            playerIndex: state.GetPlayerIndexForRole(Role.Boss),
+            device: bossDevice,
+            spawn: bossSpawn,
+            namePrefix: "BOSS",
+            state: state
+        );
 
-        for (int i = 0; i < deviceCount; i++)
-        {
-            var device = devices[i];
-            string scheme = device is Gamepad ? "Gamepad" : "Joystick";
-
-            // Choose prefab for player i
-            var prefab = GetPrefabForPlayerIndex(i);
-
-            if (prefab == null)
-            {
-                Debug.LogError($"AutoTwoPlayerSpawner: Prefab for player {i} is null.");
-                continue;
-            }
-
-            // Spawn and pair device
-            var player = PlayerInput.Instantiate(
-                prefab,
-                playerIndex: i,
-                controlScheme: scheme,
-                pairWithDevice: device
-            );
-
-            // Move to spawn point
-            if (spawnPoints != null && spawnPoints.Length > i && spawnPoints[i] != null)
-            {
-                player.transform.SetPositionAndRotation(
-                    spawnPoints[i].position,
-                    spawnPoints[i].rotation
-                );
-            }
-
-            player.gameObject.name = $"P{i + 1}_{prefab.name}_{device.displayName}";
-
-            FindFirstObjectByType<MultiTargetCamera>().RegisterPlayer(player.transform);
-
-            // Connect health to correct UI
-            HealthManager health = player.GetComponent<HealthManager>();
-
-            if (healthBars != null && healthBars.Length > i && healthBars[i] != null)
-            {
-                healthBars[i].Initialize(health);
-            }
-        }
-
-        // Joining behavior after spawn
-        if (disableJoiningAfterSpawn && deviceCount == 2)
-            _pim.DisableJoining();
-        else if (!allowJoinIfMissingSecondDevice)
-            _pim.DisableJoining();
-        else
-            _pim.EnableJoining();
+        // Hook up health bars to the spawned instances
+        WireHealthBar(roleIndex: 0, player: heroPI);
+        WireHealthBar(roleIndex: 1, player: bossPI);
     }
 
-    private GameObject GetPrefabForPlayerIndex(int playerIndex)
+    private void WireHealthBar(int roleIndex, PlayerInput player)
     {
-        int chosenIndex = (playerIndex == 0) ? player1PrefabIndex : player2PrefabIndex;
-        chosenIndex = Mathf.Clamp(chosenIndex, 0, playerPrefabs.Length - 1);
-        return playerPrefabs[chosenIndex];
+        if (player == null) return;
+
+        if (healthBars == null || healthBars.Length <= roleIndex || healthBars[roleIndex] == null)
+        {
+            Debug.LogWarning($"PlayerManager: Health bar slot {roleIndex} not assigned.");
+            return;
+        }
+
+        var health = player.GetComponent<HealthManager>();
+        if (health == null)
+        {
+            Debug.LogWarning($"PlayerManager: Spawned player {player.name} has no HealthManager.");
+            return;
+        }
+
+        healthBars[roleIndex].Initialize(health);
+    }
+
+    // Change return type to PlayerInput
+    private PlayerInput SpawnForRole(
+        Role role,
+        GameObject prefab,
+        int playerIndex,
+        InputDevice device,
+        Transform spawn,
+        string namePrefix,
+        GameState state
+    )
+    {
+        if (prefab == null)
+        {
+            Debug.LogError($"PlayerManager: {namePrefix} prefab not set.");
+            return null;
+        }
+
+        string scheme = device is Gamepad ? "Gamepad" : "Joystick";
+
+        var pi = PlayerInput.Instantiate(
+            prefab,
+            playerIndex: playerIndex,
+            controlScheme: scheme,
+            pairWithDevice: device
+        );
+
+        if (spawn != null)
+            pi.transform.SetPositionAndRotation(spawn.position, spawn.rotation);
+
+        pi.gameObject.name = $"{namePrefix}_P{playerIndex}_{prefab.name}_{device.displayName}";
+
+        // Apply customized stats from GameState to the spawned prefab
+        var cfg = state != null ? state.GetConfigForRole(role) : null;
+
+        var movement = pi.GetComponent<PlayerMovement>();
+        if (movement != null) movement.ApplyConfig(cfg);
+        
+        var healthMgr = pi.GetComponent<HealthManager>();
+        if (healthMgr != null && cfg != null)
+        {
+            // cfg.health is int; HealthManager uses float
+            healthMgr.ApplyMaxHealth(cfg.health, fillToMax: true);
+        }
+
+        var cam = FindFirstObjectByType<MultiTargetCamera>();
+        if (cam != null) cam.RegisterPlayer(pi.transform);
+
+        return pi;
     }
 }
+
+
+/*
+ * // Connect health to correct UI
+   HealthManager health = player.GetComponent<HealthManager>();
+
+   if (healthBars != null && healthBars.Length > i && healthBars[i] != null)
+   {
+       healthBars[i].Initialize(health);
+   }
+ */
 
