@@ -66,9 +66,7 @@ public class AttackHitboxController : MonoBehaviour
 
             Vector2 direction = (target.groundCheck.position - attacker.groundCheck.position).normalized;
 
-            // if (Mathf.Abs(direction.y) < 0.2f)
-            //     direction.y = 0f;
-            targetHealth.TakeDamage(damage, direction * knockback);
+            targetHealth.TakeDamage(damage, direction, knockback);
         }
     }
 }

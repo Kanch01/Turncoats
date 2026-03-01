@@ -14001,6 +14001,26 @@ PrefabInstance:
       propertyPath: stageModCamera
       value: 
       objectReference: {fileID: 519255749}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: 'placeablePrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5130269596071569451, guid: a7e451bb6dbea8e4fa2c695d1c13149a, type: 3}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: 'placeablePrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 860530830951776320, guid: fa3e2c5e15bee82459b254e566dedb10, type: 3}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: 'placeablePrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 4635464213394732003, guid: 1b6597716ab1430458b7ce09817badbe, type: 3}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: 'placeablePrefabs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 6204657668505716869, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: 'placeablePrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8615502785291650437, guid: e95da3ab17fa2c44990cf41f162ba360, type: 3}
     - target: {fileID: 3515273853223700072, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: m_Name
       value: StageModifierManager

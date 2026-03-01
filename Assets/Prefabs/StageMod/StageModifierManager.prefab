@@ -468,16 +468,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageModifierManager
   stageModCamera: {fileID: 0}
   placeablePrefabs:
-  - {fileID: 8922384266696629566, guid: 9ab4e51224c1b53489312d180a418f48, type: 3}
-  - {fileID: 5440784020798262430, guid: ff449a117f9f41543a73bc1b942fd2fc, type: 3}
+  - {fileID: 5130269596071569451, guid: a7e451bb6dbea8e4fa2c695d1c13149a, type: 3}
+  - {fileID: 860530830951776320, guid: fa3e2c5e15bee82459b254e566dedb10, type: 3}
+  - {fileID: 4635464213394732003, guid: 1b6597716ab1430458b7ce09817badbe, type: 3}
   - {fileID: 6204657668505716869, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
   - {fileID: 8615502785291650437, guid: e95da3ab17fa2c44990cf41f162ba360, type: 3}
-  - {fileID: 6691990723813493879, guid: 87345da6b1fafaa40b4573dce7bd4c8d, type: 3}
   - {fileID: 1357180114309260521, guid: 5389a3bc44a0cb648b553f8c124ac40d, type: 3}
   gridSize: 0
   groundTilemap: {fileID: 0}
   budget: 20
-  confirmPanel: {fileID: 0}
+  confirmPanel: {fileID: 5076393759005229335}
   moveAction: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   placeAction: {fileID: 392368643174621059, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   rotateAction: {fileID: 3584566496950942275, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

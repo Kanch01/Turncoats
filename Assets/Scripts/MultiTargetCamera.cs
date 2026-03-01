@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+
 
 public class MultiTargetCamera : MonoBehaviour
 {
@@ -18,8 +20,16 @@ public class MultiTargetCamera : MonoBehaviour
     void Awake()
     {
         cam = GetComponent<Camera>();
-        leftCol   = transform.Find("LeftBound").GetComponent<BoxCollider2D>();
-        rightCol  = transform.Find("RightBound").GetComponent<BoxCollider2D>();
+
+        try
+        {
+            leftCol = transform.Find("LeftBound").GetComponent<BoxCollider2D>();
+            rightCol = transform.Find("RightBound").GetComponent<BoxCollider2D>();
+        }
+        catch (NullReferenceException)
+        {
+            UnityEngine.Debug.Log("Camera colliders not found, assuming they're not needed for this map");
+        }
     }
     
     void LateUpdate()

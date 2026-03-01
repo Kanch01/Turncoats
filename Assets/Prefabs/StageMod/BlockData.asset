@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed1a237ce9fa2194882df38a645825e1, type: 3}
-  m_Name: SpikeBallData
+  m_Name: BlockData
   m_EditorClassIdentifier: Assembly-CSharp::StageModifierData
-  modifierName: SpikeBall
+  modifierName: Block
   damage: 0
-  knockback: 10
-  cost: 2
+  knockback: 0
+  cost: 0

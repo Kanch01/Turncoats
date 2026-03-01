@@ -16,6 +16,6 @@ public class DamageOnTouch : MonoBehaviour
         if (health == null) return;
 
         Vector2 direction = (other.transform.position - transform.position).normalized;
-        health.TakeDamage(modifier.data.damage, direction*modifier.data.knockback);
+        health.TakeDamage(modifier.data.damage, direction, modifier.data.knockback);
     }
 }

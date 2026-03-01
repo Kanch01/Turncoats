@@ -70,7 +70,7 @@ public class HealthManager : MonoBehaviour
     /// Object will take damage and take knockback
     /// Called when damage colliion is triggered
     /// </summary>
-    public void TakeDamage(float damage, Vector2 knockback)
+    public void TakeDamage(float damage, Vector2 direction, float knockback_mag)
     {
         // Debug.Log($"{name}: AHHHHHHH IT HURTS");
         currentHealth -= damage;
@@ -78,6 +78,9 @@ public class HealthManager : MonoBehaviour
         onHealthChanged?.Invoke(currentHealth / maxHealth);
 
         // Look for rigid body and apply knockback if found
+        if (Mathf.Abs(direction.y) < 0.7f)  // Limit vertical knockback by angle
+                direction.y = 0f;
+        Vector2 knockback = direction*knockback_mag;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb == null)
             rb = GetComponentInParent<Rigidbody2D>();
