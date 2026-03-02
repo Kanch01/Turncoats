@@ -13951,6 +13951,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 670255169}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: placeAction
+      value: 
+      objectReference: {fileID: 6304096183771926695, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: spawnPoints
       value: 
       objectReference: {fileID: 1680890989}
@@ -13958,6 +13962,10 @@ PrefabInstance:
       propertyPath: confirmPanel
       value: 
       objectReference: {fileID: 1895010749}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: submitAction
+      value: 
+      objectReference: {fileID: 392368643174621059, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: groundTilemap
       value: 
@@ -13970,6 +13978,10 @@ PrefabInstance:
       propertyPath: stageModCamera
       value: 
       objectReference: {fileID: 519255749}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: menuConfirmAction
+      value: 
+      objectReference: {fileID: 392368643174621059, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: 'placeablePrefabs.Array.data[0]'
       value: 

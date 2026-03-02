@@ -19,7 +19,7 @@ public class StageModifierManager : MonoBehaviour
 
     [Header("Input Actions")]
     public InputActionReference moveAction;         // Control to move virtual cursor
-    public InputActionReference placeAction;        // Button to place object
+    public InputActionReference submitAction;        // Button to place object and select menu options
     public InputActionReference rotateAction;       // Button to rotate preview
     public InputActionReference nextPrefabAction;   // Button to cycle stage modifiers
     public InputActionReference buttonAction;       // UI Button to move on to battle
@@ -48,12 +48,12 @@ public class StageModifierManager : MonoBehaviour
     {
         // Enable controls and connect callbacks
         moveAction.action.Enable();
-        placeAction.action.Enable();
+        submitAction.action.Enable();
         rotateAction.action.Enable();
         nextPrefabAction.action.Enable();
         buttonAction.action.Enable();
 
-        placeAction.action.performed += _ => TryPlaceObject();
+        submitAction.action.performed += _ => OnSubmit();
         rotateAction.action.performed += _ => RotatePreview();
         nextPrefabAction.action.performed += _ => NextPrefab();
         buttonAction.action.performed += _ => OnButtonPress();
@@ -62,31 +62,45 @@ public class StageModifierManager : MonoBehaviour
     void OnDisable()
     {
         moveAction.action.Disable();
-        placeAction.action.Disable();
         rotateAction.action.Disable();
         nextPrefabAction.action.Disable();
         buttonAction.action.Disable();
+
+        submitAction.action.performed -= _ => OnSubmit();
+        submitAction.action.Disable();
+    }
+
+    private void OnSubmit()
+    {
+        if (confirming)
+        {
+            // Confirm menu
+            var selected = eventSystem.currentSelectedGameObject?.GetComponent<Button>();
+            if (selected != null && selected.interactable && selected.transform.IsChildOf(confirmPanel.transform))
+                selected.onClick.Invoke();
+        }
+        else
+        {
+            // Stage mod placement
+            TryPlaceObject();
+        }
     }
 
     public void OnButtonPress()
     {
         confirmPanel.SetActive(true);
         confirming = true;
-        
-        /*
-        if (yesButton != null)
+
+        // Reset selection explicitly
+        if (eventSystem != null)
         {
-            evsystem.SetSelectedGameObject(null);
-            evsystem.SetSelectedGameObject(yesButton);
-
-            var btn = yesButton.GetComponent<Button>();
-            if (btn != null) btn.Select();
+            var yes = confirmPanel.transform.Find("YesButton")?.GetComponent<Button>();
+            if (yes != null)
+            {
+                eventSystem.SetSelectedGameObject(null);
+                eventSystem.SetSelectedGameObject(yes.gameObject);
+            }
         }
-        */
-
-        // Set focus to confirm panel
-        // Button yesButton = confirmPanel.transform.Find("YesButton").GetComponent<Button>();
-        // EventSystem.current.SetSelectedGameObject(yesButton.gameObject);
     }
 
     public void ConfirmStartGame()
@@ -161,10 +175,6 @@ public class StageModifierManager : MonoBehaviour
         raycaster = GetComponent<Canvas>().GetComponent<GraphicRaycaster>();
         pointerData = new PointerEventData(eventSystem);
 
-        // Enable transition button
-        // Button transition = GetComponentInChildren<Button>();
-        // transition.onClick.AddListener(OnButtonPress);
-
         // Use the class name GameObject, not the instance
         budgetText = GameObject.Find("BudgetText").GetComponent<TMP_Text>();
 
@@ -187,7 +197,7 @@ public class StageModifierManager : MonoBehaviour
                 if (eventSystem.currentSelectedGameObject != b.gameObject)
                     eventSystem.SetSelectedGameObject(b.gameObject);
 
-                if (placeAction.action.triggered)
+                if (submitAction.action.triggered)
                     b.onClick.Invoke();
 
                 break;
@@ -208,13 +218,13 @@ public class StageModifierManager : MonoBehaviour
             if (currentPreview != null)
                 UpdatePreviewPosition();
 
-            placeAction.action.Enable();
+            submitAction.action.Enable();
             rotateAction.action.Enable();
             nextPrefabAction.action.Enable();
         }
         else
         {
-            placeAction.action.Disable();
+            submitAction.action.Disable();
             nextPrefabAction.action.Disable();
         }
     }
@@ -259,24 +269,6 @@ public class StageModifierManager : MonoBehaviour
             {
                 if (eventSystem.currentSelectedGameObject != hoveredButton.gameObject)
                     eventSystem.SetSelectedGameObject(hoveredButton.gameObject);
-            }
-            else
-            {
-                // If nothing is hovered, make sure something is selected (default to Yes)
-                if (eventSystem.currentSelectedGameObject == null && confirmPanel.activeSelf)
-                {
-                    var yes = confirmPanel.transform.Find("YesButton")?.GetComponent<Button>();
-                    if (yes != null)
-                        eventSystem.SetSelectedGameObject(yes.gameObject);
-                }
-            }
-
-            // Click whichever confirm button is currently selected (now updated by hover)
-            if (placeAction.action.triggered)
-            {
-                var selected = eventSystem.currentSelectedGameObject?.GetComponent<Button>();
-                if (selected != null && selected.interactable)
-                    selected.onClick.Invoke();
             }
         }
     }
