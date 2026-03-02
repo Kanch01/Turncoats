@@ -80,8 +80,6 @@ public class GameFlowManager : MonoBehaviour
         State.hero.speed = 8;
         State.hero.health = 10;
         State.hero.jump = 20;
-        State.hero.weapon = 0;
-        State.hero.ability = 0;
         State.hero.playerInd = State.GetPlayerIndexForRole(Role.Hero);
 
         // Default boss stats
@@ -89,8 +87,6 @@ public class GameFlowManager : MonoBehaviour
         State.boss.speed = 8;
         State.boss.health = 10;
         State.boss.jump = 20;
-        State.boss.weapon = 0;
-        State.boss.ability = 0;
         State.boss.playerInd = State.GetPlayerIndexForRole(Role.Boss);
     }
 
@@ -148,15 +144,15 @@ public class GameFlowManager : MonoBehaviour
     }
 
     // Called by PlayerSelect buttons:
-    public void ChooserSelectsHero()
+    public void ChooserSelectsHero(bool decision)
     {
-        AssignRoles(chooserIsHero: true);
+        AssignRoles(chooserIsHero: decision);
         _ = StartCoroutine(LoadContentScene(statsMenu));
     }
 
-    public void ChooserSelectsBoss()
+    public void ChooserSelectsBoss(bool decision)
     {
-        AssignRoles(chooserIsHero: false);
+        AssignRoles(chooserIsHero: decision);
         _ = StartCoroutine(LoadContentScene(statsMenu));
     }
 
@@ -181,6 +177,7 @@ public class GameFlowManager : MonoBehaviour
         State.boss.playerInd = State.GetPlayerIndexForRole(Role.Boss);
     }
 
+    public void GoSelectToStats() => _ = StartCoroutine(LoadContentScene(statsMenu));
     public void GoStatsToWeapon() => _ = StartCoroutine(LoadContentScene(weaponMenu));
     public void GoWeaponToAbility() => _ = StartCoroutine(LoadContentScene(abilityMenu));
     public void GoAbilityToBattle() => _ = StartCoroutine(LoadContentScene(battle));

@@ -8,6 +8,12 @@ public class StatsMenuController : MonoBehaviour
     [SerializeField] private int totalPoints = 15;
     [SerializeField] private int maxPerStat = 10;
 
+    [Header("Base Stats")]
+    [SerializeField] private int baseHealth = 20;
+    [SerializeField] private int baseAttack = 1;
+    [SerializeField] private int baseSpeed = 10;
+    [SerializeField] private int baseJump = 15;
+
     [Header("Sliders")]
     [SerializeField] private Slider hpSlider;
     [SerializeField] private Slider speedSlider;
@@ -109,10 +115,10 @@ public class StatsMenuController : MonoBehaviour
         int remaining = totalPoints - sum;
 
         // Update labels
-        hpValueText.text = (hp + 10).ToString();
-        speedValueText.text = (spd + 10).ToString();
-        attackValueText.text = ((atk / 2) + 1).ToString();
-        jumpValueText.text = (jmp + 15).ToString();
+        hpValueText.text = (hp + baseHealth).ToString();
+        attackValueText.text = ((atk / 2) + baseAttack).ToString();
+        speedValueText.text = (spd + baseSpeed).ToString();
+        jumpValueText.text = (jmp + baseJump).ToString();
 
         remainingPointsText.text = $"Remaining: {remaining}";
 
@@ -126,10 +132,10 @@ public class StatsMenuController : MonoBehaviour
         var state = GameFlowManager.Instance.State;
         var cfg = state.hero;
 
-        cfg.attack = (int)attackSlider.value + 1;
-        cfg.speed  = (int)speedSlider.value + 10;
-        cfg.health = (int)hpSlider.value + 10;
-        cfg.jump   = (int)jumpSlider.value + 15;
+        cfg.health = (int)hpSlider.value + baseHealth;
+        cfg.attack = ((int)attackSlider.value / 2) + baseAttack;
+        cfg.speed  = (int)speedSlider.value + baseSpeed;
+        cfg.jump   = (int)jumpSlider.value + baseJump;
 
         GameFlowManager.Instance.GoStatsToWeapon();
     }

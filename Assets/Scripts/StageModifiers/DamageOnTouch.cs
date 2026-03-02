@@ -15,7 +15,10 @@ public class DamageOnTouch : MonoBehaviour
         var health = other.GetComponent<HealthManager>();
         if (health == null) return;
 
+        // attacker = character root owning this hitbox
+        GameObject attacker = transform.root.gameObject;
+
         Vector2 direction = (other.transform.position - transform.position).normalized;
-        health.TakeDamage(modifier.data.damage, direction, modifier.data.knockback);
+        health.TakeDamage(modifier.data.damage, attacker, direction, modifier.data.knockback);
     }
 }

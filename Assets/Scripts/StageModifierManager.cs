@@ -77,7 +77,13 @@ public class StageModifierManager : MonoBehaviour
             // Confirm menu
             var selected = eventSystem.currentSelectedGameObject?.GetComponent<Button>();
             if (selected != null && selected.interactable && selected.transform.IsChildOf(confirmPanel.transform))
+            {
                 selected.onClick.Invoke();
+            }
+            // else
+            // {
+            //     UnityEngine.Debug.Log("Error selecting in menu");
+            // }
         }
         else
         {

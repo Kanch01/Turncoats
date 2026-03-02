@@ -1,0 +1,2379 @@
+fileFormatVersion: 2
+guid: 6224d86fe3afc4aae9047e997b9681a2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6591808647141868252
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_0
+  - first:
+      213: -3230655450813502105
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_1
+  - first:
+      213: 1693978815024408748
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_2
+  - first:
+      213: 4469026377784028727
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_3
+  - first:
+      213: 4325567450556384350
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_4
+  - first:
+      213: 2898803699507009566
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_5
+  - first:
+      213: -1865227732058265888
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_6
+  - first:
+      213: -7729674235249917934
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_7
+  - first:
+      213: 5746045929198817779
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_8
+  - first:
+      213: 573128268426298022
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_9
+  - first:
+      213: -2079950199535570794
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_10
+  - first:
+      213: -7201069453171581883
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_11
+  - first:
+      213: -8278240499478399705
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_12
+  - first:
+      213: 4291030139651209333
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_13
+  - first:
+      213: 6730031833992679157
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_14
+  - first:
+      213: -3955360077580217087
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_15
+  - first:
+      213: -1728720683815098363
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_16
+  - first:
+      213: -2332033924196125400
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_17
+  - first:
+      213: 8260531375943056334
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_18
+  - first:
+      213: 3278301597348473136
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_19
+  - first:
+      213: 7790137911495703087
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_20
+  - first:
+      213: 8947369197158517738
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_21
+  - first:
+      213: -1060790137593987639
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_22
+  - first:
+      213: -5122444175626304115
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_23
+  - first:
+      213: 7205884590847487006
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_24
+  - first:
+      213: 4578845319320819778
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_25
+  - first:
+      213: 2737373634206730766
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_26
+  - first:
+      213: -505414468681318694
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_27
+  - first:
+      213: 7414409687175283002
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_28
+  - first:
+      213: 891385623606461543
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_29
+  - first:
+      213: 6963946025464192437
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_30
+  - first:
+      213: -6797027022837824046
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_31
+  - first:
+      213: 497444554786318030
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_32
+  - first:
+      213: -1751299991678374032
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_33
+  - first:
+      213: -2701796251421970281
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_34
+  - first:
+      213: -2249923316379541271
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_35
+  - first:
+      213: -4091702756689924110
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_36
+  - first:
+      213: 7343163602500575523
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_37
+  - first:
+      213: 1920922060627866746
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_38
+  - first:
+      213: -7972250685510326161
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_39
+  - first:
+      213: 6193055233557253919
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_40
+  - first:
+      213: -4814960931682377896
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_41
+  - first:
+      213: -8772085996263005606
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_42
+  - first:
+      213: -51003914040041633
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_43
+  - first:
+      213: 8813510760007564941
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_44
+  - first:
+      213: -4868273365648267460
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_45
+  - first:
+      213: 1982670520683455181
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_46
+  - first:
+      213: -165258156556549397
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_47
+  - first:
+      213: -1365704961987104941
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_48
+  - first:
+      213: -4186425938718694383
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_49
+  - first:
+      213: -5670393236278901359
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_50
+  - first:
+      213: 1231699875720293324
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_51
+  - first:
+      213: 4766879049214662574
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_52
+  - first:
+      213: 3663145499567098540
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_53
+  - first:
+      213: -5352893778063175547
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_54
+  - first:
+      213: 6605473061240571265
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_55
+  - first:
+      213: -8980964427751323763
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_56
+  - first:
+      213: -518381880513760035
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_57
+  - first:
+      213: -518422398668375233
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_58
+  - first:
+      213: -6255152953523849433
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_59
+  - first:
+      213: -3639477906108659131
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_60
+  - first:
+      213: -5671198185849691502
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_61
+  - first:
+      213: -294352440220034888
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_62
+  - first:
+      213: 4815982615607618968
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_63
+  - first:
+      213: 7921173887649977600
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_64
+  - first:
+      213: 4954395250449724347
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_65
+  - first:
+      213: 7665987770353324066
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_66
+  - first:
+      213: 4774597633670560119
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_67
+  - first:
+      213: 2109792440777560985
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_68
+  - first:
+      213: -6590774652292682954
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_69
+  - first:
+      213: 6264904466587919695
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_70
+  - first:
+      213: 6535302715429059155
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_71
+  - first:
+      213: 1522860148345362412
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_72
+  - first:
+      213: -1900435038226186755
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_73
+  - first:
+      213: 5572342971369478539
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_74
+  - first:
+      213: -8025068239123896465
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_75
+  - first:
+      213: -5688896982689780452
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_76
+  - first:
+      213: 7244212519256813257
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_77
+  - first:
+      213: -6919586953521768271
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_78
+  - first:
+      213: -7017983572358504002
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_79
+  - first:
+      213: 866848090639536755
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_80
+  - first:
+      213: 2519073289518691478
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_81
+  - first:
+      213: 7121327986774523456
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_82
+  - first:
+      213: -8707460868177656399
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_83
+  - first:
+      213: 839434495385865570
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_84
+  - first:
+      213: -7617173091234015504
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_85
+  - first:
+      213: 8908804777251342585
+    second: 20240412fineFantasyStrategiesItalicNumbersFont_86
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd24d382a0fca7b50800000000000000
+      internalID: 6591808647141868252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76de496fbf76a23d0800000000000000
+      internalID: -3230655450813502105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca82196d1c8328710800000000000000
+      internalID: 1693978815024408748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 83
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73eeaab00db250e30800000000000000
+      internalID: 4469026377784028727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 68
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54c76eada0870c30800000000000000
+      internalID: 4325567450556384350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_5
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1814be2b9e9a3820800000000000000
+      internalID: 2898803699507009566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_6
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 68
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6a57592416d16e0800000000000000
+      internalID: -1865227732058265888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 83
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21080729c3eaab490800000000000000
+      internalID: -7729674235249917934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_8
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 65
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f199f8245e0ebf40800000000000000
+      internalID: 5746045929198817779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_9
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 35
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2c842af1924f700800000000000000
+      internalID: 573128268426298022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690fd2640588223e0800000000000000
+      internalID: -2079950199535570794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_11
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 65
+        width: 8
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c9ac83c79a01c90800000000000000
+      internalID: -7201069453171581883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 35
+        width: 8
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 725765f2028cd1d80800000000000000
+      internalID: -8278240499478399705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 83
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578b76a5d2dcc8b30800000000000000
+      internalID: 4291030139651209333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_14
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 35
+        width: 9
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fe4438bb40e56d50800000000000000
+      internalID: 6730031833992679157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_15
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 105d11147fcbb19c0800000000000000
+      internalID: -3955360077580217087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 35
+        width: 9
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508a45d72b95208e0800000000000000
+      internalID: -1728720683815098363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_17
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 83
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82531286083f2afd0800000000000000
+      internalID: -2332033924196125400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_18
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 65
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecbfd0f258d43a270800000000000000
+      internalID: 8260531375943056334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_19
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 19
+        width: 6
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0392d800fedde7d20800000000000000
+      internalID: 3278301597348473136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_20
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 19
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a310618212c1c60800000000000000
+      internalID: 7790137911495703087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_21
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 82
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aebc7ee21e07b2c70800000000000000
+      internalID: 8947369197158517738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_22
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 65
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cdf87b7df05741f0800000000000000
+      internalID: -1060790137593987639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_23
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 58
+        width: 7
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d858602892c69e8b0800000000000000
+      internalID: -5122444175626304115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_24
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 74
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1cece16bd1700460800000000000000
+      internalID: 7205884590847487006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_25
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 51
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 248d393ee835b8f30800000000000000
+      internalID: 4578845319320819778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_26
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 35
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a896c21da1df520800000000000000
+      internalID: 2737373634206730766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_27
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade38e1f7386cf8f0800000000000000
+      internalID: -505414468681318694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_28
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 83
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a314c47c35645e660800000000000000
+      internalID: 7414409687175283002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_29
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 67
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76404fc7086de5c00800000000000000
+      internalID: 891385623606461543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_30
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 51
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bd59ca7308e4a060800000000000000
+      internalID: 6963946025464192437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_31
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d545075feb1ca1a0800000000000000
+      internalID: -6797027022837824046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_32
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec6ad7fdf2747e600800000000000000
+      internalID: 497444554786318030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_33
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 50
+        width: 9
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07fadd4bfe122b7e0800000000000000
+      internalID: -1751299991678374032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_34
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 790f282cf9a418ad0800000000000000
+      internalID: -2701796251421970281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_35
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e024531aaaa6c0e0800000000000000
+      internalID: -2249923316379541271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_36
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 67
+        width: 6
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ffa205850a5737c0800000000000000
+      internalID: -4091702756689924110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_37
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 18
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321ef96046828e560800000000000000
+      internalID: 7343163602500575523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_38
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a747fe8cf6c78aa10800000000000000
+      internalID: 1920922060627866746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_39
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68eac58d30ec5190800000000000000
+      internalID: -7972250685510326161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_40
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 67
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fcd863ce622f550800000000000000
+      internalID: 6193055233557253919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_41
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 74
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f10bb1b82dd2db0800000000000000
+      internalID: -4814960931682377896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_42
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 18
+        width: 6
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a52a09d434a434680800000000000000
+      internalID: -8772085996263005606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_43
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 99
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f1d7dd53cca4ff0800000000000000
+      internalID: -51003914040041633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_44
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 66
+        width: 6
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e755a1751ef4a70800000000000000
+      internalID: 8813510760007564941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_45
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 35
+        width: 7
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c372a0bca2b607cb0800000000000000
+      internalID: -4868273365648267460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_46
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc2e9fb755cd38b10800000000000000
+      internalID: 1982670520683455181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_47
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 66
+        width: 6
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be2063a0592e4bdf0800000000000000
+      internalID: -165258156556549397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_48
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 16
+        width: 7
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f25c8a29a0c0de0800000000000000
+      internalID: -1365704961987104941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_49
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 114e0341ac3d6e5c0800000000000000
+      internalID: -4186425938718694383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_50
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 69
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19581d60567be41b0800000000000000
+      internalID: -5670393236278901359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_51
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 51
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb633ad280e71110800000000000000
+      internalID: 1231699875720293324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_52
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 35
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea711bf3d3b572240800000000000000
+      internalID: 4766879049214662574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_53
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa84467c6b16d230800000000000000
+      internalID: 3663145499567098540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_54
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 69
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 580552e3873b6b5b0800000000000000
+      internalID: -5352893778063175547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_55
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 51
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18508ac70ca5bab50800000000000000
+      internalID: 6605473061240571265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_56
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 19
+        width: 7
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d878677af643d5380800000000000000
+      internalID: -8980964427751323763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_57
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 83
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd47af91d665ec8f0800000000000000
+      internalID: -518381880513760035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_58
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 51
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3bf3cb33913ec8f0800000000000000
+      internalID: -518422398668375233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_59
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727b97da78b3139a0800000000000000
+      internalID: -6255152953523849433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_60
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ac28e802afd7dc0800000000000000
+      internalID: -3639477906108659131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_61
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 51
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 292e6991c4bdb41b0800000000000000
+      internalID: -5671198185849691502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_62
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 51
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b85ae1e3004aebf0800000000000000
+      internalID: -294352440220034888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_63
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89dafb73caec5d240800000000000000
+      internalID: 4815982615607618968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_64
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 83
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0051a71cea9aded60800000000000000
+      internalID: 7921173887649977600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_65
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb330f31b3c81c440800000000000000
+      internalID: 4954395250449724347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_66
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2201660d24f036a60800000000000000
+      internalID: 7665987770353324066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_67
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 35
+        width: 6
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779ba5c3047c24240800000000000000
+      internalID: 4774597633670560119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_68
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 35
+        width: 7
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 993d956fb0d774d10800000000000000
+      internalID: 2109792440777560985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_69
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 4
+        width: 7
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63b22778f5dd884a0800000000000000
+      internalID: -6590774652292682954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_70
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 19
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f452bb26b6961f650800000000000000
+      internalID: 6264904466587919695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_71
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 3
+        width: 7
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a7bc4b13f02ba50800000000000000
+      internalID: 6535302715429059155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_72
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 19
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce759b88c39422510800000000000000
+      internalID: 1522860148345362412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_73
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 19
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfd72d3d66c40a5e0800000000000000
+      internalID: -1900435038226186755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_74
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 19
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b895f1fa860f45d40800000000000000
+      internalID: 5572342971369478539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_75
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 19
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6720c484fa31a090800000000000000
+      internalID: -8025068239123896465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_76
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 16
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1debf6d55afc01b0800000000000000
+      internalID: -5688896982689780452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_77
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 19
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce6dbf97ec988460800000000000000
+      internalID: 7244212519256813257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_78
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 19
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b858eac350b8ff90800000000000000
+      internalID: -6919586953521768271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_79
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 19
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb16b02bf1d1b9e90800000000000000
+      internalID: -7017983572358504002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_80
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 19
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3729bc4eeb9a70c00800000000000000
+      internalID: 866848090639536755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_81
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 19
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 694bfe86fcb85f220800000000000000
+      internalID: 2519073289518691478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_82
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 19
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04e3eb4d21a04d260800000000000000
+      internalID: 7121327986774523456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_83
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b508a87972e82780800000000000000
+      internalID: -8707460868177656399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_84
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d0fadd93546ab00800000000000000
+      internalID: 839434495385865570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_85
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 3
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f615585e6d5a4690800000000000000
+      internalID: -7617173091234015504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20240412fineFantasyStrategiesItalicNumbersFont_86
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 3
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f88e597ebe62ab70800000000000000
+      internalID: 8908804777251342585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      20240412fineFantasyStrategiesItalicNumbersFont_0: 6591808647141868252
+      20240412fineFantasyStrategiesItalicNumbersFont_1: -3230655450813502105
+      20240412fineFantasyStrategiesItalicNumbersFont_10: -2079950199535570794
+      20240412fineFantasyStrategiesItalicNumbersFont_11: -7201069453171581883
+      20240412fineFantasyStrategiesItalicNumbersFont_12: -8278240499478399705
+      20240412fineFantasyStrategiesItalicNumbersFont_13: 4291030139651209333
+      20240412fineFantasyStrategiesItalicNumbersFont_14: 6730031833992679157
+      20240412fineFantasyStrategiesItalicNumbersFont_15: -3955360077580217087
+      20240412fineFantasyStrategiesItalicNumbersFont_16: -1728720683815098363
+      20240412fineFantasyStrategiesItalicNumbersFont_17: -2332033924196125400
+      20240412fineFantasyStrategiesItalicNumbersFont_18: 8260531375943056334
+      20240412fineFantasyStrategiesItalicNumbersFont_19: 3278301597348473136
+      20240412fineFantasyStrategiesItalicNumbersFont_2: 1693978815024408748
+      20240412fineFantasyStrategiesItalicNumbersFont_20: 7790137911495703087
+      20240412fineFantasyStrategiesItalicNumbersFont_21: 8947369197158517738
+      20240412fineFantasyStrategiesItalicNumbersFont_22: -1060790137593987639
+      20240412fineFantasyStrategiesItalicNumbersFont_23: -5122444175626304115
+      20240412fineFantasyStrategiesItalicNumbersFont_24: 7205884590847487006
+      20240412fineFantasyStrategiesItalicNumbersFont_25: 4578845319320819778
+      20240412fineFantasyStrategiesItalicNumbersFont_26: 2737373634206730766
+      20240412fineFantasyStrategiesItalicNumbersFont_27: -505414468681318694
+      20240412fineFantasyStrategiesItalicNumbersFont_28: 7414409687175283002
+      20240412fineFantasyStrategiesItalicNumbersFont_29: 891385623606461543
+      20240412fineFantasyStrategiesItalicNumbersFont_3: 4469026377784028727
+      20240412fineFantasyStrategiesItalicNumbersFont_30: 6963946025464192437
+      20240412fineFantasyStrategiesItalicNumbersFont_31: -6797027022837824046
+      20240412fineFantasyStrategiesItalicNumbersFont_32: 497444554786318030
+      20240412fineFantasyStrategiesItalicNumbersFont_33: -1751299991678374032
+      20240412fineFantasyStrategiesItalicNumbersFont_34: -2701796251421970281
+      20240412fineFantasyStrategiesItalicNumbersFont_35: -2249923316379541271
+      20240412fineFantasyStrategiesItalicNumbersFont_36: -4091702756689924110
+      20240412fineFantasyStrategiesItalicNumbersFont_37: 7343163602500575523
+      20240412fineFantasyStrategiesItalicNumbersFont_38: 1920922060627866746
+      20240412fineFantasyStrategiesItalicNumbersFont_39: -7972250685510326161
+      20240412fineFantasyStrategiesItalicNumbersFont_4: 4325567450556384350
+      20240412fineFantasyStrategiesItalicNumbersFont_40: 6193055233557253919
+      20240412fineFantasyStrategiesItalicNumbersFont_41: -4814960931682377896
+      20240412fineFantasyStrategiesItalicNumbersFont_42: -8772085996263005606
+      20240412fineFantasyStrategiesItalicNumbersFont_43: -51003914040041633
+      20240412fineFantasyStrategiesItalicNumbersFont_44: 8813510760007564941
+      20240412fineFantasyStrategiesItalicNumbersFont_45: -4868273365648267460
+      20240412fineFantasyStrategiesItalicNumbersFont_46: 1982670520683455181
+      20240412fineFantasyStrategiesItalicNumbersFont_47: -165258156556549397
+      20240412fineFantasyStrategiesItalicNumbersFont_48: -1365704961987104941
+      20240412fineFantasyStrategiesItalicNumbersFont_49: -4186425938718694383
+      20240412fineFantasyStrategiesItalicNumbersFont_5: 2898803699507009566
+      20240412fineFantasyStrategiesItalicNumbersFont_50: -5670393236278901359
+      20240412fineFantasyStrategiesItalicNumbersFont_51: 1231699875720293324
+      20240412fineFantasyStrategiesItalicNumbersFont_52: 4766879049214662574
+      20240412fineFantasyStrategiesItalicNumbersFont_53: 3663145499567098540
+      20240412fineFantasyStrategiesItalicNumbersFont_54: -5352893778063175547
+      20240412fineFantasyStrategiesItalicNumbersFont_55: 6605473061240571265
+      20240412fineFantasyStrategiesItalicNumbersFont_56: -8980964427751323763
+      20240412fineFantasyStrategiesItalicNumbersFont_57: -518381880513760035
+      20240412fineFantasyStrategiesItalicNumbersFont_58: -518422398668375233
+      20240412fineFantasyStrategiesItalicNumbersFont_59: -6255152953523849433
+      20240412fineFantasyStrategiesItalicNumbersFont_6: -1865227732058265888
+      20240412fineFantasyStrategiesItalicNumbersFont_60: -3639477906108659131
+      20240412fineFantasyStrategiesItalicNumbersFont_61: -5671198185849691502
+      20240412fineFantasyStrategiesItalicNumbersFont_62: -294352440220034888
+      20240412fineFantasyStrategiesItalicNumbersFont_63: 4815982615607618968
+      20240412fineFantasyStrategiesItalicNumbersFont_64: 7921173887649977600
+      20240412fineFantasyStrategiesItalicNumbersFont_65: 4954395250449724347
+      20240412fineFantasyStrategiesItalicNumbersFont_66: 7665987770353324066
+      20240412fineFantasyStrategiesItalicNumbersFont_67: 4774597633670560119
+      20240412fineFantasyStrategiesItalicNumbersFont_68: 2109792440777560985
+      20240412fineFantasyStrategiesItalicNumbersFont_69: -6590774652292682954
+      20240412fineFantasyStrategiesItalicNumbersFont_7: -7729674235249917934
+      20240412fineFantasyStrategiesItalicNumbersFont_70: 6264904466587919695
+      20240412fineFantasyStrategiesItalicNumbersFont_71: 6535302715429059155
+      20240412fineFantasyStrategiesItalicNumbersFont_72: 1522860148345362412
+      20240412fineFantasyStrategiesItalicNumbersFont_73: -1900435038226186755
+      20240412fineFantasyStrategiesItalicNumbersFont_74: 5572342971369478539
+      20240412fineFantasyStrategiesItalicNumbersFont_75: -8025068239123896465
+      20240412fineFantasyStrategiesItalicNumbersFont_76: -5688896982689780452
+      20240412fineFantasyStrategiesItalicNumbersFont_77: 7244212519256813257
+      20240412fineFantasyStrategiesItalicNumbersFont_78: -6919586953521768271
+      20240412fineFantasyStrategiesItalicNumbersFont_79: -7017983572358504002
+      20240412fineFantasyStrategiesItalicNumbersFont_8: 5746045929198817779
+      20240412fineFantasyStrategiesItalicNumbersFont_80: 866848090639536755
+      20240412fineFantasyStrategiesItalicNumbersFont_81: 2519073289518691478
+      20240412fineFantasyStrategiesItalicNumbersFont_82: 7121327986774523456
+      20240412fineFantasyStrategiesItalicNumbersFont_83: -8707460868177656399
+      20240412fineFantasyStrategiesItalicNumbersFont_84: 839434495385865570
+      20240412fineFantasyStrategiesItalicNumbersFont_85: -7617173091234015504
+      20240412fineFantasyStrategiesItalicNumbersFont_86: 8908804777251342585
+      20240412fineFantasyStrategiesItalicNumbersFont_9: 573128268426298022
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

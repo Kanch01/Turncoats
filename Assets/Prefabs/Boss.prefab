@@ -228,12 +228,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b26c7548b69413ead925faebd1144e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  attack: 1
+  health: 10
   moveSpeed: 8
   jumpImpulse: 20
   dashSpeed: 35
   dashDuration: 0.1
   dashCooldown: 0.5
   attackLockoutMoveTime: 0
+  parryWindow: 1
+  parryCooldown: 0.5
+  parryCounterHitDelay: 0.5
+  parryFreezeMaxDuration: 0.01
+  spriteRenderer: {fileID: 718212349973549858}
   groundCheck: {fileID: 5369116203322428786}
   groundCheckRadius: 0.27
   groundLayer:
@@ -281,6 +288,7 @@ MonoBehaviour:
   hurtColor: {r: 0.6980392, g: 0.1333333, b: 0.1333333, a: 1}
   flashDuration: 0.5
   knockbackDuration: 0.15
+  parryRepeatBlockSeconds: 0.15
 --- !u!1 &6204560630894171009
 GameObject:
   m_ObjectHideFlags: 0

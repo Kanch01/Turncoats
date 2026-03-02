@@ -18241,6 +18241,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1863430960}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: submitAction
+      value: 
+      objectReference: {fileID: 392368643174621059, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: groundTilemap
       value: 
       objectReference: {fileID: 1752660657}

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -23,6 +24,18 @@ public class PlayerMovement : MonoBehaviour
     private static readonly int AttackTrigger = Animator.StringToHash("Attack");
     private static readonly int SpeedParam = Animator.StringToHash("Speed");
 
+    [Header("Parry")]
+    [SerializeField] private float parryWindow = 1f;
+    [SerializeField] private float parryCooldown = 0.5f;
+
+    // When parry succeeds, we "always hit" by applying damage directly after this delay.
+    [SerializeField] private float parryCounterHitDelay = 0.08f;
+
+    // How long we keep the attacker frozen at most (safety fallback).
+    [SerializeField] private float parryFreezeMaxDuration = 0.35f;
+
+    [SerializeField] private SpriteRenderer spriteRenderer; // optional; auto-found if null
+
     [Header("Ground Check")]
     [SerializeField] public Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.12f;
@@ -38,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction _jumpAction;
     private InputAction _dashAction;
     private InputAction _attackAction;
+    private InputAction _parryAction;
 
     private float _moveX;
 
@@ -48,15 +62,29 @@ public class PlayerMovement : MonoBehaviour
     private bool _isAttacking;
     private bool _attackMoveLocked;
 
+    // Parry state
+    private bool _isParrying;
+    private bool _parryOnCooldown;
+    private Coroutine _parryRoutine;
+    private Coroutine _parryCooldownRoutine;
+
+    // Freeze state (used when YOU are the attacker frozen by someone else's parry)
+    private bool _isFrozenByParry;
+
     private Vector3 _baseScale;
     private float _facingSign = 1f;
     private Vector2 actingKnockbackForce = Vector2.zero; 
+
+    private Color _originalColor;
+    private bool _hasOriginalColor;
 
     // ---- Public read access for other systems (damage, UI, etc.) ----
     public int Attack => attack;
     public int Health => health;
     public float MoveSpeed => moveSpeed;
     public float JumpImpulse => jumpImpulse;
+
+    public bool IsParrying => _isParrying;
 
     /// <summary>
     /// Call this immediately after spawning to overwrite stats from GameState.
@@ -68,9 +96,6 @@ public class PlayerMovement : MonoBehaviour
         attack = cfg.attack;
         health = cfg.health;
 
-        // Your GameState uses ints; PlayerMovement uses floats for movement.
-        // If your ints are already “real values”, this is correct.
-        // If they’re “points”, this is where you’d convert points -> real stats.
         moveSpeed = cfg.speed;
         jumpImpulse = cfg.jump;
     }
@@ -83,10 +108,20 @@ public class PlayerMovement : MonoBehaviour
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
 
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        if (spriteRenderer != null)
+        {
+            _originalColor = spriteRenderer.color;
+            _hasOriginalColor = true;
+        }
+
         _moveAction = _playerInput.actions["Move"];
         _jumpAction = _playerInput.actions["Jump"];
         _dashAction = _playerInput.actions["Dash"];
         _attackAction = _playerInput.actions["Attack"];
+        _parryAction = _playerInput.actions["Parry"];
 
         _baseScale = transform.localScale;
         _facingSign = Mathf.Sign(_baseScale.x);
@@ -98,6 +133,9 @@ public class PlayerMovement : MonoBehaviour
         _jumpAction.performed += OnJump;
         _dashAction.performed += OnDash;
         _attackAction.performed += OnAttack;
+
+        if (_parryAction != null)
+            _parryAction.performed += OnParry;
     }
 
     private void OnDisable()
@@ -105,6 +143,9 @@ public class PlayerMovement : MonoBehaviour
         _jumpAction.performed -= OnJump;
         _dashAction.performed -= OnDash;
         _attackAction.performed -= OnAttack;
+
+        if (_parryAction != null)
+            _parryAction.performed -= OnParry;
     }
 
     private void Update()
@@ -118,8 +159,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // If you are frozen by someone else's parry, you do nothing.
+        if (_isFrozenByParry)
+        {
+            _rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        // If you are dashing, keep dash control.
         if (_isDashing)
             return;
+
+        // If parrying: remain idle (no horizontal motion)
+        if (_isParrying)
+        {
+            _rb.linearVelocity = new Vector2(0f, _rb.linearVelocity.y);
+            return;
+        }
 
         float effectiveMoveX = _attackMoveLocked ? 0f : _moveX;
         
@@ -143,6 +199,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnJump(InputAction.CallbackContext ctx)
     {
+        if (_isFrozenByParry) return;
+        if (_isParrying) return;
+
         if (_isDashing) return;
         if (_isAttacking) return;
         if (!_isGrounded) return;
@@ -153,6 +212,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext ctx)
     {
+        if (_isFrozenByParry) return;
+        if (_isParrying) return;
+
         if (_isDashing) return;
         if (!_canDash) return;
 
@@ -185,6 +247,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnAttack(InputAction.CallbackContext ctx)
     {
+        if (_isFrozenByParry) return;
+        if (_isParrying) return;
+
         if (_isAttacking) return;
         StartCoroutine(AttackRoutine());
     }
@@ -211,6 +276,166 @@ public class PlayerMovement : MonoBehaviour
 
         _isAttacking = false;
     }
+    
+    private void OnParry(InputAction.CallbackContext ctx)
+    {
+        if (_parryOnCooldown) return;
+        if (_isParrying) return;
+
+       
+        if (_isDashing) return;
+
+        StartParry();
+    }
+
+    private void StartParry()
+    {
+        // If something was running, stop 
+        if (_parryRoutine != null)
+        {
+            StopCoroutine(_parryRoutine);
+            _parryRoutine = null;
+        }
+
+        _isParrying = true;
+
+        // Visual + idle lock
+        _attackMoveLocked = true;
+        if (spriteRenderer != null)
+        {
+            if (!_hasOriginalColor)
+            {
+                _originalColor = spriteRenderer.color;
+                _hasOriginalColor = true;
+            }
+            spriteRenderer.color = Color.black;
+        }
+
+        _parryRoutine = StartCoroutine(ParryWindowRoutine());
+    }
+
+    private IEnumerator ParryWindowRoutine()
+    {
+        yield return new WaitForSeconds(parryWindow);
+
+        EndParryVisuals();
+        _parryRoutine = null;
+
+        // Start cooldown after a normal parry
+        StartParryCooldown();
+    }   
+
+    private void EndParryVisuals()
+    {
+        _isParrying = false;
+        _attackMoveLocked = false;
+
+        if (spriteRenderer != null && _hasOriginalColor)
+            spriteRenderer.color = _originalColor;
+    }
+
+    private void StartParryCooldown()
+    {
+        // Always ensure cooldown gets reset
+        if (_parryCooldownRoutine != null)
+            StopCoroutine(_parryCooldownRoutine);
+
+        _parryCooldownRoutine = StartCoroutine(ParryCooldownRoutine());
+    }
+
+    private IEnumerator ParryCooldownRoutine()
+    {
+        _parryOnCooldown = true;
+        yield return new WaitForSeconds(parryCooldown);
+        _parryOnCooldown = false;
+        _parryCooldownRoutine = null;
+    }
+    
+    public void HandleParrySuccess(GameObject attacker)
+    {
+        if (!_isParrying) return;
+
+        // Stop active window coroutine 
+        if (_parryRoutine != null)
+        {
+            StopCoroutine(_parryRoutine);
+            _parryRoutine = null;
+        }
+
+        EndParryVisuals();
+        
+        StartParryCooldown();
+
+        // Counter logic
+        StartCoroutine(ParryCounterRoutine(attacker));
+    }
+
+    private IEnumerator ParryCounterRoutine(GameObject attacker)
+    {
+        if (attacker == null) yield break;
+
+        // Freeze attacker until counter lands
+        var attackerMove = attacker.GetComponent<PlayerMovement>();
+        if (attackerMove != null)
+            attackerMove.FreezeForParryUntilHit();
+
+        // Optional: play your attack animation as the "counter"
+        // (This does not control hitboxes; we apply damage directly.)
+        if (animator != null)
+        {
+            animator.ResetTrigger(AttackTrigger);
+            animator.SetTrigger(AttackTrigger);
+        }
+
+        float elapsed = 0f;
+
+        // Wait until the counter "hit moment"
+        while (elapsed < parryCounterHitDelay)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Always-hit: apply damage directly to attacker
+        try
+        {
+            var attackerHealth = attacker.GetComponent<HealthManager>();
+            if (attackerHealth != null)
+            {
+                // Apply knockback based on distance between GroundChecks because they should be at
+                // the same y-level when on even ground no matter player height
+                PlayerMovement attacker_mov = attacker.transform.root.GetComponent<PlayerMovement>();
+                PlayerMovement target_mov = transform.root.GetComponent<PlayerMovement>();
+
+                Vector2 direction = (target_mov.groundCheck.position - attacker_mov.groundCheck.position).normalized;
+                attackerHealth.TakeDamage(attack, this.gameObject, direction, 10f); // TODO: Don't hardcode this
+            }
+        }
+        catch (MissingReferenceException)
+        {
+            UnityEngine.Debug.Log("Parry missing reference exception, parry + player died");
+        }
+        
+
+        // Safety: if something goes wrong, don't freeze attacker forever
+        float remaining = Mathf.Max(0f, parryFreezeMaxDuration - parryCounterHitDelay);
+        if (remaining > 0f)
+            yield return new WaitForSeconds(remaining);
+
+        if (attackerMove != null)
+            attackerMove.ReleaseParryFreeze();
+    }
+    
+    public void FreezeForParryUntilHit()
+    {
+        _isFrozenByParry = true;
+        _rb.linearVelocity = Vector2.zero;
+    }
+
+    public void ReleaseParryFreeze()
+    {
+        _isFrozenByParry = false;
+    }
 
     private bool CheckGrounded()
     {
@@ -221,6 +446,13 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimationState()
     {
         if (animator == null) return;
+
+        // If parrying or frozen, stay idle
+        if (_isParrying || _isFrozenByParry)
+        {
+            animator.SetFloat(SpeedParam, 0f);
+            return;
+        }
 
         if (_isAttacking)
         {

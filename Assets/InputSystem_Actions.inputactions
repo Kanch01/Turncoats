@@ -41,6 +41,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Parry",
+                    "type": "Button",
+                    "id": "799f4ac5-61ff-44d1-bbb2-d01204d6dbb8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -112,17 +121,6 @@
                 },
                 {
                     "name": "",
-                    "id": "7037fabf-fe02-4076-b79c-55015d4e2a2d",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "daba33a1-ad0c-4742-a909-43ad1cdfbeb6",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -157,7 +155,7 @@
                 {
                     "name": "",
                     "id": "7c5299a0-d2de-48ab-b179-f85dada71dd2",
-                    "path": "<HID::Microsoft Jared Controller>/button5",
+                    "path": "<HID::Microsoft Jared Controller>/button7",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Joystick",
@@ -168,7 +166,7 @@
                 {
                     "name": "",
                     "id": "7cb5cc44-8caf-49fc-a894-eda7dcac9ada",
-                    "path": "<HID::Microsoft Jose Controller>/button5",
+                    "path": "<HID::Microsoft Jose Controller>/button7",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Joystick",
@@ -178,12 +176,45 @@
                 },
                 {
                     "name": "",
-                    "id": "28cb18a5-b39a-4b04-9da4-bb315a39f2ef",
-                    "path": "<Gamepad>/rightTrigger",
+                    "id": "a73231f3-5218-40ee-a873-952a824552de",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c6c70d1-f8be-4de6-a147-66dc92c18016",
+                    "path": "<HID::Microsoft Jared Controller>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e6b6e70-36be-41fb-b7b7-8a395c388c4f",
+                    "path": "<HID::Microsoft Jose Controller>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dbc22e30-f3ce-4a16-aab0-3b341d1db852",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
