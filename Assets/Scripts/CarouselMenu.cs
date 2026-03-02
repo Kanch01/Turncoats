@@ -93,6 +93,7 @@ public class CarouselMenu : MonoBehaviour
             cfg.speed = 12;
         }
         
+        cfg.health = Mathf.Max(6, cfg.health);
         
         // Get the selected boss
         RectTransform selectedBoss = bosses[targetIndex];

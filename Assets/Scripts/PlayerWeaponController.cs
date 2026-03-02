@@ -191,10 +191,10 @@ public class PlayerWeaponController : MonoBehaviour
                 break;
         }
 
-        // Optional: clamp stats so they never go below 1
-        config.attack = Mathf.Max(1, config.attack);
-        config.speed  = Mathf.Max(1, config.speed);
-        config.health = Mathf.Max(1, config.health);
-        config.jump   = Mathf.Max(1, config.jump);
+        // // Optional: clamp stats so they never go below 1
+        // config.attack = Mathf.Max(1, config.attack);
+        // config.speed  = Mathf.Max(1, config.speed);
+        // config.health = Mathf.Max(1, config.health);
+        // config.jump   = Mathf.Max(1, config.jump);
     }
 }
