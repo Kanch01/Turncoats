@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
+
 public class CarouselMenu : MonoBehaviour
 {
     public List<RectTransform> bosses;
@@ -62,10 +63,36 @@ public class CarouselMenu : MonoBehaviour
         var state = GameFlowManager.Instance.State;
         var cfg = state.boss;
 
-        cfg.attack = 2;
-        cfg.health = 10;
-        cfg.jump = 20;
-        cfg.speed = 10;
+        var randHealth = (int)Random.Range(-6f, 6f);
+        var randAttack = (int)Random.Range(-2f, 2f);
+
+        UnityEngine.Debug.Log($"Random Health: {randHealth}     Random Attack: {randAttack}");
+
+        if (targetIndex == 0)
+        {
+            // Mole is tank
+            cfg.attack = (int)(state.hero.health/10) + randAttack;
+            cfg.health = state.hero.attack*10 + randHealth;  // 10 hits to die
+            cfg.jump = 18;
+            cfg.speed = 8;
+        }
+        else if (targetIndex == 1)
+        {
+            // Clouds is glass cannon
+            cfg.attack = (int)(state.hero.health/6) + randAttack;
+            cfg.health = state.hero.attack*6 + randHealth;   // 6 hits to die
+            cfg.jump = 25;
+            cfg.speed = 17;
+        }
+        else
+        {
+            // Map 2 is balanced
+            cfg.attack = (int)(state.hero.health/8) + randAttack;
+            cfg.health = state.hero.attack*8 + randHealth;   // 8 hits to die
+            cfg.jump = 20;
+            cfg.speed = 12;
+        }
+        
         
         // Get the selected boss
         RectTransform selectedBoss = bosses[targetIndex];

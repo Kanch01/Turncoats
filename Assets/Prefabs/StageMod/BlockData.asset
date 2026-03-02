@@ -15,4 +15,4 @@ MonoBehaviour:
   modifierName: Block
   damage: 0
   knockback: 0
-  cost: 0
+  cost: 1

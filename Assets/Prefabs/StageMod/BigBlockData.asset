@@ -15,4 +15,4 @@ MonoBehaviour:
   modifierName: BigBlock
   damage: 0
   knockback: 0
-  cost: 5
+  cost: 4

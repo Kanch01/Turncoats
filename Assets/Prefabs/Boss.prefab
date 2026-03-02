@@ -32,15 +32,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3232351733049374520}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75, y: -0.59, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
+  m_LocalPosition: {x: 0, y: -0.59, z: 0}
+  m_LocalScale: {x: -1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5369116203322428786}
   - {fileID: 4077325758893138220}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
 --- !u!212 &718212349973549858
 SpriteRenderer:
   serializedVersion: 2
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -270785710348516584, guid: 537a9c302307e4cefbe80d9ab681afef, type: 3}
+  m_Sprite: {fileID: 8810267081325647525, guid: 58aa55df065bf4b8aafdd8732d1249f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,8 +161,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.13200423, y: -0.16600041}
-  m_Size: {x: 0.22663283, y: 0.5211531}
+  m_Offset: {x: 0.02, y: -0.16600041}
+  m_Size: {x: 0.21591942, y: 0.5211531}
   m_Direction: 0
 --- !u!95 &8460493356336581365
 Animator:
@@ -264,7 +264,7 @@ MonoBehaviour:
     m_Bits: 128
   hitboxRoot: {fileID: 4077325758893138220}
   damage: 1
-  knockback: 10
+  knockback: 25
 --- !u!114 &-775332242211437412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +356,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.53536487, y: -0.052738838}
+  m_Offset: {x: -0.3943, y: -0.052738838}
   m_Size: {x: 0.3831422, y: 0.14662269}
   m_Direction: 1
 --- !u!70 &5190652592669400727
@@ -393,7 +393,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.08150509, y: -0.13174233}
+  m_Offset: {x: 0.0595, y: -0.13174233}
   m_Size: {x: 0.9826326, y: 0.28586456}
   m_Direction: 1
 --- !u!1 &8328461272350771033
@@ -421,7 +421,7 @@ Transform:
   m_GameObject: {fileID: 8328461272350771033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.121, y: -0.315, z: 0}
+  m_LocalPosition: {x: 0.02, y: -0.315, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

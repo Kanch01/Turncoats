@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour
     public UnityEvent onDeath;
 
     public SpriteRenderer spriteRenderer;
-    public Color hurtColor = Color.firebrick;
+    public Color hurtColor = Color.red;
     public float flashDuration = 0.15f;
     public float knockbackDuration = 0.5f;
     
@@ -92,7 +92,7 @@ public class HealthManager : MonoBehaviour
             movement.HandleParrySuccess(attacker);
             return;
         }
-        
+
         // Debug.Log($"{name}: AHHHHHHH IT HURTS");
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0);

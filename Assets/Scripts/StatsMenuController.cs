@@ -115,7 +115,7 @@ public class StatsMenuController : MonoBehaviour
         int remaining = totalPoints - sum;
 
         // Update labels
-        hpValueText.text = (hp + baseHealth).ToString();
+        hpValueText.text = (2*hp + baseHealth).ToString();
         attackValueText.text = ((atk / 2) + baseAttack).ToString();
         speedValueText.text = (spd + baseSpeed).ToString();
         jumpValueText.text = (jmp + baseJump).ToString();
@@ -132,7 +132,7 @@ public class StatsMenuController : MonoBehaviour
         var state = GameFlowManager.Instance.State;
         var cfg = state.hero;
 
-        cfg.health = (int)hpSlider.value + baseHealth;
+        cfg.health = (int)hpSlider.value*2 + baseHealth;
         cfg.attack = ((int)attackSlider.value / 2) + baseAttack;
         cfg.speed  = (int)speedSlider.value + baseSpeed;
         cfg.jump   = (int)jumpSlider.value + baseJump;

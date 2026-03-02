@@ -190,6 +190,12 @@ public class PlayerMovement : MonoBehaviour
         if (effectiveMoveX > 0.01f) _facingSign = 1f;
         else if (effectiveMoveX < -0.01f) _facingSign = -1f;
 
+        // var turn = 0f;
+        // if (_facingSign < 0f) turn = 180f;
+        
+        // transform.rotation = Quaternion.Euler(0f, turn, 0f);
+        // UnityEngine.Debug.Log($"Rot: {transform.rotation}");
+
         transform.localScale = new Vector3(
             Mathf.Abs(_baseScale.x) * _facingSign,
             _baseScale.y,

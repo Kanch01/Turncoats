@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageModifierData
   modifierName: SpikeBall
   damage: 0
-  knockbackForce: 0
-  cost: 5
+  knockback: 0
+  cost: 4
