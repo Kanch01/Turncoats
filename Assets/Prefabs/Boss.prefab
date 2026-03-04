@@ -236,10 +236,10 @@ MonoBehaviour:
   dashDuration: 0.1
   dashCooldown: 0.5
   attackLockoutMoveTime: 0
-  parryWindow: 1
-  parryCooldown: 0.5
+  parryWindow: 0.7
+  parryCooldown: 1
   parryCounterHitDelay: 0.5
-  parryFreezeMaxDuration: 0.01
+  parryFreezeMaxDuration: 0.3
   spriteRenderer: {fileID: 718212349973549858}
   groundCheck: {fileID: 5369116203322428786}
   groundCheckRadius: 0.27

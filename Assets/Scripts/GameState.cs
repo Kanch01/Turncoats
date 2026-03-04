@@ -14,7 +14,7 @@ public class PlayerConfig
     public int playerInd;
 
     public string weapon;
-    public int ability;
+    public string ability;
 }
 
 public class GameState : MonoBehaviour

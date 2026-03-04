@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b37811e9fd8354d11891974cf2957bef
+guid: a2421f633da694a16ac690661c2d63bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5283320917157072292
-    second: 20250425compass-Sheet_0
+      213: 7016248271062971217
+    second: helmets_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 20250425compass-Sheet_0
+      name: helmets_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 76
-        height: 74
+        x: 60
+        y: 97
+        width: 390
+        height: 310
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4adc985c160225940800000000000000
-      internalID: 5283320917157072292
+      spriteID: 15338acf0a8be5160800000000000000
+      internalID: 7016248271062971217
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      20250425compass-Sheet_0: 5283320917157072292
+      helmets_0: 7016248271062971217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

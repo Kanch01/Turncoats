@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _isGrounded;
     private bool _isDashing;
-    private bool _canDash = true;
 
     private bool _isAttacking;
     private bool _attackMoveLocked;
@@ -73,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 _baseScale;
     private float _facingSign = 1f;
-    private Vector2 actingKnockbackForce = Vector2.zero; 
+    private Vector2 actingKnockbackForce = Vector2.zero;
 
     private Color _originalColor;
     private bool _hasOriginalColor;
@@ -85,6 +84,24 @@ public class PlayerMovement : MonoBehaviour
     public float JumpImpulse => jumpImpulse;
 
     public bool IsParrying => _isParrying;
+
+    // ---- Ability selection (read from GameState) ----
+    public bool IsHero { get; private set; }
+    public string SelectedAbility { get; private set; } = "";
+
+    public bool HasAbility(string abilityName)
+    {
+        return !string.IsNullOrEmpty(SelectedAbility) &&
+               string.Equals(SelectedAbility, abilityName, StringComparison.OrdinalIgnoreCase);
+    }
+
+    // Double Jump state
+    private bool _doubleJumpUsed;
+
+    // Double Dash state
+    private int _dashMaxCharges = 1;
+    private int _dashCharges = 1;
+    private bool _dashOnCooldown;
 
     /// <summary>
     /// Call this immediately after spawning to overwrite stats from GameState.
@@ -98,6 +115,12 @@ public class PlayerMovement : MonoBehaviour
 
         moveSpeed = cfg.speed;
         jumpImpulse = cfg.jump;
+
+        // If config includes ability, keep it (but we still prefer resolving via GameState at runtime)
+        if (!string.IsNullOrEmpty(cfg.ability))
+            SelectedAbility = cfg.ability;
+
+        RefreshAbilityRuntimeState();
     }
 
     private void Awake()
@@ -128,6 +151,13 @@ public class PlayerMovement : MonoBehaviour
         if (_facingSign == 0f) _facingSign = 1f;
     }
 
+    private void Start()
+    {
+        // Determine role + ability from GameState (the authoritative source during runtime).
+        ResolveRoleAndAbilityFromGameState();
+        RefreshAbilityRuntimeState();
+    }
+
     private void OnEnable()
     {
         _jumpAction.performed += OnJump;
@@ -154,6 +184,11 @@ public class PlayerMovement : MonoBehaviour
         _moveX = Mathf.Clamp(move.x, -1f, 1f);
 
         _isGrounded = CheckGrounded();
+
+        // Reset double-jump when grounded.
+        if (_isGrounded)
+            _doubleJumpUsed = false;
+
         UpdateAnimationState();
     }
 
@@ -178,23 +213,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         float effectiveMoveX = _attackMoveLocked ? 0f : _moveX;
-        
+
         _rb.linearVelocity = new Vector2(
             effectiveMoveX * moveSpeed + actingKnockbackForce.x,
             _rb.linearVelocity.y + actingKnockbackForce.y
         );
 
-        // Add knockback force
-        // _rb.AddForce(actingKnockbackForce, ForceMode2D.Force);
-
         if (effectiveMoveX > 0.01f) _facingSign = 1f;
         else if (effectiveMoveX < -0.01f) _facingSign = -1f;
-
-        // var turn = 0f;
-        // if (_facingSign < 0f) turn = 180f;
-        
-        // transform.rotation = Quaternion.Euler(0f, turn, 0f);
-        // UnityEngine.Debug.Log($"Rot: {transform.rotation}");
 
         transform.localScale = new Vector3(
             Mathf.Abs(_baseScale.x) * _facingSign,
@@ -210,10 +236,22 @@ public class PlayerMovement : MonoBehaviour
 
         if (_isDashing) return;
         if (_isAttacking) return;
-        if (!_isGrounded) return;
 
-        _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0f);
-        _rb.AddForce(Vector2.up * jumpImpulse, ForceMode2D.Impulse);
+        // Normal jump if grounded.
+        if (_isGrounded)
+        {
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0f);
+            _rb.AddForce(Vector2.up * jumpImpulse, ForceMode2D.Impulse);
+            return;
+        }
+
+        // Double Jump: hero only, once per airtime.
+        if (IsHero && HasAbility("Double Jump") && !_doubleJumpUsed)
+        {
+            _doubleJumpUsed = true;
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0f);
+            _rb.AddForce(Vector2.up * jumpImpulse, ForceMode2D.Impulse);
+        }
     }
 
     private void OnDash(InputAction.CallbackContext ctx)
@@ -222,14 +260,15 @@ public class PlayerMovement : MonoBehaviour
         if (_isParrying) return;
 
         if (_isDashing) return;
-        if (!_canDash) return;
+        if (_dashOnCooldown) return;
+        if (_dashCharges <= 0) return;
 
         StartCoroutine(DashRoutine());
     }
 
     private IEnumerator DashRoutine()
     {
-        _canDash = false;
+        _dashCharges = Mathf.Max(0, _dashCharges - 1);
         _isDashing = true;
 
         float dir = Mathf.Abs(_moveX) > 0.01f ? Mathf.Sign(_moveX) : Mathf.Sign(transform.localScale.x);
@@ -247,8 +286,14 @@ public class PlayerMovement : MonoBehaviour
 
         _isDashing = false;
 
-        yield return new WaitForSeconds(dashCooldown);
-        _canDash = true;
+        // If we're out of charges, start cooldown and then refill.
+        if (_dashCharges <= 0)
+        {
+            _dashOnCooldown = true;
+            yield return new WaitForSeconds(dashCooldown);
+            _dashCharges = _dashMaxCharges;
+            _dashOnCooldown = false;
+        }
     }
 
     private void OnAttack(InputAction.CallbackContext ctx)
@@ -282,13 +327,12 @@ public class PlayerMovement : MonoBehaviour
 
         _isAttacking = false;
     }
-    
+
     private void OnParry(InputAction.CallbackContext ctx)
     {
         if (_parryOnCooldown) return;
         if (_isParrying) return;
 
-       
         if (_isDashing) return;
 
         StartParry();
@@ -296,7 +340,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartParry()
     {
-        // If something was running, stop 
+        // If something was running, stop
         if (_parryRoutine != null)
         {
             StopCoroutine(_parryRoutine);
@@ -329,7 +373,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Start cooldown after a normal parry
         StartParryCooldown();
-    }   
+    }
 
     private void EndParryVisuals()
     {
@@ -356,12 +400,12 @@ public class PlayerMovement : MonoBehaviour
         _parryOnCooldown = false;
         _parryCooldownRoutine = null;
     }
-    
+
     public void HandleParrySuccess(GameObject attacker)
     {
         if (!_isParrying) return;
 
-        // Stop active window coroutine 
+        // Stop active window coroutine
         if (_parryRoutine != null)
         {
             StopCoroutine(_parryRoutine);
@@ -369,7 +413,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         EndParryVisuals();
-        
+
         StartParryCooldown();
 
         // Counter logic
@@ -421,7 +465,6 @@ public class PlayerMovement : MonoBehaviour
         {
             UnityEngine.Debug.Log("Parry missing reference exception, parry + player died");
         }
-        
 
         // Safety: if something goes wrong, don't freeze attacker forever
         float remaining = Mathf.Max(0f, parryFreezeMaxDuration - parryCounterHitDelay);
@@ -431,7 +474,7 @@ public class PlayerMovement : MonoBehaviour
         if (attackerMove != null)
             attackerMove.ReleaseParryFreeze();
     }
-    
+
     public void FreezeForParryUntilHit()
     {
         _isFrozenByParry = true;
@@ -483,6 +526,37 @@ public class PlayerMovement : MonoBehaviour
     public void SetActingKnockbackForce(Vector2 knockback)
     {
         actingKnockbackForce = knockback;
+    }
+
+    private void ResolveRoleAndAbilityFromGameState()
+    {
+        // GameState lives in the root scene under DoNotDestroyOnLoad.
+        var gs = FindFirstObjectByType<GameState>();
+        if (gs == null || _playerInput == null) return;
+
+        int idx = _playerInput.playerIndex;
+
+        Role role = Role.None;
+        if (idx == 0) role = gs.player0Role;
+        else if (idx == 1) role = gs.player1Role;
+
+        IsHero = (role == Role.Hero);
+
+        var cfg = gs.GetConfigForRole(role);
+        if (cfg != null)
+            SelectedAbility = cfg.ability;
+    }
+
+    private void RefreshAbilityRuntimeState()
+    {
+        // Double Dash affects dash charges.
+        _dashMaxCharges = (IsHero && HasAbility("Double Dash")) ? 2 : 1;
+        _dashCharges = _dashMaxCharges;
+        _dashOnCooldown = false;
+
+        // Double Jump reset handled when grounded.
+        if (!IsHero || !HasAbility("Double Jump"))
+            _doubleJumpUsed = false;
     }
 
 #if UNITY_EDITOR

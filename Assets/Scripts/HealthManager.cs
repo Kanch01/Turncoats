@@ -15,12 +15,15 @@ public class HealthManager : MonoBehaviour
     public Color hurtColor = Color.red;
     public float flashDuration = 0.15f;
     public float knockbackDuration = 0.5f;
-    
+
     private Color originalColor;
     private Coroutine flashRoutine;
 
     // Parry support
     private PlayerMovement movement;
+
+    // Tank ability (hero-only): prevents death once by setting HP to 1.
+    private bool tankUsed;
 
     // Prevent multiple parry triggers from the same attacker within a short time
     private readonly Dictionary<int, float> parryLockoutUntil = new Dictionary<int, float>();
@@ -75,11 +78,10 @@ public class HealthManager : MonoBehaviour
 
     /// <summary>
     /// Object will take damage and take knockback
-    /// Called when damage colliion is triggered
+    /// Called when damage collision is triggered
     /// </summary>
     public void TakeDamage(float damage, GameObject attacker, Vector2 direction, float knockback_mag)
     {
-
         // Parry check
         if (movement != null && movement.IsParrying && attacker != null)
         {
@@ -93,30 +95,42 @@ public class HealthManager : MonoBehaviour
             return;
         }
 
-        // Debug.Log($"{name}: AHHHHHHH IT HURTS");
-        currentHealth -= damage;
-        currentHealth = Mathf.Max(currentHealth, 0);
+        // Apply damage (with Tank death-prevention once for the hero).
+        float newHealth = currentHealth - damage;
+        bool wouldDie = newHealth <= 0f;
+
+        if (wouldDie && !tankUsed && movement != null && movement.IsHero && movement.HasAbility("Tank"))
+        {
+            tankUsed = true;
+            currentHealth = 1f;
+        }
+        else
+        {
+            currentHealth = Mathf.Max(newHealth, 0f);
+        }
+
         onHealthChanged?.Invoke(currentHealth / maxHealth);
 
         // Look for rigid body and apply knockback if found
         if (Mathf.Abs(direction.y) < 0.7f)  // Limit vertical knockback by angle
-                direction.y = 0f;
-        Vector2 knockback = direction*knockback_mag;
+            direction.y = 0f;
+
+        Vector2 knockback = direction * knockback_mag;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb == null)
             rb = GetComponentInParent<Rigidbody2D>();
+
         if (rb != null)
         {
-            float y_knockback_lim = (4f / 8f) * rb.gravityScale;            // Limit grav scale of 8 to 5, lim scale of 5 to smaller
+            float y_knockback_lim = (4f / 8f) * rb.gravityScale;
             knockback.y = Mathf.Clamp(knockback.y, -y_knockback_lim, y_knockback_lim);
-            // UnityEngine.Debug.Log($"Knockback: {knockback}"); 
             StartKnockbackTimer(knockback, knockbackDuration);
         }
         else
         {
-            UnityEngine.Debug.Log($"Couldn't find rigidbody!");    
+            UnityEngine.Debug.Log($"Couldn't find rigidbody!");
         }
-        
+
         if (spriteRenderer != null)
         {
             if (flashRoutine != null) StopCoroutine(flashRoutine);
