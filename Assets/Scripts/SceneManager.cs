@@ -77,14 +77,14 @@ public class GameFlowManager : MonoBehaviour
 
         // Default hero stats
         State.hero.attack = 1;
-        State.hero.speed = 8;
+        State.hero.speed = 15;
         State.hero.health = 10;
         State.hero.jump = 20;
         State.hero.playerInd = State.GetPlayerIndexForRole(Role.Hero);
 
         // Default boss stats
         State.boss.attack = 1;
-        State.boss.speed = 8;
+        State.boss.speed = 15;
         State.boss.health = 10;
         State.boss.jump = 20;
         State.boss.playerInd = State.GetPlayerIndexForRole(Role.Boss);
