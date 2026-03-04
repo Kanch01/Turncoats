@@ -9,7 +9,8 @@ public class FloatyZone : MonoBehaviour
     public float drag = 2f;               // Optional: slow horizontal movement
     public bool ignoreStatic = true;
 
-    private Dictionary<Rigidbody2D, float> objectsInZone = new();
+    private Dictionary<Rigidbody2D, int> objectsInZone = new();
+    private Dictionary<Rigidbody2D, float> originalGravity = new();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +18,14 @@ public class FloatyZone : MonoBehaviour
         if (rb == null) return;
         if (ignoreStatic && rb.bodyType != RigidbodyType2D.Dynamic) return;
 
-        objectsInZone[rb] = rb.gravityScale; // Store original gravity
+        // Add new object to dict
+        if (!objectsInZone.ContainsKey(rb))
+        {
+            objectsInZone[rb] = 0;
+            originalGravity[rb] = rb.gravityScale;
+        }
+
+        objectsInZone[rb]++;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -26,8 +34,15 @@ public class FloatyZone : MonoBehaviour
         if (rb == null) return;
         if (!objectsInZone.ContainsKey(rb)) return;
 
-        rb.gravityScale = objectsInZone[rb]; //Restore gravity
-        objectsInZone.Remove(rb);
+        objectsInZone[rb]--;
+
+        // Restore gravity
+        if (objectsInZone[rb] <= 0)
+        {
+            rb.gravityScale = originalGravity[rb];
+            objectsInZone.Remove(rb);
+            originalGravity.Remove(rb);
+        }
     }
 
     private void FixedUpdate()
@@ -38,7 +53,7 @@ public class FloatyZone : MonoBehaviour
 
             // Apply gentle upward force
             if (rb.linearVelocity.y < maxUpSpeed)
-                rb.AddForce(Vector2.up * floatStrength * rb.mass * objectsInZone[rb]/5, ForceMode2D.Force);
+                rb.AddForce(Vector2.up * floatStrength * rb.mass * originalGravity[rb]/5, ForceMode2D.Force);
 
             // Horizontal damping
             rb.linearVelocity = new Vector2(rb.linearVelocity.x * (1f - drag * Time.fixedDeltaTime), rb.linearVelocity.y);
