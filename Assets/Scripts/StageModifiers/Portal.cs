@@ -5,7 +5,8 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Collider2D))]
 public class Portal : MonoBehaviour
 {
-    public float targetY = 5f;
+    public Transform targetHeight;
+    private float targetY;
 
     // Keep track of all bodies inside trigger zone to prevent retrigger
     private HashSet<Rigidbody2D> insidePortal = new();
@@ -13,6 +14,26 @@ public class Portal : MonoBehaviour
     private void Awake()
     {
         GetComponent<Collider2D>().isTrigger = true;
+    }
+
+    private void Start()
+    {
+        if (targetHeight != null)
+            targetY = targetHeight.position.y;
+        if (targetHeight == null)
+        {
+            // If not assigned, search for child
+            Transform child = transform.Find("TargetHeight");
+            if (child != null)
+            {
+                targetHeight = child;
+                targetY = targetHeight.position.y;
+            }
+            else
+            {
+                Debug.LogWarning("Portal: No child named 'TargetHeight' found!");
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -5,8 +5,8 @@ using UnityEngine;
 public class StageModifierData : ScriptableObject
 {
     public string modifierName;
+    public string description;
     public float damage;
     public float knockback;
-
     public float cost;
 }

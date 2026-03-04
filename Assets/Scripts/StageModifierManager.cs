@@ -42,6 +42,9 @@ public class StageModifierManager : MonoBehaviour
     private EventSystem eventSystem;
     private bool hoveringUI = false;
     private TMP_Text budgetText;
+    private TMP_Text nameText;
+    private TMP_Text descriptionText;
+    private TMP_Text costText;
     private bool confirming = false;
 
     void OnEnable()
@@ -181,13 +184,24 @@ public class StageModifierManager : MonoBehaviour
         raycaster = GetComponent<Canvas>().GetComponent<GraphicRaycaster>();
         pointerData = new PointerEventData(eventSystem);
 
-        // Use the class name GameObject, not the instance
+        // Get UI text
         budgetText = GameObject.Find("BudgetText").GetComponent<TMP_Text>();
-
         if (budgetText != null)
             budgetText.text = $"Budget: {budget:F0}";
         else
             UnityEngine.Debug.LogWarning("BudgetText GameObject not found!");
+
+        nameText = GameObject.Find("NameText").GetComponent<TMP_Text>();
+        if (nameText == null)
+            UnityEngine.Debug.LogWarning("NameText GameObject not found!");
+
+        descriptionText = GameObject.Find("DescriptionText").GetComponent<TMP_Text>();
+        if (descriptionText == null)
+            UnityEngine.Debug.LogWarning("DescriptionText GameObject not found!");
+
+        costText = GameObject.Find("CostText").GetComponent<TMP_Text>();
+        if (costText == null)
+            UnityEngine.Debug.LogWarning("CostText GameObject not found!");
     }
 
     private void HandleStageModPlacement(List<RaycastResult> results)
@@ -223,6 +237,7 @@ public class StageModifierManager : MonoBehaviour
 
             if (currentPreview != null)
                 UpdatePreviewPosition();
+                UpdateStageModifierUI();
 
             submitAction.action.Enable();
             rotateAction.action.Enable();
@@ -286,6 +301,24 @@ public class StageModifierManager : MonoBehaviour
         virtualCursor += delta * controllerCursorSpeed * Time.deltaTime;
         virtualCursor.x = Mathf.Clamp(virtualCursor.x, 0, Screen.width);
         virtualCursor.y = Mathf.Clamp(virtualCursor.y, 0, Screen.height);
+    }
+
+    private void UpdateStageModifierUI()
+    {
+        if (placeablePrefabs.Length == 0) return;
+
+        StageModifier sm = placeablePrefabs[selectedIndex].GetComponent<StageModifier>();
+        if (sm != null && sm.data != null)
+        {
+            nameText.text = sm.data.modifierName;
+            descriptionText.text = sm.data.description;
+            costText.text = $"Cost: {sm.data.cost:F0}";
+
+            if (sm.data.cost > budget)
+                costText.color = Color.red;
+            else
+                costText.color = Color.white;
+        }
     }
 
     private void SpawnPreview()

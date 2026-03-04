@@ -192,6 +192,7 @@ MonoBehaviour:
   hurtColor: {r: 0, g: 0, b: 0, a: 1}
   flashDuration: 0.15
   knockbackDuration: 0.15
+  parryRepeatBlockSeconds: 0.15
 --- !u!114 &8666092663581054835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,4 +221,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de65c972d4f2a3c45b53f3894fc75a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageModifier
-  data: {fileID: 11400000, guid: 4a0042ff7dafdfe4aa3201c3c0215229, type: 2}
+  data: {fileID: 11400000, guid: e5494e71bd02f2f4a8b3cd240205f8eb, type: 2}
