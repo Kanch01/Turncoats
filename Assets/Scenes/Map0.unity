@@ -1116,6 +1116,7 @@ MonoBehaviour:
   heroSpawn: {fileID: 330481877}
   bossSpawn: {fileID: 305253498}
   respawnDelay: 3
+  numRounds: 3
 --- !u!224 &1246678500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11872,6 +11873,10 @@ PrefabInstance:
       propertyPath: stageModCamera
       value: 
       objectReference: {fileID: 519255749}
+    - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
+      propertyPath: lastPrefabAction
+      value: 
+      objectReference: {fileID: -5391029425281268340, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: placeablePrefabs.Array.size
       value: 7

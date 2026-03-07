@@ -22,6 +22,7 @@ public class StageModifierManager : MonoBehaviour
     public InputActionReference submitAction;        // Button to place object and select menu options
     public InputActionReference rotateAction;       // Button to rotate preview
     public InputActionReference nextPrefabAction;   // Button to cycle stage modifiers
+    public InputActionReference lastPrefabAction;   // Button to cycle back
     public InputActionReference buttonAction;       // UI Button to move on to battle
 
     [Header("Cursor Settings")]
@@ -58,6 +59,7 @@ public class StageModifierManager : MonoBehaviour
         submitAction.action.performed += OnSubmitPerformed;
         rotateAction.action.performed += OnRotatePerformed;
         nextPrefabAction.action.performed += OnNextPrefabPerformed;
+        lastPrefabAction.action.performed += OnLastPrefabPerformed;
         buttonAction.action.performed += OnButtonPressed;
     }
 
@@ -72,6 +74,7 @@ public class StageModifierManager : MonoBehaviour
         submitAction.action.performed -= OnSubmitPerformed;
         rotateAction.action.performed -= OnRotatePerformed;
         nextPrefabAction.action.performed -= OnNextPrefabPerformed;
+        lastPrefabAction.action.performed -= OnLastPrefabPerformed;
         buttonAction.action.performed -= OnButtonPressed;
     }
 
@@ -87,7 +90,12 @@ public class StageModifierManager : MonoBehaviour
 
     private void OnNextPrefabPerformed(InputAction.CallbackContext ctx)
     {
-        NextPrefab();
+        CyclePrefab(1);
+    }
+
+    private void OnLastPrefabPerformed(InputAction.CallbackContext ctx)
+    {
+        CyclePrefab(-1);
     }
 
     private void OnButtonPressed(InputAction.CallbackContext ctx)
@@ -429,10 +437,13 @@ public class StageModifierManager : MonoBehaviour
         rotationZ %= 360f;
     }
 
-    private void NextPrefab()
+    private void CyclePrefab(int direction)
     {
         // Cycle to next using prefab cycle button
-        selectedIndex = (selectedIndex + 1) % placeablePrefabs.Length;
+        selectedIndex = (selectedIndex + direction) % placeablePrefabs.Length;
+        
+        if (selectedIndex < 0)
+            selectedIndex = placeablePrefabs.Length - 1;
         if (currentPreview != null)
             Destroy(currentPreview);
         SpawnPreview();

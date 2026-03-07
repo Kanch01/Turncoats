@@ -623,6 +623,7 @@ MonoBehaviour:
   submitAction: {fileID: 392368643174621059, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   rotateAction: {fileID: 3584566496950942275, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   nextPrefabAction: {fileID: 808930066650462972, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  lastPrefabAction: {fileID: -5391029425281268340, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   buttonAction: {fileID: 7727032971491509709, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   controllerCursorSpeed: 800
   spawnPoints: {fileID: 0}
