@@ -9,8 +9,10 @@ public class MultiTargetCamera : MonoBehaviour
     [SerializeField] private Vector3 offset;
     [SerializeField] private float smoothTime = 0.5f; // For smooth movement
     [SerializeField] private float minSize = 6f;     // Minimum zoom
+    [SerializeField] private float maxSize = 20f;    // Maximum zoom
     [SerializeField] private float zoomLimiter = 1f; // Controls how aggressive scaling is
-    [SerializeField] private bool move = true;         // Whether to actually move the camera
+    [SerializeField] private bool move = true;         // Whether to move the camera
+    [SerializeField] private bool zoom = true;         // Whether to zoom the camera
 
     private Vector3 velocity;
     private Camera cam;
@@ -34,12 +36,15 @@ public class MultiTargetCamera : MonoBehaviour
     
     void LateUpdate()
     {
-        if ((target1 == null && target2 == null) || !move)
+        if (target1 == null && target2 == null)
             return;
 
-        MoveCamera();
-        ZoomCamera();
-        UpdateBounds();
+        if (move)
+            MoveCamera();
+        if (zoom)
+            ZoomCamera();
+        if (leftCol != null && rightCol != null)
+            UpdateBounds();
     }
 
     void MoveCamera()
@@ -69,6 +74,7 @@ public class MultiTargetCamera : MonoBehaviour
             Mathf.Max(GetGreatestDistance() / zoomLimiter, minSize),
             Time.deltaTime
         );
+        newSize = Mathf.Min(newSize, maxSize);
         cam.orthographicSize = newSize;
     }
 
