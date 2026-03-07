@@ -161,7 +161,10 @@ public class HealthManager : MonoBehaviour
     {
         Debug.Log($"{name} bleh (ˆ𐃷ˆ)");
         onDeath?.Invoke();
-        Destroy(gameObject, 0f);
+
+        var manager = FindFirstObjectByType<PlayerManager>();
+        manager?.OnPlayerDeath(this);
+        Destroy(gameObject);
     }
 
     public void Heal(float amount)

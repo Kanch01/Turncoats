@@ -23,13 +23,13 @@ public class AttackHitboxController : MonoBehaviour
     public void EnableHitboxes()
     {
         hitTracker = new HashSet<GameObject>();
-        Debug.Log($"{name}: EnableHitboxes event fired", this);
+        // Debug.Log($"{name}: EnableHitboxes event fired", this);
         SetActive(true);
     }
 
     public void DisableHitboxes()
     {
-        Debug.Log($"{name}: DisableHitboxes event fired", this);
+        // Debug.Log($"{name}: DisableHitboxes event fired", this);
         SetActive(false);
     }
 

@@ -1,5 +1,7 @@
+using System.Net.Http.Headers;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -11,11 +13,59 @@ public class PlayerManager : MonoBehaviour
     [Header("Spawn Points")]
     [SerializeField] private Transform heroSpawn;
     [SerializeField] private Transform bossSpawn;
+    [SerializeField] private float respawnDelay = 1f;
+
+    private PlayerInput heroInstance;
+    private PlayerInput bossInstance;
+    private bool respawning = false;
+    private MultiTargetCamera cam;
+    private Vector3 cameraStartPos;
+    private Quaternion cameraStartRot;
+    private TMP_Text respawnText;
+    private TMP_Text countdownText;
+
+    private void Awake()
+    {
+        cam = FindFirstObjectByType<MultiTargetCamera>();
+    }
+
+    private void Start()
+    {
+        // cam = FindFirstObjectByType<MultiTargetCamera>();
+        if (cam != null)
+        {
+            cameraStartPos = cam.transform.position;
+            cameraStartRot = cam.transform.rotation;
+        }
+
+        respawnText = GameObject.Find("RespawnText").GetComponent<TMP_Text>();
+        if (respawnText != null)
+        {
+            respawnText.gameObject.SetActive(false);
+        }
+        else
+        {
+            UnityEngine.Debug.LogWarning("RespawnText GameObject not found!");
+        }
+
+        countdownText = GameObject.Find("CountdownText").GetComponent<TMP_Text>();
+        if (countdownText != null)
+        {
+            countdownText.gameObject.SetActive(false);
+        }
+        else
+        {
+            UnityEngine.Debug.LogWarning("CountdownText GameObject not found!");
+        }
+    }
 
     public void StartGame()
     {
         if (FindObjectsByType<PlayerInput>(FindObjectsSortMode.None).Length > 0)
+        {
+            UnityEngine.Debug.Log("returning, player input still exists");
             return;
+        }
 
         var flow = GameFlowManager.Instance;
         if (flow == null || flow.State == null)
@@ -37,7 +87,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         // Spawn HERO
-        var heroPI = SpawnForRole(
+        heroInstance = SpawnForRole(
             role: Role.Hero,
             prefab: heroPrefab,
             playerIndex: state.GetPlayerIndexForRole(Role.Hero),
@@ -48,7 +98,7 @@ public class PlayerManager : MonoBehaviour
         );
 
         // Spawn BOSS
-        var bossPI = SpawnForRole(
+        bossInstance = SpawnForRole(
             role: Role.Boss,
             prefab: bossPrefab,
             playerIndex: state.GetPlayerIndexForRole(Role.Boss),
@@ -59,8 +109,8 @@ public class PlayerManager : MonoBehaviour
         );
 
         // Hook up health bars to the spawned instances
-        WireHealthBar(roleIndex: 0, player: heroPI);
-        WireHealthBar(roleIndex: 1, player: bossPI);
+        WireHealthBar(roleIndex: 0, player: heroInstance);
+        WireHealthBar(roleIndex: 1, player: bossInstance);
     }
 
     private void WireHealthBar(int roleIndex, PlayerInput player)
@@ -134,21 +184,65 @@ public class PlayerManager : MonoBehaviour
             attackMgr.ApplyNewAttack(cfg.attack);
         }
 
-        var cam = FindFirstObjectByType<MultiTargetCamera>();
         if (cam != null) cam.RegisterPlayer(pi.transform);
 
         return pi;
     }
+
+    public void OnPlayerDeath(HealthManager deadPlayer)
+    {
+        if (!respawning)
+            StartCoroutine(RespawnBoth(deadPlayer));
+    }
+
+    private System.Collections.IEnumerator RespawnBoth(HealthManager deadPlayer)
+    {
+        respawning = true;
+
+        string deathName = deadPlayer.GetComponent<PlayerMovement>().IsHero ? "Boss" : "Hero";
+
+        // Display death message
+        if (respawnText != null)
+            respawnText.gameObject.SetActive(true);
+            respawnText.text = $"{deathName} Wins!";
+
+        // Enable countdown and display game over text
+        if (countdownText != null)
+            countdownText.gameObject.SetActive(true);
+
+        float timer = respawnDelay;
+        while (timer > 0f)
+        {
+            if (countdownText != null)
+                countdownText.text = $"Respawning in {Mathf.Ceil(timer)}";
+
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+
+        // Move camera back to start
+        if (cam != null)
+        {
+            cam.transform.position = cameraStartPos;
+            cam.transform.rotation = cameraStartRot;
+        }
+
+        if (respawnText != null)
+            respawnText.gameObject.SetActive(false);
+        if (countdownText != null)
+            countdownText.gameObject.SetActive(false);
+
+        if (heroInstance != null)
+            Destroy(heroInstance.gameObject);
+
+        if (bossInstance != null)
+            Destroy(bossInstance.gameObject);
+
+        // Wait one frame so Destroy actually completes
+        yield return null;
+
+        StartGame();
+
+        respawning = false;
+    }
 }
-
-
-/*
- * // Connect health to correct UI
-   HealthManager health = player.GetComponent<HealthManager>();
-
-   if (healthBars != null && healthBars.Length > i && healthBars[i] != null)
-   {
-       healthBars[i].Initialize(health);
-   }
- */
-
