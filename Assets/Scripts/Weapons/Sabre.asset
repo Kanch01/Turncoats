@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86171e8c5404f464ebeba89e08f70588, type: 3}
   m_Name: Sabre
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  displayName: 
+  displayName: Sabre
   buff: 5
   buffAmount: 4
   debuff: 4

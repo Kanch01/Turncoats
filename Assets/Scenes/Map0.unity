@@ -11706,7 +11706,7 @@ PrefabInstance:
       objectReference: {fileID: 519255749}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: placeablePrefabs.Array.size
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: 'placeablePrefabs.Array.data[3]'
@@ -11715,19 +11715,19 @@ PrefabInstance:
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: 'placeablePrefabs.Array.data[4]'
       value: 
-      objectReference: {fileID: 7753472629028182465, guid: 9227169534f08f44c9829097a5b9d411, type: 3}
+      objectReference: {fileID: 6204657668505716869, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: 'placeablePrefabs.Array.data[5]'
       value: 
-      objectReference: {fileID: 6204657668505716869, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
+      objectReference: {fileID: 8615502785291650437, guid: e95da3ab17fa2c44990cf41f162ba360, type: 3}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: 'placeablePrefabs.Array.data[6]'
       value: 
-      objectReference: {fileID: 8615502785291650437, guid: e95da3ab17fa2c44990cf41f162ba360, type: 3}
+      objectReference: {fileID: 1357180114309260521, guid: 5389a3bc44a0cb648b553f8c124ac40d, type: 3}
     - target: {fileID: 3134640603631082596, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: 'placeablePrefabs.Array.data[7]'
       value: 
-      objectReference: {fileID: 1357180114309260521, guid: 5389a3bc44a0cb648b553f8c124ac40d, type: 3}
+      objectReference: {fileID: 7753472629028182465, guid: 9227169534f08f44c9829097a5b9d411, type: 3}
     - target: {fileID: 3515273853223700072, guid: 73d9183d2e3c72b498ba57ed4d8a15a1, type: 3}
       propertyPath: m_Name
       value: StageModifierManager

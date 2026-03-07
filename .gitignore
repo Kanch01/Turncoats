@@ -10,3 +10,4 @@ obj/
 *.sln
 *.slnx
 buildmacOS.app/
+Builds/
