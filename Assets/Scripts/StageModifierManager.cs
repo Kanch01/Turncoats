@@ -47,30 +47,52 @@ public class StageModifierManager : MonoBehaviour
     private TMP_Text costText;
     private bool confirming = false;
 
-    void OnEnable()
+    private void OnEnable()
     {
-        // Enable controls and connect callbacks
         moveAction.action.Enable();
         submitAction.action.Enable();
         rotateAction.action.Enable();
         nextPrefabAction.action.Enable();
         buttonAction.action.Enable();
 
-        submitAction.action.performed += _ => OnSubmit();
-        rotateAction.action.performed += _ => RotatePreview();
-        nextPrefabAction.action.performed += _ => NextPrefab();
-        buttonAction.action.performed += _ => OnButtonPress();
+        submitAction.action.performed += OnSubmitPerformed;
+        rotateAction.action.performed += OnRotatePerformed;
+        nextPrefabAction.action.performed += OnNextPrefabPerformed;
+        buttonAction.action.performed += OnButtonPressed;
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         moveAction.action.Disable();
+        submitAction.action.Disable();
         rotateAction.action.Disable();
         nextPrefabAction.action.Disable();
         buttonAction.action.Disable();
 
-        submitAction.action.performed -= _ => OnSubmit();
-        submitAction.action.Disable();
+        submitAction.action.performed -= OnSubmitPerformed;
+        rotateAction.action.performed -= OnRotatePerformed;
+        nextPrefabAction.action.performed -= OnNextPrefabPerformed;
+        buttonAction.action.performed -= OnButtonPressed;
+    }
+
+    private void OnSubmitPerformed(InputAction.CallbackContext ctx)
+    {
+        OnSubmit();
+    }
+
+    private void OnRotatePerformed(InputAction.CallbackContext ctx)
+    {
+        RotatePreview();
+    }
+
+    private void OnNextPrefabPerformed(InputAction.CallbackContext ctx)
+    {
+        NextPrefab();
+    }
+
+    private void OnButtonPressed(InputAction.CallbackContext ctx)
+    {
+        OnButtonPress();
     }
 
     private void OnSubmit()
@@ -165,7 +187,8 @@ public class StageModifierManager : MonoBehaviour
         }
 
         // Disable this button
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     public void CancelStartGame()

@@ -143,6 +143,17 @@ public class GameFlowManager : MonoBehaviour
         _ = StartCoroutine(LoadContentScene(playerSelect));
     }
 
+    public void SwitchPlayers()
+    {
+        var prevHeroIndex = State.GetPlayerIndexForRole(Role.Hero);
+        State.ResetRun();
+
+        State.player0Role = (prevHeroIndex == 0) ? Role.Boss : Role.Hero;
+        State.player1Role = (prevHeroIndex == 1) ? Role.Boss : Role.Hero;
+
+        _ = StartCoroutine(LoadContentScene(statsMenu));
+    }
+
     // Called by PlayerSelect buttons:
     public void ChooserSelectsHero(bool decision)
     {

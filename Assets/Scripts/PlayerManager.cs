@@ -2,6 +2,7 @@ using System.Net.Http.Headers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using System.Collections.Generic;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Transform heroSpawn;
     [SerializeField] private Transform bossSpawn;
     [SerializeField] private float respawnDelay = 1f;
+    [SerializeField] public float numRounds = 3;
 
     private PlayerInput heroInstance;
     private PlayerInput bossInstance;
@@ -23,10 +25,20 @@ public class PlayerManager : MonoBehaviour
     private Quaternion cameraStartRot;
     private TMP_Text respawnText;
     private TMP_Text countdownText;
+    private float currentRound = 0;
+    private int winsNeeded;
+    private Dictionary<string, int> scoreTracker = new Dictionary<string, int>()
+        {
+            { "Hero", 0 },
+            { "Boss", 0 },
+        };
 
     private void Awake()
     {
         cam = FindFirstObjectByType<MultiTargetCamera>();
+        if (numRounds % 2 == 0)
+            UnityEngine.Debug.LogError("Total games must be odd!");
+        winsNeeded = (int)(numRounds / 2) + 1;
     }
 
     private void Start()
@@ -191,20 +203,29 @@ public class PlayerManager : MonoBehaviour
 
     public void OnPlayerDeath(HealthManager deadPlayer)
     {
-        if (!respawning)
-            StartCoroutine(RespawnBoth(deadPlayer));
+        if (respawning) return;
+
+        // Determine who won the round
+        string wonName = deadPlayer.GetComponent<PlayerMovement>().IsHero ? "Boss" : "Hero";
+        scoreTracker[wonName]++;
+        currentRound++;
+        UnityEngine.Debug.Log($"Finished Round {currentRound}!   HeroScore: {scoreTracker["Hero"]}    BossScore: {scoreTracker["Boss"]}");
+
+        // Check if a player won, otherwise respawn
+        if (scoreTracker["Hero"] >= winsNeeded || scoreTracker["Boss"] >= winsNeeded)
+            StartCoroutine(SwitchPlayers(wonName));
+        else
+            StartCoroutine(RespawnBoth(wonName));
     }
 
-    private System.Collections.IEnumerator RespawnBoth(HealthManager deadPlayer)
+    private System.Collections.IEnumerator RespawnBoth(string wonName)
     {
         respawning = true;
-
-        string deathName = deadPlayer.GetComponent<PlayerMovement>().IsHero ? "Boss" : "Hero";
 
         // Display death message
         if (respawnText != null)
             respawnText.gameObject.SetActive(true);
-            respawnText.text = $"{deathName} Wins!";
+            respawnText.text = $"{wonName} wins round {currentRound}/{numRounds}!";
 
         // Enable countdown and display game over text
         if (countdownText != null)
@@ -244,5 +265,51 @@ public class PlayerManager : MonoBehaviour
         StartGame();
 
         respawning = false;
+    }
+
+    private System.Collections.IEnumerator SwitchPlayers(string wonName)
+    {
+        var flow = GameFlowManager.Instance;
+        if (flow == null)
+        {
+            Debug.LogError("GameFlowManager instance not found!");
+        }
+
+        if (flow.debugMode)
+        {
+            StartCoroutine(RespawnBoth(wonName));
+            yield break;
+        }
+
+        // Display death message
+        if (respawnText != null)
+            respawnText.gameObject.SetActive(true);
+            respawnText.text = $"{wonName} Wins!";
+
+        // Enable countdown and display game over text
+        if (countdownText != null)
+            countdownText.gameObject.SetActive(true);
+
+        float timer = respawnDelay;
+        while (timer > 0f)
+        {
+            if (countdownText != null)
+                countdownText.text = $"Switching players in {Mathf.Ceil(timer)}";
+
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+
+        if (heroInstance != null)
+            Destroy(heroInstance.gameObject);
+
+        if (bossInstance != null)
+            Destroy(bossInstance.gameObject);
+
+        // Wait one frame so Destroy actually completes
+        yield return null;
+
+        flow.SwitchPlayers();
+        
     }
 }
