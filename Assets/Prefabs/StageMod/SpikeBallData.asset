@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: SpikeBallData
   m_EditorClassIdentifier: Assembly-CSharp::StageModifierData
   modifierName: Spike Ball
-  description: A spikey ball that causes knockback, but no damage.
+  description: A floating spikey ball that causes knockback, but no damage.
   damage: 0
   knockback: 10
   cost: 2
+  limit: 0
