@@ -9,4 +9,5 @@ public class StageModifierData : ScriptableObject
     public float damage;
     public float knockback;
     public float cost;
+    public int limit;
 }

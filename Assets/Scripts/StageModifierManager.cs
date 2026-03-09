@@ -46,7 +46,9 @@ public class StageModifierManager : MonoBehaviour
     private TMP_Text nameText;
     private TMP_Text descriptionText;
     private TMP_Text costText;
+    private TMP_Text limitText;
     private bool confirming = false;
+    private Dictionary<string, int> stageModCount = new();
 
     private void OnEnable()
     {
@@ -233,6 +235,11 @@ public class StageModifierManager : MonoBehaviour
         costText = GameObject.Find("CostText").GetComponent<TMP_Text>();
         if (costText == null)
             UnityEngine.Debug.LogWarning("CostText GameObject not found!");
+
+        limitText = GameObject.Find("LimitText").GetComponent<TMP_Text>();
+        if (limitText == null)
+            UnityEngine.Debug.LogWarning("LimitText GameObject not found!");
+        limitText.gameObject.SetActive(false);
     }
 
     private void HandleStageModPlacement(List<RaycastResult> results)
@@ -349,6 +356,22 @@ public class StageModifierManager : MonoBehaviour
                 costText.color = Color.red;
             else
                 costText.color = Color.white;
+
+            var limit = sm.data.limit;
+            if (limit > 0)
+            {
+                limitText.gameObject.SetActive(true);
+                limitText.text = $"Limit: {limit}";
+
+                if (stageModCount.ContainsKey(sm.data.modifierName) && stageModCount[sm.data.modifierName] >= limit)
+                {
+                    limitText.color = Color.red;
+                }
+                else
+                {
+                    limitText.color = Color.white;
+                } 
+            }
         }
     }
 
@@ -486,14 +509,28 @@ public class StageModifierManager : MonoBehaviour
         StageModifier script = preview.GetComponentInChildren<StageModifier>();
         if (script != null)
         {
+            string name = script.data.modifierName;
+            int limit = script.data.limit;
             float new_budget = budget - script.data.cost;
             if (new_budget < 0.0)
             {
                 UnityEngine.Debug.Log("You broke!");
                 return false;
             }
+            else if (stageModCount.ContainsKey(name) && limit != 0 && stageModCount[name] >= limit)
+            {
+                UnityEngine.Debug.Log("Can't place any more of these!");
+                return false;
+            }
             else
             {
+                // Add new object to dict
+                if (!stageModCount.ContainsKey(name))
+                {
+                    stageModCount[name] = 0;
+                }
+
+                stageModCount[name]++;
                 budget = new_budget;
                 budgetText.text = $"Budget: {budget:F0}";
             }
