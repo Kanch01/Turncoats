@@ -372,6 +372,10 @@ public class StageModifierManager : MonoBehaviour
                     limitText.color = Color.white;
                 } 
             }
+            else
+            {
+                limitText.gameObject.SetActive(false);
+            }
         }
     }
 

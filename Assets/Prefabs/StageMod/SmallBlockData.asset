@@ -16,4 +16,5 @@ MonoBehaviour:
   description: A small block to push around
   damage: 0
   knockback: 0
-  cost: 1
+  cost: 0
+  limit: 6
