@@ -358,7 +358,7 @@ public class PlayerMovement : MonoBehaviour
                 _originalColor = spriteRenderer.color;
                 _hasOriginalColor = true;
             }
-            spriteRenderer.color = Color.black;
+            spriteRenderer.color = Color.green;
         }
 
         _parryRoutine = StartCoroutine(ParryWindowRoutine());
