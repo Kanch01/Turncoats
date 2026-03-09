@@ -22,8 +22,10 @@ public class BossSelectController : MonoBehaviour
 
     private void Awake()
     {
-        randHealth = (int)Random.Range(-6f, 6f);
-        randAttack = (int)Random.Range(-2f, 2f);
+        // randHealth = (int)Random.Range(-6f, 6f);
+        // randAttack = (int)Random.Range(-2f, 2f);
+        randHealth = 0;
+        randAttack = 0;
         
         if (bossSelectButtons == null || bossSelectButtons.Length != 3)
             Debug.LogWarning($"{nameof(BossSelectController)}: bossSelectButtons should be size 3.");
@@ -86,26 +88,28 @@ public class BossSelectController : MonoBehaviour
         if (index == 0)
         {
             // Mole is tank
-            cfg.attack = (int)(state.hero.health/10) + randAttack;
-            cfg.health = state.hero.attack*10 + randHealth;  // 10 hits to die
-            cfg.jump = 18;
-            cfg.speed = 8;
+            // cfg.attack = (int)(state.hero.health/10) + randAttack;
+            cfg.attack = 3;
+            cfg.health = 10 + state.hero.attack*7 + randHealth;  // 10 hits to die
+            cfg.speed = 15;
+            cfg.jump = 22;
         }
         else if (index == 1)
         {
             // Clouds is glass cannon
-            cfg.attack = (int)(state.hero.health/6) + randAttack;
-            cfg.health = state.hero.attack*6 + randHealth;   // 6 hits to die
+            cfg.attack = 5;
+            cfg.health = 3 + state.hero.attack*6 + randHealth;   // 6 hits to die
+            cfg.speed = 20;
             cfg.jump = 25;
-            cfg.speed = 17;
         }
         else
         {
             // Map 2 is balanced
-            cfg.attack = (int)(state.hero.health/8) + randAttack;
-            cfg.health = state.hero.attack*8 + randHealth;   // 8 hits to die
-            cfg.jump = 20;
-            cfg.speed = 12;
+            // cfg.attack = (int)(state.hero.health/8) + randAttack;
+            cfg.attack = 4;
+            cfg.health = 6 + state.hero.attack*8 + randHealth;   // 8 hits to die
+            cfg.speed = 15;
+            cfg.jump = 28;
         }
         
         cfg.health = Mathf.Max(6, cfg.health);

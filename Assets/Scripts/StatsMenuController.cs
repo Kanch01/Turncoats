@@ -11,8 +11,8 @@ public class StatsMenuController : MonoBehaviour
     [Header("Base Stats")]
     [SerializeField] private int baseHealth = 20;
     [SerializeField] private int baseAttack = 1;
-    [SerializeField] private int baseSpeed = 10;
-    [SerializeField] private int baseJump = 15;
+    [SerializeField] private int baseSpeed = 13;
+    [SerializeField] private int baseJump = 18;
 
     [Header("Sliders")]
     [SerializeField] private Slider hpSlider;

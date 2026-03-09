@@ -79,7 +79,7 @@ public class AttackHitboxController : MonoBehaviour
 
             Vector2 direction = (target_mov.groundCheck.position - attacker_mov.groundCheck.position).normalized;
 
-            targetHealth.TakeDamage(damage, attacker, direction, knockback);
+            targetHealth.TakeDamage(damage, attacker, direction, knockback, Color.red);
         }
     }
 }

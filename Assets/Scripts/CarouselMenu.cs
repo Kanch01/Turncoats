@@ -74,7 +74,7 @@ public class CarouselMenu : MonoBehaviour
             cfg.attack = (int)(state.hero.health/10) + randAttack;
             cfg.health = state.hero.attack*10 + randHealth;  // 10 hits to die
             cfg.jump = 18;
-            cfg.speed = 8;
+            cfg.speed = 15;
         }
         else if (targetIndex == 1)
         {
@@ -82,15 +82,15 @@ public class CarouselMenu : MonoBehaviour
             cfg.attack = (int)(state.hero.health/6) + randAttack;
             cfg.health = state.hero.attack*6 + randHealth;   // 6 hits to die
             cfg.jump = 25;
-            cfg.speed = 17;
+            cfg.speed = 20;
         }
         else
         {
             // Map 2 is balanced
             cfg.attack = (int)(state.hero.health/8) + randAttack;
             cfg.health = state.hero.attack*8 + randHealth;   // 8 hits to die
-            cfg.jump = 20;
-            cfg.speed = 12;
+            cfg.jump = 16;
+            cfg.speed = 15;
         }
         
         cfg.health = Mathf.Max(6, cfg.health);

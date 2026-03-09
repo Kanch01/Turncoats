@@ -458,7 +458,7 @@ public class PlayerMovement : MonoBehaviour
                 PlayerMovement target_mov = transform.root.GetComponent<PlayerMovement>();
 
                 Vector2 direction = (target_mov.groundCheck.position - attacker_mov.groundCheck.position).normalized;
-                attackerHealth.TakeDamage(attack, this.gameObject, direction, 10f); // TODO: Don't hardcode this
+                attackerHealth.TakeDamage(attack, this.gameObject, direction, 10f, Color.red); // TODO: Don't hardcode this
             }
         }
         catch (MissingReferenceException)

@@ -80,7 +80,7 @@ public class HealthManager : MonoBehaviour
     /// Object will take damage and take knockback
     /// Called when damage collision is triggered
     /// </summary>
-    public void TakeDamage(float damage, GameObject attacker, Vector2 direction, float knockback_mag)
+    public void TakeDamage(float damage, GameObject attacker, Vector2 direction, float knockback_mag, Color col)
     {
         // Parry check
         if (movement != null && movement.IsParrying && attacker != null)
@@ -134,23 +134,23 @@ public class HealthManager : MonoBehaviour
         if (spriteRenderer != null)
         {
             if (flashRoutine != null) StopCoroutine(flashRoutine);
-            flashRoutine = StartCoroutine(HurtFlash());
+            flashRoutine = StartCoroutine(HurtFlash(col));
         }
 
         if (currentHealth <= 0)
             Die();
     }
 
-    private IEnumerator HurtFlash()
+    private IEnumerator HurtFlash(Color col)
     {
-        spriteRenderer.color = hurtColor;
+        spriteRenderer.color = col;
 
         float t = 0f;
         while (t < flashDuration)
         {
             t += Time.deltaTime;
             float lerp = t / flashDuration;
-            spriteRenderer.color = Color.Lerp(hurtColor, originalColor, lerp);
+            spriteRenderer.color = Color.Lerp(col, originalColor, lerp);
             yield return null;
         }
 

@@ -19,6 +19,6 @@ public class DamageOnTouch : MonoBehaviour
         GameObject attacker = transform.root.gameObject;
 
         Vector2 direction = (other.transform.position - transform.position).normalized;
-        health.TakeDamage(modifier.data.damage, attacker, direction, modifier.data.knockback);
+        health.TakeDamage(modifier.data.damage, attacker, direction, modifier.data.knockback, Color.white);
     }
 }
