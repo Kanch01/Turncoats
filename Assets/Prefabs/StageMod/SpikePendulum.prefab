@@ -191,6 +191,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6056143991852399111}
     m_Modifications:
+    - target: {fileID: 4703223923585645715, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6204657668505716869, guid: 9597da1cd15f4954cad5e353fc4e4c1c, type: 3}
       propertyPath: m_Name
       value: SpikeBall
