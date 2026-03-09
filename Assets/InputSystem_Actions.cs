@@ -196,6 +196,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""92c769ea-defc-4ea2-a28e-8d3c79ed9ec6"",
+                    ""path"": ""<SwitchProControllerHID>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a1fbb0ea-639b-4e6b-a478-aa74a608e81b"",
                     ""path"": ""<HID::Microsoft Jose Controller>/button4"",
                     ""interactions"": """",
@@ -807,6 +818,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""3aa1a749-2634-4930-83cb-f44033540f55"",
                     ""path"": ""<HID::Jared Second Controller>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5bdfd47d-6470-41c5-b4b1-607356abcd42"",
+                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
